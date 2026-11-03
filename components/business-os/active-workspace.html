@@ -1,0 +1,758 @@
+<!-- ==========================================
+     SYNVORA AI — ACTIVE WORKSPACE
+     Company Workspace Control Center
+========================================== -->
+
+<style>
+    .synvora-workspace {
+        --ws-bg: #07111f;
+        --ws-card: #0d1929;
+        --ws-border: rgba(255,255,255,.10);
+        --ws-cyan: #00aeef;
+        --ws-gold: #ffd700;
+        --ws-text: #edf5ff;
+        --ws-muted: #9aabc0;
+        display: grid;
+        gap: 20px;
+        margin-top: 20px;
+        color: var(--ws-text);
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .synvora-workspace * {
+        box-sizing: border-box;
+    }
+
+    .synvora-workspace .ws-card {
+        min-width: 0;
+        padding: 23px;
+        border: 1px solid var(--ws-border);
+        border-radius: 17px;
+        background: linear-gradient(145deg, #101d30, #091321);
+        box-shadow: 0 12px 32px rgba(0,0,0,.20);
+    }
+
+    .synvora-workspace .ws-heading {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .synvora-workspace .ws-heading h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .synvora-workspace .ws-heading p {
+        margin: 7px 0 0;
+        color: var(--ws-muted);
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .synvora-workspace .ws-eyebrow {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ws-cyan);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.8px;
+    }
+
+    .synvora-workspace .ws-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        width: fit-content;
+        padding: 8px 12px;
+        border: 1px solid var(--ws-border);
+        border-radius: 30px;
+        background: rgba(255,255,255,.04);
+        color: var(--ws-text);
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .synvora-workspace .ws-status.active {
+        border-color: rgba(34,197,94,.30);
+        color: #4ade80;
+    }
+
+    .synvora-workspace .ws-status.inactive {
+        border-color: rgba(248,113,113,.30);
+        color: #f87171;
+    }
+
+    .synvora-workspace .ws-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 25px;
+        border: 1px solid rgba(0,174,239,.22);
+        border-radius: 18px;
+        background:
+            radial-gradient(ellipse at top left, rgba(0,174,239,.13), transparent 65%),
+            linear-gradient(145deg,#101e31,#081321);
+    }
+
+    .synvora-workspace .ws-company-identity {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        min-width: 0;
+    }
+
+    .synvora-workspace .ws-company-icon {
+        display: grid;
+        flex: 0 0 55px;
+        width: 55px;
+        height: 55px;
+        place-items: center;
+        border: 1px solid rgba(0,174,239,.30);
+        border-radius: 15px;
+        background: rgba(0,174,239,.10);
+        font-size: 26px;
+    }
+
+    .synvora-workspace .ws-company-identity h2 {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(19px,3vw,27px);
+        overflow-wrap: anywhere;
+    }
+
+    .synvora-workspace .ws-company-identity p {
+        margin: 8px 0 0;
+        color: var(--ws-muted);
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .synvora-workspace .ws-top-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .synvora-workspace .ws-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-height: 40px;
+        padding: 10px 14px;
+        border: 1px solid var(--ws-border);
+        border-radius: 9px;
+        background: rgba(255,255,255,.05);
+        color: var(--ws-text);
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: .2s ease;
+    }
+
+    .synvora-workspace .ws-btn:hover {
+        transform: translateY(-1px);
+        border-color: var(--ws-cyan);
+    }
+
+    .synvora-workspace .ws-btn.primary {
+        border-color: rgba(0,174,239,.45);
+        background: linear-gradient(135deg,#00aeef,#087eaf);
+        color: #fff;
+    }
+
+    .synvora-workspace .ws-btn.gold {
+        border-color: rgba(255,215,0,.30);
+        background: rgba(255,215,0,.08);
+        color: var(--ws-gold);
+    }
+
+    .synvora-workspace .ws-btn.danger {
+        border-color: rgba(248,113,113,.32);
+        background: rgba(248,113,113,.08);
+        color: #fca5a5;
+    }
+
+    .synvora-workspace .ws-btn:disabled {
+        opacity: .45;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .synvora-workspace .ws-grid {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 20px;
+    }
+
+    .synvora-workspace .ws-fields {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 15px;
+    }
+
+    .synvora-workspace .ws-field {
+        min-width: 0;
+    }
+
+    .synvora-workspace .ws-field.full {
+        grid-column: 1 / -1;
+    }
+
+    .synvora-workspace .ws-field label {
+        display: block;
+        margin-bottom: 7px;
+        color: #c4d2e4;
+        font-size: 12px;
+        font-weight: 650;
+    }
+
+    .synvora-workspace .ws-field input,
+    .synvora-workspace .ws-field select,
+    .synvora-workspace .ws-field textarea {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+        padding: 10px 12px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 9px;
+        outline: none;
+        background: rgba(0,0,0,.20);
+        color: #fff;
+        font-family: inherit;
+        font-size: 13px;
+    }
+
+    .synvora-workspace .ws-field textarea {
+        min-height: 90px;
+        resize: vertical;
+    }
+
+    .synvora-workspace .ws-field input:focus,
+    .synvora-workspace .ws-field select:focus,
+    .synvora-workspace .ws-field textarea:focus {
+        border-color: var(--ws-cyan);
+        box-shadow: 0 0 0 3px rgba(0,174,239,.10);
+    }
+
+    .synvora-workspace .ws-field select option {
+        background: #0d1929;
+        color: #fff;
+    }
+
+    .synvora-workspace .ws-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .synvora-workspace .ws-control-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .synvora-workspace .ws-control-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 15px;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 12px;
+        background: rgba(255,255,255,.025);
+    }
+
+    .synvora-workspace .ws-control-item strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    .synvora-workspace .ws-control-item small {
+        display: block;
+        color: var(--ws-muted);
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .synvora-workspace .ws-activity-list {
+        display: grid;
+        gap: 10px;
+        max-height: 350px;
+        overflow-y: auto;
+    }
+
+    .synvora-workspace .ws-activity {
+        padding: 12px 14px;
+        border-left: 3px solid var(--ws-cyan);
+        border-radius: 7px;
+        background: rgba(0,174,239,.055);
+    }
+
+    .synvora-workspace .ws-activity strong {
+        display: block;
+        color: #eaf5ff;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .synvora-workspace .ws-activity small {
+        display: block;
+        margin-top: 5px;
+        color: var(--ws-muted);
+        font-size: 11px;
+    }
+
+    .synvora-workspace .ws-empty {
+        padding: 22px;
+        border: 1px dashed rgba(255,255,255,.13);
+        border-radius: 11px;
+        color: var(--ws-muted);
+        font-size: 13px;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .synvora-workspace .ws-danger-card {
+        border-color: rgba(248,113,113,.25);
+    }
+
+    .synvora-workspace .ws-danger-card .ws-heading h3 {
+        color: #fca5a5;
+    }
+
+    .synvora-workspace .ws-notice {
+        display: none;
+        padding: 12px 14px;
+        border: 1px solid rgba(0,174,239,.25);
+        border-radius: 10px;
+        background: rgba(0,174,239,.08);
+        color: #bfeeff;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .synvora-workspace .ws-notice.visible {
+        display: block;
+    }
+
+    .synvora-workspace .ws-disabled-overlay {
+        display: none;
+    }
+
+    @media(max-width:760px) {
+        .synvora-workspace .ws-grid,
+        .synvora-workspace .ws-fields {
+            grid-template-columns: 1fr;
+        }
+
+        .synvora-workspace .ws-field.full {
+            grid-column: auto;
+        }
+
+        .synvora-workspace .ws-top {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .synvora-workspace .ws-top-actions {
+            width: 100%;
+        }
+
+        .synvora-workspace .ws-top-actions .ws-btn {
+            flex: 1;
+        }
+
+        .synvora-workspace .ws-card {
+            padding: 18px;
+        }
+
+        .synvora-workspace .ws-control-item {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+</style>
+
+<section class="synvora-workspace" id="synvoraWorkspaceControlCenter">
+
+    <!-- ACTIVE WORKSPACE HEADER -->
+
+    <div class="ws-top">
+
+        <div class="ws-company-identity">
+
+            <div class="ws-company-icon">🏢</div>
+
+            <div>
+                <span class="ws-eyebrow">SYNVORA AI / BUSINESS WORKSPACE</span>
+
+                <h2 id="activeWorkspaceName">No Company Selected</h2>
+
+                <p id="activeWorkspaceMeta">
+                    Company select karne ke baad workspace details yahan show hongi.
+                </p>
+
+                <div style="margin-top:12px">
+                    <span id="activeWorkspaceStatus" class="ws-status">
+                        ⚪ No Workspace
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ws-top-actions">
+
+            <button
+                type="button"
+                class="ws-btn primary"
+                id="wsOpenSelectedBtn"
+                onclick="openActiveCompanyWorkspace()">
+
+                🏢 Open Workspace
+            </button>
+
+            <button
+                type="button"
+                class="ws-btn"
+                onclick="wsRefreshWorkspace()">
+
+                ↻ Refresh
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div id="wsGlobalNotice" class="ws-notice" role="status"></div>
+
+
+    <!-- WORKSPACE CONFIGURATION -->
+
+    <section class="ws-card">
+
+        <div class="ws-heading">
+            <div>
+                <span class="ws-eyebrow">WORKSPACE CONFIGURATION</span>
+                <h3>⚙️ Company Configuration</h3>
+                <p>Selected company ki details check karo aur zaroorat par update karo.</p>
+            </div>
+        </div>
+
+        <div class="ws-fields">
+
+            <div class="ws-field">
+                <label for="wsConfigName">Company Name</label>
+                <input id="wsConfigName" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigCode">Company Code</label>
+                <input id="wsConfigCode" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigType">Company Type</label>
+                <input id="wsConfigType" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigIndustry">Industry</label>
+                <input id="wsConfigIndustry" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigOwner">Owner</label>
+                <input id="wsConfigOwner" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigCurrency">Currency</label>
+                <input id="wsConfigCurrency" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigEmail">Business Email</label>
+                <input id="wsConfigEmail" type="text" readonly>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsConfigFiscalYear">Financial Year Starts</label>
+                <input id="wsConfigFiscalYear" type="text" readonly>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPANY SETTINGS -->
+
+    <section class="ws-card">
+
+        <div class="ws-heading">
+            <div>
+                <span class="ws-eyebrow">COMPANY SETTINGS</span>
+                <h3>🛠️ Business Preferences</h3>
+                <p>Company ki editable settings yahan save hongi.</p>
+            </div>
+        </div>
+
+        <div class="ws-fields">
+
+            <div class="ws-field">
+                <label for="wsSettingName">Company Name *</label>
+                <input id="wsSettingName" type="text" maxlength="120">
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingOwner">Owner Name *</label>
+                <input id="wsSettingOwner" type="text" maxlength="120">
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingEmail">Business Email</label>
+                <input id="wsSettingEmail" type="email" maxlength="180">
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingPhone">Phone Number</label>
+                <input id="wsSettingPhone" type="text" maxlength="40">
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingCountry">Country</label>
+                <input id="wsSettingCountry" type="text" maxlength="100">
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingCurrency">Currency</label>
+                <select id="wsSettingCurrency">
+                    <option value="PKR">PKR — Pakistani Rupee</option>
+                    <option value="USD">USD — US Dollar</option>
+                    <option value="GBP">GBP — British Pound</option>
+                    <option value="AED">AED — UAE Dirham</option>
+                    <option value="EUR">EUR — Euro</option>
+                </select>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingFiscalYear">Financial Year Starts</label>
+                <select id="wsSettingFiscalYear">
+                    <option value="January">January</option>
+                    <option value="April">April</option>
+                    <option value="July">July</option>
+                    <option value="October">October</option>
+                </select>
+            </div>
+
+            <div class="ws-field">
+                <label for="wsSettingWebsite">Website</label>
+                <input id="wsSettingWebsite" type="url" placeholder="https://example.com">
+            </div>
+
+            <div class="ws-field full">
+                <label for="wsSettingAddress">Business Address</label>
+                <textarea id="wsSettingAddress" maxlength="1000"></textarea>
+            </div>
+
+            <div class="ws-field full">
+                <label for="wsSettingDescription">Company Description</label>
+                <textarea id="wsSettingDescription" maxlength="2000"></textarea>
+            </div>
+
+        </div>
+
+        <div class="ws-actions">
+
+            <button
+                type="button"
+                class="ws-btn primary"
+                id="wsSaveSettingsBtn"
+                onclick="wsSaveCompanySettings()">
+
+                💾 Save Company Settings
+            </button>
+
+            <button
+                type="button"
+                class="ws-btn"
+                onclick="wsResetCompanySettings()">
+
+                ↩ Reset Changes
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPANY CONTROL -->
+
+    <div class="ws-grid">
+
+        <section class="ws-card">
+
+            <div class="ws-heading">
+                <div>
+                    <span class="ws-eyebrow">COMPANY CONTROL</span>
+                    <h3>🎛️ Workspace Controls</h3>
+                    <p>Selected company ke workspace controls.</p>
+                </div>
+            </div>
+
+            <div class="ws-control-list">
+
+                <div class="ws-control-item">
+                    <div>
+                        <strong>Set as Active Workspace</strong>
+                        <small>Is company ko current selected workspace banao.</small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="ws-btn primary"
+                        onclick="wsSetCompanyActive()">
+
+                        Select
+                    </button>
+                </div>
+
+                <div class="ws-control-item">
+                    <div>
+                        <strong>Refresh Workspace</strong>
+                        <small>Company details aur displayed status dobara load karo.</small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="ws-btn"
+                        onclick="wsRefreshWorkspace()">
+
+                        Refresh
+                    </button>
+                </div>
+
+                <div class="ws-control-item">
+                    <div>
+                        <strong>Open Company Profile</strong>
+                        <small>Company ki complete profile details dekho.</small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="ws-btn"
+                        onclick="wsViewCompanyProfile()">
+
+                        View Profile
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WORKSPACE PRESENCE -->
+
+        <section class="ws-card">
+
+            <div class="ws-heading">
+                <div>
+                    <span class="ws-eyebrow">WORKSPACE PRESENCE</span>
+                    <h3>🔔 Activity & Notifications</h3>
+                    <p>Is browser mein hone wali company workspace activities.</p>
+                </div>
+            </div>
+
+            <div id="wsPresenceSummary" class="ws-empty">
+                Workspace activity abhi available nahi hai.
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 12px">
+                <strong style="font-size:13px">Recent Activity</strong>
+
+                <button
+                    type="button"
+                    class="ws-btn"
+                    onclick="wsClearActivity()">
+
+                    Clear Activity
+                </button>
+            </div>
+
+            <div id="wsActivityList" class="ws-activity-list">
+                <div class="ws-empty">Abhi koi activity record nahi hui.</div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- DANGER ZONE -->
+
+    <section class="ws-card ws-danger-card">
+
+        <div class="ws-heading">
+            <div>
+                <span class="ws-eyebrow" style="color:#f87171">RESTRICTED OPERATIONS</span>
+                <h3>⚠️ Danger Zone</h3>
+                <p>Yahan ki actions company ke status ya company record ko change karti hain.</p>
+            </div>
+        </div>
+
+        <div class="ws-control-list">
+
+            <div class="ws-control-item">
+                <div>
+                    <strong id="wsDeactivateTitle">Deactivate Company</strong>
+                    <small id="wsDeactivateDescription">
+                        Company ko inactive mark kar do. Company record delete nahi hoga.
+                    </small>
+                </div>
+
+                <button
+                    type="button"
+                    class="ws-btn danger"
+                    id="wsDeactivateBtn"
+                    onclick="wsToggleCompanyStatus()">
+
+                    Deactivate
+                </button>
+            </div>
+
+            <div class="ws-control-item">
+                <div>
+                    <strong>Delete Company</strong>
+                    <small>Company record permanently remove hoga. Is action ki confirmation li jayegi.</small>
+                </div>
+
+                <button
+                    type="button"
+                    class="ws-btn danger"
+                    onclick="wsDeleteSelectedCompany()">
+
+                    🗑 Delete Company
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+</section>

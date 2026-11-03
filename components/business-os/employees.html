@@ -1,0 +1,154 @@
+<section class="employee-management">
+
+    <!-- TEAM HEADER -->
+    <div class="team-header">
+
+        <div class="team-header-content">
+            <span class="team-eyebrow">WORKFORCE MANAGEMENT</span>
+            <h2>👥 Team Management</h2>
+            <p>Manage your employees, departments and workforce activities from one place.</p>
+        </div>
+
+        <div class="team-header-actions">
+
+            <button
+                class="team-secondary-btn"
+                type="button"
+                id="exportEmployees"
+            >
+                Export Team
+            </button>
+
+            <button
+                class="team-primary-btn"
+                type="button"
+                id="addEmployeeBtn"
+            >
+                + Add Employee
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TEAM STATISTICS -->
+    <div class="employee-management-grid">
+
+        <div class="employee-card">
+            <span class="employee-card-icon">👥</span>
+            <p>Total Employees</p>
+            <h3 id="managementTotalEmployees">0</h3>
+            <span>Active Team Members</span>
+        </div>
+
+        <div class="employee-card">
+            <span class="employee-card-icon">🟢</span>
+            <p>Active Employees</p>
+            <h3 id="managementActiveEmployees">0</h3>
+            <span>Currently Active</span>
+        </div>
+
+        <div class="employee-card">
+            <span class="employee-card-icon">🏖️</span>
+            <p>On Leave</p>
+            <h3 id="managementLeaveEmployees">0</h3>
+            <span>Employees on Leave</span>
+        </div>
+
+        <div class="employee-card">
+            <span class="employee-card-icon">⛔</span>
+            <p>Inactive Employees</p>
+            <h3 id="managementInactiveEmployees">0</h3>
+            <span>Currently Inactive</span>
+        </div>
+
+    </div>
+
+
+    <!-- TEAM DIRECTORY -->
+    <div class="team-directory">
+
+        <div class="team-directory-header">
+
+            <div>
+                <span class="team-eyebrow">WORKFORCE DIRECTORY</span>
+                <h3>Team Members</h3>
+                <p>View and manage your company workforce.</p>
+            </div>
+
+            <div class="team-member-count">
+                Employee Directory
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTER -->
+        <div class="team-toolbar">
+
+            <div class="team-search-box">
+                <span>🔍</span>
+
+                <input
+                    type="search"
+                    id="managementEmployeeSearch"
+                    placeholder="Search employees..."
+                    aria-label="Search employees"
+                >
+            </div>
+
+            <select
+                id="managementDepartmentFilter"
+                aria-label="Filter by department"
+            >
+                <option value="all">All Departments</option>
+            </select>
+
+            <select
+                id="managementStatusFilter"
+                aria-label="Filter by status"
+            >
+                <option value="all">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Leave">Leave</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+
+        </div>
+
+
+        <!-- EMPLOYEE TABLE -->
+        <div class="employee-table-container">
+
+            <table class="employee-table">
+
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Task</th>
+                        <th>Performance</th>
+                        <th>Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeManagementList">
+
+                    <tr>
+                        <td colspan="7" style="text-align:center;padding:30px;">
+                            Loading employees...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>

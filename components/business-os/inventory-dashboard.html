@@ -1,0 +1,158 @@
+<section class="inventory-dashboard" aria-labelledby="inventoryDashboardTitle">
+    <header class="inventory-intro">
+        <div>
+            <span class="inventory-eyebrow">INVENTORY CONTROL</span>
+            <h2 id="inventoryDashboardTitle">Inventory overview</h2>
+            <p>Monitor stock, cost value, reorder levels and supplier coverage using your saved product records.</p>
+        </div>
+        <button type="button" class="inventory-primary-btn" data-inventory-action="add">
+            <span aria-hidden="true">＋</span> Add product
+        </button>
+    </header>
+
+    <div class="inventory-grid" aria-label="Inventory summary">
+        <article class="inventory-card">
+            <span class="inventory-card-icon" aria-hidden="true">▦</span>
+            <p class="inventory-card-label">Products</p>
+            <strong id="inventoryTotalProducts">0</strong>
+            <small>Saved product records</small>
+        </article>
+        <article class="inventory-card inventory-card-warning">
+            <span class="inventory-card-icon" aria-hidden="true">⚠</span>
+            <p class="inventory-card-label">Low stock</p>
+            <strong id="inventoryLowStock">0</strong>
+            <small>At or below reorder level</small>
+        </article>
+        <article class="inventory-card inventory-card-danger">
+            <span class="inventory-card-icon" aria-hidden="true">◉</span>
+            <p class="inventory-card-label">Out of stock</p>
+            <strong id="inventoryOutOfStock">0</strong>
+            <small>Products needing replenishment</small>
+        </article>
+        <article class="inventory-card inventory-card-value">
+            <span class="inventory-card-icon" aria-hidden="true">◈</span>
+            <p class="inventory-card-label">Stock cost value</p>
+            <strong id="inventoryStockValue">—</strong>
+            <small id="inventoryStockValueNote">Calculated from saved quantity × unit cost</small>
+        </article>
+        <article class="inventory-card inventory-card-suppliers">
+            <span class="inventory-card-icon" aria-hidden="true">↗</span>
+            <p class="inventory-card-label">Suppliers</p>
+            <strong id="inventorySupplierCount">0</strong>
+            <small>Distinct saved suppliers</small>
+        </article>
+    </div>
+
+    <p id="inventoryStatus" class="inventory-status" role="status" aria-live="polite"></p>
+
+    <dialog class="inventory-modal" id="inventoryProductModal" aria-labelledby="inventoryProductModalTitle">
+        <form id="inventoryProductForm">
+            <div class="inventory-modal-heading">
+                <div>
+                    <span class="inventory-eyebrow">PRODUCT RECORD</span>
+                    <h2 id="inventoryProductModalTitle">Add product</h2>
+                </div>
+                <button type="button" class="inventory-icon-btn" data-inventory-action="close-product" aria-label="Close dialog">×</button>
+            </div>
+            <div class="inventory-modal-body">
+                <div class="inventory-form-grid">
+                    <label class="inventory-field">
+                        <span>Product name <b>*</b></span>
+                        <input name="name" required maxlength="100" autocomplete="off" placeholder="e.g. Cotton fabric roll">
+                    </label>
+                    <label class="inventory-field">
+                        <span>SKU <b>*</b></span>
+                        <input name="sku" required maxlength="40" autocomplete="off" placeholder="e.g. FAB-001">
+                    </label>
+                    <label class="inventory-field">
+                        <span>Category <b>*</b></span>
+                        <input name="category" required maxlength="60" list="inventoryCategoryOptions" autocomplete="off" placeholder="e.g. Raw materials">
+                        <datalist id="inventoryCategoryOptions"></datalist>
+                    </label>
+                    <label class="inventory-field">
+                        <span>Quantity in stock <b>*</b></span>
+                        <input name="stock" type="number" min="0" step="1" required inputmode="numeric" placeholder="0">
+                    </label>
+                    <label class="inventory-field">
+                        <span>Reorder when at or below <b>*</b></span>
+                        <input name="reorderLevel" type="number" min="0" step="1" required inputmode="numeric" value="5">
+                    </label>
+                    <label class="inventory-field">
+                        <span>Unit cost <b>*</b></span>
+                        <input name="unitCost" type="number" min="0" step="0.01" required inputmode="decimal" placeholder="0.00">
+                    </label>
+                    <label class="inventory-field">
+                        <span>Unit selling price <b>*</b></span>
+                        <input name="unitPrice" type="number" min="0" step="0.01" required inputmode="decimal" placeholder="0.00">
+                    </label>
+                    <label class="inventory-field">
+                        <span>Currency <b>*</b></span>
+                        <select name="currency" required>
+                            <option value="USD">USD</option>
+                            <option value="PKR">PKR</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="AED">AED</option>
+                            <option value="SAR">SAR</option>
+                        </select>
+                    </label>
+                    <label class="inventory-field">
+                        <span>Supplier</span>
+                        <input name="supplier" maxlength="100" autocomplete="organization" placeholder="Supplier name">
+                    </label>
+                    <label class="inventory-field">
+                        <span>Storage location</span>
+                        <input name="location" maxlength="80" autocomplete="off" placeholder="e.g. Warehouse A · Shelf 2">
+                    </label>
+                    <label class="inventory-field inventory-field-wide">
+                        <span>Product notes</span>
+                        <textarea name="notes" rows="3" maxlength="500" placeholder="Optional product or handling details"></textarea>
+                    </label>
+                </div>
+                <p id="inventoryProductFormMessage" class="inventory-form-message" role="status" aria-live="polite"></p>
+            </div>
+            <div class="inventory-modal-actions">
+                <button type="button" class="inventory-secondary-btn" data-inventory-action="close-product">Cancel</button>
+                <button type="submit" class="inventory-primary-btn">Save product</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="inventory-modal inventory-adjustment-modal" id="inventoryAdjustmentModal" aria-labelledby="inventoryAdjustmentModalTitle">
+        <form id="inventoryAdjustmentForm">
+            <div class="inventory-modal-heading">
+                <div>
+                    <span class="inventory-eyebrow">STOCK MOVEMENT</span>
+                    <h2 id="inventoryAdjustmentModalTitle">Adjust stock</h2>
+                    <p id="inventoryAdjustmentProductName"></p>
+                </div>
+                <button type="button" class="inventory-icon-btn" data-inventory-action="close-adjustment" aria-label="Close dialog">×</button>
+            </div>
+            <div class="inventory-modal-body">
+                <div class="inventory-form-grid inventory-adjustment-fields">
+                    <label class="inventory-field">
+                        <span>Adjustment type <b>*</b></span>
+                        <select name="mode" required>
+                            <option value="add">Receive stock</option>
+                            <option value="remove">Remove stock</option>
+                            <option value="set">Set exact quantity</option>
+                        </select>
+                    </label>
+                    <label class="inventory-field">
+                        <span>Quantity <b>*</b></span>
+                        <input name="quantity" type="number" min="0" step="1" required inputmode="numeric" placeholder="Enter quantity">
+                    </label>
+                    <label class="inventory-field inventory-field-wide">
+                        <span>Reason <b>*</b></span>
+                        <input name="reason" required maxlength="120" placeholder="e.g. Supplier delivery or damaged goods">
+                    </label>
+                </div>
+                <p id="inventoryAdjustmentFormMessage" class="inventory-form-message" role="status" aria-live="polite"></p>
+            </div>
+            <div class="inventory-modal-actions">
+                <button type="button" class="inventory-secondary-btn" data-inventory-action="close-adjustment">Cancel</button>
+                <button type="submit" class="inventory-primary-btn">Save adjustment</button>
+            </div>
+        </form>
+    </dialog>
+</section>

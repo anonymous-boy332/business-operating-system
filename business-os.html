@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Operating System | Synvora AI</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/sidebar-toggle.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/business-os.css">
+    <link rel="stylesheet" href="css/business-stats.css">
+    <link rel="stylesheet" href="css/employee-tasks.css">
+    <link rel="stylesheet" href="css/employee-table.css">
+    <link rel="stylesheet" href="css/inventory-table.css">
+    <link rel="stylesheet" href="css/notification-center.css">
+    <link rel="stylesheet" href="css/calendar-dashboard.css">
+    <link rel="stylesheet" href="css/business-activity.css">
+    <link rel="stylesheet" href="css/automation-dashboard.css">
+    <link rel="stylesheet" href="css/reports-dashboard.css">
+    <link rel="stylesheet" href="css/finance-dashboard.css">
+    <link rel="stylesheet" href="css/ai-advisor.css">
+    <link rel="stylesheet" href="css/business-toolbar.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/expenses.css">
+    <link rel="stylesheet" href="css/income.css">
+    <link rel="stylesheet" href="css/invoice.css">
+    <link rel="stylesheet" href="css/company-management.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/employee-attendance.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
+    <link rel="stylesheet" href="css/company-workspace.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/team-permissions.css">
+    <link rel="stylesheet" href="css/crm.css">
+    <link rel="stylesheet" href="css/crm-dashboard.css">
+    <link rel="stylesheet" href="css/sales-dashboard.css">
+    <link rel="stylesheet" href="css/transactions.css">
+    <link rel="stylesheet" href="css/attendance-history.css">
+    <link rel="stylesheet" href="css/finance-management.css">
+    <link rel="stylesheet" href="css/inventory-dashboard.css">
+    <link rel="stylesheet" href="css/business-intelligence.css">
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="ai-sidebar" id="appSidebar">
+
+            <div id="sidebar-container"></div>
+
+        </aside>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            onclick="toggleSidebar()"
+            aria-label="Toggle navigation"
+            aria-controls="appSidebar"
+            aria-expanded="false"
+        >☰</button>
+
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <!-- Main Content -->
+
+        <main class="main-dashboard">
+
+            <header class="dash-header">
+
+    <div class="business-header-left">
+
+        <h1>
+            🏢 Business Operating System
+        </h1>
+
+
+    </div>
+
+</header>
+
+<nav class="business-os-module-nav" aria-label="Business OS pages">
+    <button type="button" class="business-os-nav-btn active"
+        data-business-module-target="overview" aria-pressed="true">
+        Overview
+    </button>
+
+    <button type="button" class="business-os-nav-btn"
+        data-business-module-target="team" aria-pressed="false">
+        Team
+    </button>
+
+    <button type="button" class="business-os-nav-btn"
+        data-business-module-target="finance" aria-pressed="false">
+        Finance
+    </button>
+
+    <button type="button" class="business-os-nav-btn"
+        data-business-module-target="crm" aria-pressed="false">
+        CRM &amp; Sales
+    </button>
+
+    <button type="button" class="business-os-nav-btn"
+        data-business-module-target="inventory" aria-pressed="false">
+        Inventory
+    </button>
+
+    <button type="button" class="business-os-nav-btn"
+        data-business-module-target="insights" aria-pressed="false">
+        Business Intelligence
+    </button>
+</nav>
+
+
+<section class="welcome-card" data-business-module="overview">
+
+    <div class="welcome-content">
+
+        <div class="welcome-top">
+
+            <div class="welcome-badge">
+                <span class="status-dot" aria-hidden="true"></span>
+                PREMIUM BUSINESS OS
+            </div>
+
+            <div class="welcome-status">
+                <span class="system-status">
+                    <span class="status-indicator" aria-hidden="true"></span>
+                    Your business, in one workspace
+                </span>
+
+                <span class="workspace-modules">
+                    Team · Finance · Sales · Inventory
+                </span>
+            </div>
+
+        </div>
+
+        <div class="welcome-main">
+
+            <div class="welcome-text">
+
+                <h2>
+                    Welcome to your Business OS
+                </h2>
+
+                <p class="welcome-subtitle">
+                    One premium command center for your entire business.
+                </p>
+
+                <p class="welcome-description">
+                    Bring team operations, finances, customer relationships,
+                    inventory and AI-powered insights together in one workspace
+                    built to help you stay aligned and make confident decisions.
+                </p>
+
+                <div class="dashboard-buttons">
+
+    <button
+        class="primary"
+        type="button"
+        data-business-action="open-dashboard">
+        Open Business Dashboard
+        <span aria-hidden="true">→</span>
+    </button>
+
+    <button
+        class="secondary"
+        type="button"
+        data-business-action="open-ai-advisor">
+        <span aria-hidden="true">✨</span>
+        AI Business Advisor
+    </button>
+
+</div>
+
+            </div>
+
+            <div class="welcome-visual">
+
+                <div class="welcome-visual-glow"></div>
+
+                <div class="welcome-icon-card">
+
+                    <div class="welcome-icon">
+                        <span aria-hidden="true">
+                        🏢
+                        </span>
+                    </div>
+
+                    <div class="welcome-icon-content">
+                        <span>PREMIUM WORKSPACE</span>
+                        <strong>Command Center</strong>
+                    </div>
+
+                </div>
+
+                <div class="welcome-mini-card welcome-mini-card-one">
+                    <span aria-hidden="true">📊</span>
+                    <div>
+                        <small>Core business modules</small>
+                        <strong>Team · Finance · CRM</strong>
+                    </div>
+                </div>
+
+                <div class="welcome-mini-card welcome-mini-card-two">
+                    <span aria-hidden="true">⚡</span>
+                    <div>
+                        <small>AI Business Advisor</small>
+                        <strong>Ready to assist</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     👑 OWNER BUSINESS INTELLIGENCE DASHBOARD
+========================================== -->
+
+<section class="business-os-module-group owner-dashboard-section"
+    data-business-module="overview">
+
+    <div id="owner-dashboard-container"></div>
+
+</section>
+
+
+            <!-- ==========================================
+     SYNVORA AI - BUSINESS OS MODULES
+========================================== -->
+
+
+<!-- ==========================================
+     🏢 COMPANY WORKSPACE
+========================================== -->
+
+<section class="business-os-module-group" data-business-module="overview">
+
+    <div class="business-os-group-header">
+
+        <span class="business-os-group-eyebrow">
+            COMPANY
+        </span>
+
+        <h2>
+            🏢 Company Workspace
+        </h2>
+
+        <p>
+            Manage your active company, workspace and company configuration.
+        </p>
+
+    </div>
+
+
+    <div id="active-workspace-container"></div>
+
+    <div id="company-management-container"></div>
+
+    <div id="settings-container"></div>
+
+</section>
+
+
+
+<!-- ==========================================
+     👥 EMPLOYEE MANAGEMENT
+========================================== -->
+
+<section class="business-os-module-group" data-business-module="team" hidden>
+
+    <header class="people-access-hero">
+
+        <div class="people-access-hero-main">
+
+            <div class="people-access-kicker">
+                <span class="people-access-kicker-icon" aria-hidden="true">✦</span>
+                <span>PEOPLE OPERATIONS</span>
+                <span class="people-access-kicker-divider" aria-hidden="true"></span>
+                <span>WORKFORCE &amp; ACCESS</span>
+            </div>
+
+            <h2>People &amp; Access</h2>
+
+            <p>
+                A clear, connected view of your workforce. Manage employee records,
+                day-to-day responsibilities and workspace access from one place.
+            </p>
+
+            <div class="people-access-highlights">
+                <span>
+                    <span class="people-access-highlight-dot" aria-hidden="true"></span>
+                    Employee lifecycle
+                </span>
+                <span>
+                    <span class="people-access-highlight-dot" aria-hidden="true"></span>
+                    Role-based access
+                </span>
+                <span>
+                    <span class="people-access-highlight-dot" aria-hidden="true"></span>
+                    Workforce performance
+                </span>
+            </div>
+
+        </div>
+
+        <aside class="people-access-snapshot" aria-label="Live workforce snapshot">
+
+            <div class="people-access-snapshot-header">
+                <div>
+                    <span class="people-access-snapshot-eyebrow">TEAM OVERVIEW</span>
+                    <h3>Workforce snapshot</h3>
+                </div>
+                <span class="people-access-live">
+                    <span aria-hidden="true"></span>
+                    LIVE
+                </span>
+            </div>
+
+            <div class="people-access-active">
+                <div class="people-access-metric-heading">
+                    <span>Active workforce</span>
+                    <strong id="peopleAccessActiveRate">—%</strong>
+                </div>
+                <div
+                    class="people-access-progress"
+                    role="progressbar"
+                    aria-label="Active workforce"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                >
+                    <span id="peopleAccessActiveProgress"></span>
+                </div>
+                <p id="peopleAccessActiveSummary">Loading team data…</p>
+            </div>
+
+            <div class="people-access-snapshot-stats">
+                <div>
+                    <span>Departments</span>
+                    <strong id="peopleAccessDepartmentCount">—</strong>
+                </div>
+                <div>
+                    <span>Avg. performance</span>
+                    <strong id="peopleAccessPerformance">—%</strong>
+                </div>
+            </div>
+
+            <div class="people-access-access-note">
+                <span class="people-access-access-icon" aria-hidden="true">⌘</span>
+                <span>
+                    <strong>Access, thoughtfully managed</strong>
+                    <small>Configure roles and permissions for every team member.</small>
+                </span>
+            </div>
+
+        </aside>
+
+    </header>
+
+
+    <div id="employee-dashboard-container"></div>
+
+    <div id="employee-tasks-container"></div>
+
+    <div id="employee-table-container"></div>
+
+    <div id="employee-management-container"></div>
+
+    <div id="team-permissions-container"></div>
+
+</section>
+
+
+
+<!-- ==========================================
+     💰 FINANCE & ACCOUNTING
+========================================== -->
+
+<section class="business-os-module-group" data-business-module="finance" hidden>
+
+    <div class="business-os-group-header">
+
+        <span class="business-os-group-eyebrow">
+            FINANCE
+        </span>
+
+        <h2>
+            💰 Finance & Accounting
+        </h2>
+
+        <p>
+            Track money in and out, manage receivables, review cash flow and export reports from your saved records.
+        </p>
+
+    </div>
+
+
+    <div id="finance-dashboard-container"></div>
+
+    <div id="finance-toolbar-container"></div>
+
+    <div id="income-management-container"></div>
+
+    <div id="expense-management-container"></div>
+
+    <div id="transactions-container"></div>
+
+    <div id="invoice-management-container"></div>
+
+    <div id="finance-salaries-container"></div>
+
+</section>
+
+
+
+<!-- ==========================================
+     🤝 CRM & SALES
+========================================== -->
+
+<section class="business-os-module-group crm-sales-group"
+    data-business-module="crm" hidden>
+
+    <div class="business-os-group-header">
+
+        <span class="business-os-group-eyebrow">
+            CUSTOMER & SALES
+        </span>
+
+        <h2>
+            🤝 CRM & Sales
+        </h2>
+
+        <p>
+            Manage customers, sales activities and CRM operations.
+        </p>
+
+    </div>
+
+
+    <div id="crm-dashboard-container"></div>
+
+    <div id="crm-management-container"></div>
+
+    <div id="sales-dashboard-container"></div>
+
+</section>
+
+
+
+<!-- ==========================================
+     📦 INVENTORY
+========================================== -->
+
+<section class="business-os-module-group" data-business-module="inventory" hidden>
+
+    <div class="business-os-group-header">
+
+        <span class="business-os-group-eyebrow">
+            INVENTORY
+        </span>
+
+        <h2>
+            📦 Inventory Management
+        </h2>
+
+        <p>
+            Track products, stock levels, unit costs, suppliers and reorder points from one place.
+        </p>
+
+    </div>
+
+
+    <div id="inventory-dashboard-container"></div>
+
+    <div id="inventory-table-container"></div>
+
+</section>
+
+
+
+<!-- ==========================================
+     📊 BUSINESS INTELLIGENCE
+========================================== -->
+
+<section class="business-os-module-group" data-business-module="insights" hidden>
+
+    <div class="business-os-group-header">
+
+        <span class="business-os-group-eyebrow">
+            BUSINESS INTELLIGENCE
+        </span>
+
+        <h2>
+            📊 Business Intelligence
+        </h2>
+
+        <p>
+            Monitor business performance, reports, automation and AI insights.
+        </p>
+
+    </div>
+
+
+    <div id="business-stats-container"></div>
+
+    <div id="business-actions-container"></div>
+
+    <div id="business-overview-container"></div>
+
+    <div id="revenue-analytics-container"></div>
+
+    <div id="automation-dashboard-container"></div>
+
+    <div id="reports-dashboard-container"></div>
+
+    <div id="notification-center-container"></div>
+
+    <div id="calendar-dashboard-container"></div>
+
+    <div id="business-activity-container"></div>
+
+    <div id="ai-advisor-dashboard-container"></div>
+
+</section>
+
+
+        </main>
+
+    </div>
+
+    <script type="module" src="supabase.js"></script>
+
+    <script src="script.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/sidebar-toggle.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="js/company-scope.js"></script>
+    <script src="js/finance-management.js"></script>
+    <script src="js/inventory-business-os.js"></script>
+    <script src="js/business-os.js"></script>
+    <script src="js/business-intelligence.js"></script>
+    <script src="js/expenses.js"></script>
+    <script src="js/income.js"></script>
+    <script src="js/button-manager.js"></script>
+    <script src="js/sales.js"></script>
+    <script src="js/invoice.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/employees.js"></script>
+<script src="js/employee-tasks.js"></script>
+<script src="js/employee-attendance.js"></script>
+    <script src="js/company-management.js"></script>
+    <script src="js/company-workspace.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/team-permissions.js"></script>
+    <script src="js/crm.js"></script>
+    <script src="js/owner-dashboard-buttons.js"></script>
+    <script src="js/company-workspace-buttons.js"></script>
+    <script src="js/attendance-history.js"></script>
+
+
+    <script src="./js/pwa.js"></script>
+</body>
+
+</html>

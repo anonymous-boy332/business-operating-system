@@ -1,0 +1,3840 @@
+/* ==========================
+   EMPLOYEE TABLE
+========================== */
+
+.employee-table{
+    margin-top:40px;
+}
+
+.employee-table h2{
+    color:#fff;
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.employee-table table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    backdrop-filter:blur(15px);
+}
+
+.employee-table th{
+    background:rgba(0,174,239,.15);
+    color:#fff;
+    padding:18px;
+    text-align:left;
+}
+
+.employee-table td{
+    padding:18px;
+    color:#dbeafe;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.employee-table tr:hover{
+    background:rgba(255,255,255,.04);
+}
+
+.employee-table button{
+    background:#00AEEF;
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.employee-table button:hover{
+    background:#0095d1;
+    transform:translateY(-2px);
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.employee-table{
+    overflow-x:auto;
+}
+
+.employee-table table{
+    min-width:700px;
+}
+
+}
+
+/* ==========================
+   EMPLOYEE MODAL
+========================== */
+
+
+/* ==========================
+   EMPLOYEE MODAL
+========================== */
+
+.employee-modal{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(8px);
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+z-index:9999;
+
+}
+
+
+
+.employee-modal-box{
+
+width:100%;
+
+max-width:650px;
+
+max-height:85vh;
+
+overflow-y:auto;
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:30px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+
+
+.employee-modal-box h2{
+
+    color:white;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+
+
+.employee-modal-box input,
+.employee-modal-box select{
+
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    background:#1f2937;
+
+    border:1px solid #374151;
+
+    border-radius:10px;
+
+    color:white;
+
+    outline:none;
+
+
+}
+
+
+
+.employee-modal-box input:focus,
+.employee-modal-box select:focus{
+
+
+    border-color:#00AEEF;
+
+
+}
+
+
+
+.employee-modal-box button{
+
+
+    width:48%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    font-weight:600;
+
+
+}
+
+
+
+.employee-modal-box button:first-of-type{
+
+
+    background:#00AEEF;
+
+    color:white;
+
+
+}
+
+
+
+.employee-modal-box button:last-of-type{
+
+
+    background:#374151;
+
+    color:white;
+
+
+}
+
+/* ==========================
+   EMPLOYEE PROFILE
+========================== */
+
+.employee-profile-card{
+
+    text-align:center;
+
+    color:#fff;
+
+}
+
+.employee-avatar{
+
+    width:90px;
+    height:90px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#00AEEF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+}
+
+.employee-profile-card h3{
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+}
+
+.profile-info{
+
+    text-align:left;
+
+}
+
+.profile-info p{
+
+    background:#1f2937;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:12px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.profile-info strong{
+
+    color:#00AEEF;
+
+}
+
+/* ==========================
+   EMPLOYEE TOOLBAR
+========================== */
+
+.employee-toolbar{
+
+display:flex;
+
+gap:15px;
+
+margin:20px 0;
+
+flex-wrap:wrap;
+
+}
+
+
+.employee-toolbar input,
+.employee-toolbar select{
+
+flex:1;
+
+min-width:220px;
+
+padding:12px 15px;
+
+background:#1f2937;
+
+color:#fff;
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:12px;
+
+outline:none;
+
+}
+
+
+.employee-toolbar input:focus,
+.employee-toolbar select:focus{
+
+border-color:#00AEEF;
+
+box-shadow:0 0 10px rgba(0,174,239,.25);
+
+}
+
+.employee-toolbar{
+
+display:flex;
+gap:15px;
+align-items:center;
+margin:20px 0;
+flex-wrap:wrap;
+
+}
+
+.employee-toolbar input,
+.employee-toolbar select{
+
+padding:12px 15px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,.08);
+color:#fff;
+outline:none;
+
+}
+
+.employee-toolbar input{
+
+width:260px;
+
+}
+
+.employee-toolbar input::placeholder{
+
+color:#b8c2cc;
+
+}
+
+.search-btn{
+
+padding:12px 24px;
+border:none;
+border-radius:10px;
+background:#00AEEF;
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.search-btn:hover{
+
+transform:translateY(-2px);
+background:#0096d6;
+
+}
+
+/* ==========================
+   EMPLOYEE STATS
+========================== */
+
+.employee-stats{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin:25px 0;
+
+}
+
+.employee-stat-card{
+
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-radius:18px;
+padding:25px;
+text-align:center;
+transition:.3s;
+
+}
+
+.employee-stat-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.employee-stat-card h3{
+
+font-size:34px;
+color:#00AEEF;
+margin-bottom:10px;
+
+}
+
+.employee-stat-card p{
+
+color:#cbd5e1;
+font-size:15px;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.employee-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.employee-stats{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ==========================
+   EMPLOYEE PHOTO UPLOAD
+========================== */
+
+.employee-photo-upload{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+margin-bottom:25px;
+
+}
+
+.employee-photo-upload img{
+
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+
+border:4px solid #00AEEF;
+
+padding:4px;
+
+background:#111827;
+
+box-shadow:
+0 0 20px rgba(0,174,239,.45),
+0 0 40px rgba(0,174,239,.15);
+
+margin-bottom:15px;
+
+transition:.35s ease;
+
+}
+
+.employee-photo-upload img:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 30px rgba(0,174,239,.7),
+0 0 60px rgba(0,174,239,.25);
+
+}
+
+.employee-photo-upload input[type="file"]{
+
+width:100%;
+max-width:240px;
+
+padding:10px;
+
+border-radius:10px;
+
+border:1px solid rgba(255,255,255,.12);
+
+background:rgba(255,255,255,.05);
+
+color:#dbeafe;
+
+cursor:pointer;
+
+}
+
+.employee-photo-upload input[type="file"]::file-selector-button{
+
+background:#00AEEF;
+
+color:#fff;
+
+border:none;
+
+padding:8px 14px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+margin-right:10px;
+
+transition:.3s ease;
+
+}
+
+.employee-photo-upload input[type="file"]::file-selector-button:hover{
+
+background:#0095d1;
+
+}
+
+/* ==========================
+   EMPLOYEE PROFILE
+========================== */
+
+.employee-profile-card{
+
+text-align:center;
+
+padding:10px;
+
+}
+
+.employee-profile-card h2{
+
+color:#fff;
+
+font-size:28px;
+
+margin:15px 0 30px;
+
+}
+
+.profile-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.profile-item{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:14px;
+
+padding:15px;
+
+text-align:left;
+
+backdrop-filter:blur(12px);
+
+transition:.3s;
+
+}
+
+.profile-item:hover{
+
+transform:translateY(-3px);
+
+border-color:#00AEEF;
+
+box-shadow:0 0 15px rgba(0,174,239,.25);
+
+}
+
+.profile-item p{
+
+margin:0;
+
+color:#dbeafe;
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+.profile-item strong{
+
+color:#00AEEF;
+
+}
+
+.employee-avatar{
+
+width:120px;
+
+height:120px;
+
+margin:auto;
+
+border-radius:50%;
+
+overflow:hidden;
+
+border:4px solid #00AEEF;
+
+box-shadow:0 0 25px rgba(0,174,239,.35);
+
+background:#111827;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:50px;
+
+}
+
+.employee-avatar img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+@media(max-width:768px){
+
+.profile-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* Employee Table Avatar */
+
+.employee-name{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.employee-table-avatar{
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid #00AEEF;
+
+box-shadow:0 0 10px rgba(0,174,239,.3);
+
+}
+
+.employee-modal-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.employee-modal-buttons button{
+
+flex:1;
+
+}
+
+@media(max-width:768px){
+
+.employee-modal-buttons{
+
+flex-direction:column;
+
+}
+
+}
+
+/* ==========================
+   MODAL BUTTONS
+========================== */
+
+.employee-modal-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.employee-modal-buttons button{
+
+flex:1;
+
+padding:14px;
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+.employee-modal-buttons button:first-child{
+
+background:#00AEEF;
+
+color:#fff;
+
+}
+
+.employee-modal-buttons button:last-child{
+
+background:#374151;
+
+color:#fff;
+
+}
+
+.employee-modal-buttons button:hover{
+
+transform:translateY(-2px);
+
+}
+
+@media(max-width:768px){
+
+.employee-modal-buttons{
+
+flex-direction:column;
+
+}
+
+}
+
+/* ==========================
+   EMPLOYEE TABLE UI
+========================== */
+
+.employee-info{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.employee-table-avatar{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid #00AEEF;
+
+box-shadow:0 0 10px rgba(0,174,239,.3);
+
+}
+
+.employee-info h4{
+
+margin:0;
+
+color:#fff;
+
+font-size:15px;
+
+}
+
+.employee-info small{
+
+color:#94a3b8;
+
+font-size:12px;
+
+}
+
+.status-badge{
+
+padding:7px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+display:inline-block;
+
+}
+
+.status-badge.active{
+
+background:#16a34a;
+
+color:#fff;
+
+}
+
+.status-badge.leave{
+
+background:#f59e0b;
+
+color:#fff;
+
+}
+
+.status-badge.inactive{
+
+background:#ef4444;
+
+color:#fff;
+
+}
+
+.performance-box{
+
+min-width:150px;
+
+}
+
+.performance-bar{
+
+width:100%;
+
+height:8px;
+
+background:#1f2937;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:6px;
+
+}
+
+.performance-fill{
+
+height:100%;
+
+background:linear-gradient(90deg,#00AEEF,#00ffd5);
+
+border-radius:30px;
+
+transition:.5s;
+
+}
+
+.performance-box span{
+
+font-size:13px;
+
+color:#dbeafe;
+
+}
+
+/* ==========================
+   ACTION BUTTONS
+========================== */
+
+.employee-actions{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:8px;
+
+flex-wrap:wrap;
+
+}
+
+.action-btn{
+
+width:40px;
+
+height:40px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.3s;
+
+color:#fff;
+
+}
+
+.view-btn{
+
+background:#2563eb;
+
+}
+
+.edit-btn{
+
+background:#f59e0b;
+
+}
+
+.attendance-btn{
+
+background:#16a34a;
+
+}
+
+.delete-btn{
+
+background:#dc2626;
+
+}
+
+.action-btn:hover{
+
+transform:translateY(-3px) scale(1.05);
+
+box-shadow:0 8px 20px rgba(0,0,0,.30);
+
+}
+
+/* ==========================
+   ATTENDANCE
+========================== */
+
+.attendance-modal-box{
+
+max-width:650px;
+
+}
+
+.attendance-employee{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px 18px;
+
+margin:15px 0 20px;
+
+background:rgba(0,174,239,.08);
+
+border:1px solid rgba(0,174,239,.20);
+
+border-radius:14px;
+
+}
+
+.attendance-employee span{
+
+color:#94a3b8;
+
+}
+
+.attendance-employee strong{
+
+color:#fff;
+
+}
+
+.attendance-modal-box label{
+
+display:block;
+
+color:#cbd5e1;
+
+font-size:13px;
+
+margin-bottom:7px;
+
+}
+
+.attendance-modal-box textarea{
+
+width:100%;
+
+min-height:100px;
+
+resize:vertical;
+
+}
+
+.attendance-notes{
+
+grid-column:1 / -1;
+
+}
+
+/* ==========================================
+   ATTENDANCE HISTORY - PREMIUM
+========================================== */
+
+.attendance-history{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(15,23,42,.96),
+        rgba(2,6,23,.98)
+    );
+
+    border:1px solid rgba(0,174,239,.18);
+
+    border-radius:20px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.attendance-history .section-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+
+}
+
+
+.attendance-history h2{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================
+   SUMMARY CARDS
+========================== */
+
+.attendance-summary{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:16px;
+
+    margin-bottom:22px;
+
+}
+
+
+.attendance-summary-card{
+
+    padding:20px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid
+    rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    transition:.25s ease;
+
+}
+
+
+.attendance-summary-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+    rgba(0,174,239,.35);
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,174,239,.08);
+
+}
+
+
+.attendance-summary-card h3{
+
+    margin:0 0 6px;
+
+    font-size:26px;
+
+    color:#00AEEF;
+
+}
+
+
+.attendance-summary-card p{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+
+/* ==========================
+   TOOLBAR
+========================== */
+
+.attendance-history-toolbar{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+
+}
+
+
+.attendance-history-toolbar input,
+.attendance-history-toolbar select{
+
+    height:42px;
+
+    padding:0 14px;
+
+    border-radius:10px;
+
+    border:1px solid
+    rgba(255,255,255,.10);
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    outline:none;
+
+}
+
+
+.attendance-history-toolbar input{
+
+    flex:1;
+
+    min-width:220px;
+
+}
+
+
+.attendance-history-toolbar input:focus,
+.attendance-history-toolbar select:focus{
+
+    border-color:#00AEEF;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(0,174,239,.10);
+
+}
+
+
+/* ==========================
+   TABLE CONTAINER
+========================== */
+
+.attendance-table-container{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* ==========================
+   TABLE
+========================== */
+
+.attendance-table-container table{
+
+    width:100%;
+
+    min-width:750px;
+
+    border-collapse:collapse;
+
+}
+
+
+.attendance-table-container th{
+
+    padding:14px;
+
+    text-align:left;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+    color:#94a3b8;
+
+    background:#0b1220;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+
+}
+
+
+.attendance-table-container td{
+
+    padding:15px 14px;
+
+    color:#e5e7eb;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.05);
+
+    font-size:14px;
+
+}
+
+
+.attendance-table-container tr{
+
+    transition:.2s ease;
+
+}
+
+
+.attendance-table-container tbody tr:hover{
+
+    background:
+    rgba(0,174,239,.04);
+
+}
+
+
+/* ==========================
+   STATUS BADGES
+========================== */
+
+.attendance-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+.attendance-status.present{
+
+    color:#22c55e;
+
+    background:
+    rgba(34,197,94,.12);
+
+}
+
+
+.attendance-status.absent{
+
+    color:#ef4444;
+
+    background:
+    rgba(239,68,68,.12);
+
+}
+
+
+.attendance-status.leave{
+
+    color:#f59e0b;
+
+    background:
+    rgba(245,158,11,.12);
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .attendance-history{
+
+        padding:18px;
+
+    }
+
+
+    .attendance-summary{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+    .attendance-history-toolbar{
+
+        flex-direction:column;
+
+    }
+
+
+    .attendance-history-toolbar input,
+    .attendance-history-toolbar select{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================
+   EMPLOYEE ACTION BUTTONS
+========================== */
+
+.employee-actions{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.employee-actions button{
+    border:none;
+    padding:8px 12px;
+    border-radius:9px;
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.employee-actions button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(0,0,0,.3);
+}
+
+/* View */
+
+.action-view{
+    background:#2563eb !important;
+}
+
+/* Edit */
+
+.action-edit{
+    background:#f59e0b !important;
+}
+
+/* Attendance */
+
+.action-attendance{
+    background:#16a34a !important;
+}
+
+/* Delete */
+
+.action-delete{
+    background:#dc2626 !important;
+}
+
+/* ==========================================
+   EMPLOYEE OS - COMPACT DASHBOARD LAYOUT
+========================================== */
+
+/* ==========================
+   SECTION SPACING
+========================== */
+
+.employee-dashboard,
+.employee-tasks-section,
+.employee-directory,
+.attendance-history{
+    margin-top:30px;
+}
+
+
+/* ==========================
+   EMPLOYEE SECTION HEADER
+========================== */
+
+.employee-section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.employee-section-title h2{
+    margin:5px 0;
+    color:#fff;
+    font-size:24px;
+}
+
+.employee-section-title p{
+    margin:0;
+    color:#94a3b8;
+    font-size:13px;
+}
+
+.employee-eyebrow{
+    display:block;
+    color:#00AEEF;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+
+/* ==========================
+   DASHBOARD OVERVIEW
+========================== */
+
+.employee-overview-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+.employee-overview-card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:22px;
+    backdrop-filter:blur(14px);
+}
+
+.overview-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.overview-card-header h3{
+    margin:0 0 5px;
+    color:#fff;
+    font-size:17px;
+}
+
+.overview-card-header p{
+    margin:0;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+.overview-icon{
+    font-size:25px;
+}
+
+
+/* ==========================
+   TASK OVERVIEW
+========================== */
+
+.employee-task-overview{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.employee-task-overview > div{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+}
+
+.employee-task-overview strong{
+    display:block;
+    color:#00AEEF;
+    font-size:25px;
+}
+
+.employee-task-overview span{
+    display:block;
+    margin-top:4px;
+    color:#94a3b8;
+    font-size:11px;
+}
+
+
+/* ==========================
+   WORKFORCE INSIGHTS
+========================== */
+
+.employee-insights{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.employee-insights > div{
+    background:rgba(255,255,255,.04);
+    padding:18px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.employee-insights span{
+    display:block;
+    color:#94a3b8;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.employee-insights strong{
+    color:#00AEEF;
+    font-size:25px;
+}
+
+
+/* ==========================
+   RECENT TASKS
+========================== */
+
+.employee-task-list{
+    display:grid;
+    gap:10px;
+
+    /* Dashboard mein list ko control rakho */
+    max-height:330px;
+    overflow-y:auto;
+
+    padding-right:5px;
+}
+
+.employee-task-card{
+    min-height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+
+    padding:14px 18px;
+
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:14px;
+
+    transition:.25s ease;
+}
+
+.employee-task-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(0,174,239,.25);
+}
+
+.employee-task-info{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.employee-task-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:rgba(0,174,239,.10);
+}
+
+.employee-task-info h3{
+    margin:0 0 4px;
+    color:#fff;
+    font-size:14px;
+}
+
+.employee-task-info p{
+    margin:0;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+
+/* ==========================
+   TASK STATUS
+========================== */
+
+.task-status{
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.task-status.in-progress{
+    color:#38bdf8;
+    background:rgba(56,189,248,.12);
+}
+
+.task-status.pending{
+    color:#f59e0b;
+    background:rgba(245,158,11,.12);
+}
+
+.task-status.completed{
+    color:#22c55e;
+    background:rgba(34,197,94,.12);
+}
+
+
+/* ==========================
+   DIRECTORY CONTAINER
+========================== */
+
+.employee-directory{
+    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:20px;
+    padding:22px;
+}
+
+.employee-table-container{
+    width:100%;
+
+    /* IMPORTANT:
+       long employee list dashboard ko stretch nahi karegi */
+    max-height:420px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+}
+
+
+/* ==========================
+   ATTENDANCE CONTAINER
+========================== */
+
+.attendance-history{
+    padding:22px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+}
+
+.attendance-table-container{
+
+    /* attendance bhi unlimited height nahi legi */
+    max-height:380px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+}
+
+
+/* ==========================
+   CUSTOM SCROLLBAR
+========================== */
+
+.employee-task-list::-webkit-scrollbar,
+.employee-table-container::-webkit-scrollbar,
+.attendance-table-container::-webkit-scrollbar{
+    width:6px;
+    height:6px;
+}
+
+.employee-task-list::-webkit-scrollbar-track,
+.employee-table-container::-webkit-scrollbar-track,
+.attendance-table-container::-webkit-scrollbar-track{
+    background:rgba(255,255,255,.03);
+    border-radius:10px;
+}
+
+.employee-task-list::-webkit-scrollbar-thumb,
+.employee-table-container::-webkit-scrollbar-thumb,
+.attendance-table-container::-webkit-scrollbar-thumb{
+    background:rgba(0,174,239,.45);
+    border-radius:10px;
+}
+
+.employee-task-list::-webkit-scrollbar-thumb:hover,
+.employee-table-container::-webkit-scrollbar-thumb:hover,
+.attendance-table-container::-webkit-scrollbar-thumb:hover{
+    background:#00AEEF;
+}
+
+
+/* ==========================
+   VIEW ALL BUTTON
+========================== */
+
+.secondary-btn{
+    padding:10px 16px;
+
+    border:1px solid rgba(0,174,239,.25);
+
+    border-radius:10px;
+
+    background:rgba(0,174,239,.08);
+
+    color:#00AEEF;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.secondary-btn:hover{
+    background:#00AEEF;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:900px){
+
+    .employee-overview-grid{
+        grid-template-columns:1fr;
+    }
+
+    .employee-section-title{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .employee-section-title button{
+        width:100%;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .employee-task-overview{
+        grid-template-columns:1fr;
+    }
+
+    .employee-insights{
+        grid-template-columns:1fr;
+    }
+
+    .employee-directory,
+    .attendance-history{
+        padding:16px;
+    }
+
+}
+
+/* ==========================================
+   EMPLOYEE DIRECTORY - COMPACT RECENT VIEW
+========================================== */
+
+.employee-directory .employee-table-container{
+    max-height:320px;
+    overflow-y:auto;
+    overflow-x:auto;
+}
+
+/* Table ko compact rakho */
+.employee-directory table{
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+}
+
+/* Sticky header */
+.employee-directory thead th{
+    position:sticky;
+    top:0;
+    z-index:5;
+
+    background:#0b1220;
+
+    padding:13px 15px;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Compact rows */
+.employee-directory tbody td{
+    padding:12px 15px;
+}
+
+/* Employee info */
+.employee-directory .employee-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.employee-directory .employee-table-avatar{
+    width:38px;
+    height:38px;
+}
+
+/* Compact action buttons */
+.employee-directory .action-btn{
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    font-size:14px;
+}
+
+/* Keep performance compact */
+.employee-directory .performance-box{
+    min-width:110px;
+}
+
+/* Empty state */
+.employee-directory .employee-empty-state{
+    padding:35px;
+    text-align:center;
+    color:#64748b;
+}
+
+
+/* ==========================================
+   DIRECTORY TOOLBAR - COMPACT
+========================================== */
+
+.employee-directory .employee-toolbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+    flex-wrap:wrap;
+}
+
+.employee-directory .employee-toolbar input{
+    flex:1;
+    min-width:200px;
+}
+
+.employee-directory .employee-toolbar select{
+    min-width:150px;
+}
+
+.employee-directory .employee-toolbar button{
+    white-space:nowrap;
+}
+
+
+/* ==========================================
+   DIRECTORY SCROLLBAR
+========================================== */
+
+.employee-directory .employee-table-container::-webkit-scrollbar{
+    width:6px;
+    height:6px;
+}
+
+.employee-directory .employee-table-container::-webkit-scrollbar-track{
+    background:rgba(255,255,255,.03);
+}
+
+.employee-directory .employee-table-container::-webkit-scrollbar-thumb{
+    background:rgba(0,174,239,.45);
+    border-radius:10px;
+}
+
+.employee-directory .employee-table-container::-webkit-scrollbar-thumb:hover{
+    background:#00AEEF;
+}
+
+/* ==========================================
+   EMPLOYEE TASKS - COMPACT PANEL
+========================================== */
+
+.employee-tasks-section{
+    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:20px;
+    padding:22px;
+}
+
+
+/* ==========================
+   TASK LIST CONTAINER
+========================== */
+
+.employee-tasks-section .employee-task-list{
+
+    max-height:300px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    padding-right:5px;
+}
+
+
+/* ==========================
+   TASK CARD
+========================== */
+
+.employee-tasks-section .employee-task-card{
+
+    min-height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:12px 15px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:14px;
+
+    transition:.25s ease;
+
+}
+
+
+/* Hover */
+
+.employee-tasks-section .employee-task-card:hover{
+
+    transform:translateX(3px);
+
+    border-color:
+    rgba(0,174,239,.30);
+
+    background:
+    rgba(0,174,239,.045);
+
+}
+
+
+/* ==========================
+   TASK INFORMATION
+========================== */
+
+.employee-tasks-section .employee-task-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+
+}
+
+
+/* Task Icon */
+
+.employee-tasks-section .employee-task-icon{
+
+    width:40px;
+
+    height:40px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:
+    rgba(0,174,239,.10);
+
+    border:1px solid
+    rgba(0,174,239,.12);
+
+}
+
+
+/* Task Title */
+
+.employee-tasks-section .employee-task-info h3{
+
+    margin:0 0 3px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* Employee Name */
+
+.employee-tasks-section .employee-task-info p{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+}
+
+
+/* ==========================
+   TASK STATUS
+========================== */
+
+.employee-tasks-section .task-status{
+
+    flex-shrink:0;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+
+/* In Progress */
+
+.employee-tasks-section .task-status.in-progress{
+
+    color:#38bdf8;
+
+    background:
+    rgba(56,189,248,.12);
+
+}
+
+
+/* Pending */
+
+.employee-tasks-section .task-status.pending{
+
+    color:#f59e0b;
+
+    background:
+    rgba(245,158,11,.12);
+
+}
+
+
+/* Completed */
+
+.employee-tasks-section .task-status.completed{
+
+    color:#22c55e;
+
+    background:
+    rgba(34,197,94,.12);
+
+}
+
+
+/* ==========================
+   TASK SCROLLBAR
+========================== */
+
+.employee-tasks-section .employee-task-list::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.employee-tasks-section .employee-task-list::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:10px;
+
+}
+
+.employee-tasks-section .employee-task-list::-webkit-scrollbar-thumb{
+
+    background:rgba(0,174,239,.45);
+
+    border-radius:10px;
+
+}
+
+.employee-tasks-section .employee-task-list::-webkit-scrollbar-thumb:hover{
+
+    background:#00AEEF;
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:600px){
+
+    .employee-tasks-section{
+
+        padding:16px;
+
+    }
+
+    .employee-tasks-section .employee-task-card{
+
+        align-items:flex-start;
+
+    }
+
+    .employee-tasks-section .task-status{
+
+        font-size:10px;
+
+        padding:5px 8px;
+
+    }
+
+}
+
+/* ==========================================
+   ATTENDANCE HISTORY - COMPACT PANEL
+========================================== */
+
+.attendance-history{
+    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:20px;
+    padding:22px;
+}
+
+
+/* ==========================
+   ATTENDANCE SUMMARY
+========================== */
+
+.attendance-history .attendance-summary{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:12px;
+
+    margin:18px 0;
+
+}
+
+
+.attendance-history .attendance-summary-card{
+
+    padding:16px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.045);
+
+    border:
+    1px solid
+    rgba(255,255,255,.07);
+
+    border-radius:14px;
+
+    transition:.25s ease;
+
+}
+
+
+.attendance-history .attendance-summary-card:hover{
+
+    transform:translateY(-2px);
+
+    border-color:
+    rgba(0,174,239,.30);
+
+}
+
+
+.attendance-history .attendance-summary-card h3{
+
+    margin:0 0 5px;
+
+    color:#00AEEF;
+
+    font-size:24px;
+
+}
+
+
+.attendance-history .attendance-summary-card p{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:11px;
+
+}
+
+
+/* ==========================
+   ATTENDANCE FILTERS
+========================== */
+
+.attendance-history .attendance-history-toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:16px;
+
+}
+
+
+.attendance-history .attendance-history-toolbar input,
+.attendance-history .attendance-history-toolbar select{
+
+    height:40px;
+
+    padding:0 12px;
+
+    border-radius:10px;
+
+    background:#0f172a;
+
+    border:
+    1px solid
+    rgba(255,255,255,.10);
+
+    color:#fff;
+
+    outline:none;
+
+}
+
+
+.attendance-history .attendance-history-toolbar input{
+
+    flex:1;
+
+    min-width:180px;
+
+}
+
+
+.attendance-history .attendance-history-toolbar select{
+
+    min-width:150px;
+
+}
+
+
+.attendance-history .attendance-history-toolbar input:focus,
+.attendance-history .attendance-history-toolbar select:focus{
+
+    border-color:#00AEEF;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(0,174,239,.08);
+
+}
+
+
+/* ==========================
+   ATTENDANCE TABLE
+========================== */
+
+.attendance-history .attendance-table-container{
+
+    width:100%;
+
+    max-height:300px;
+
+    overflow-y:auto;
+
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* ==========================
+   STICKY TABLE HEADER
+========================== */
+
+.attendance-history .attendance-table-container thead th{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    background:#0b1220;
+
+    padding:12px 14px;
+
+    color:#94a3b8;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.4px;
+
+    white-space:nowrap;
+
+}
+
+
+/* ==========================
+   TABLE ROWS
+========================== */
+
+.attendance-history .attendance-table-container td{
+
+    padding:12px 14px;
+
+    font-size:13px;
+
+    color:#e5e7eb;
+
+    white-space:nowrap;
+
+}
+
+
+/* ==========================
+   ATTENDANCE STATUS
+========================== */
+
+.attendance-history .attendance-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.attendance-history .attendance-status.present{
+
+    color:#22c55e;
+
+    background:
+    rgba(34,197,94,.12);
+
+}
+
+
+.attendance-history .attendance-status.absent{
+
+    color:#ef4444;
+
+    background:
+    rgba(239,68,68,.12);
+
+}
+
+
+.attendance-history .attendance-status.leave{
+
+    color:#f59e0b;
+
+    background:
+    rgba(245,158,11,.12);
+
+}
+
+
+/* ==========================
+   ATTENDANCE SCROLLBAR
+========================== */
+
+.attendance-history .attendance-table-container::-webkit-scrollbar{
+
+    width:6px;
+
+    height:6px;
+
+}
+
+
+.attendance-history .attendance-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+
+.attendance-history .attendance-table-container::-webkit-scrollbar-thumb{
+
+    background:rgba(0,174,239,.45);
+
+    border-radius:10px;
+
+}
+
+
+.attendance-history .attendance-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#00AEEF;
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .attendance-history{
+
+        padding:16px;
+
+    }
+
+
+    .attendance-history .attendance-summary{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+    .attendance-history .attendance-history-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .attendance-history .attendance-history-toolbar input,
+    .attendance-history .attendance-history-toolbar select{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================
+   EMPLOYEE MANAGEMENT
+========================================== */
+
+.employee-management{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(15,23,42,.96),
+        rgba(2,6,23,.98)
+    );
+
+    border:1px solid
+    rgba(0,174,239,.15);
+
+    border-radius:20px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.30);
+
+}
+
+
+/* ==========================================
+   MANAGEMENT HEADER
+========================================== */
+
+.employee-management .employee-section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:22px;
+
+}
+
+
+/* ==========================================
+   MANAGEMENT STATS
+========================================== */
+
+.employee-management-stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:14px;
+
+    margin-bottom:20px;
+
+}
+
+
+.management-stat-card{
+
+    display:grid;
+
+    grid-template-columns:
+    42px 1fr;
+
+    grid-template-rows:
+    auto auto;
+
+    column-gap:12px;
+
+    align-items:center;
+
+    padding:16px;
+
+    background:
+    rgba(255,255,255,.045);
+
+    border:1px solid
+    rgba(255,255,255,.07);
+
+    border-radius:14px;
+
+    transition:.25s ease;
+
+}
+
+
+.management-stat-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+    rgba(0,174,239,.30);
+
+}
+
+
+.management-stat-card span{
+
+    grid-row:1 / 3;
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+    rgba(0,174,239,.10);
+
+}
+
+
+.management-stat-card strong{
+
+    color:#fff;
+
+    font-size:23px;
+
+}
+
+
+.management-stat-card small{
+
+    color:#94a3b8;
+
+    font-size:11px;
+
+}
+
+
+/* ==========================================
+   MANAGEMENT TOOLBAR
+========================================== */
+
+.employee-management-toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+
+}
+
+
+.employee-management-toolbar input,
+.employee-management-toolbar select{
+
+    height:42px;
+
+    padding:0 13px;
+
+    border-radius:10px;
+
+    border:1px solid
+    rgba(255,255,255,.10);
+
+    background:#0f172a;
+
+    color:#fff;
+
+    outline:none;
+
+}
+
+
+.employee-management-toolbar input{
+
+    flex:1;
+
+    min-width:220px;
+
+}
+
+
+.employee-management-toolbar select{
+
+    min-width:160px;
+
+}
+
+
+.employee-management-toolbar input:focus,
+.employee-management-toolbar select:focus{
+
+    border-color:#00AEEF;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(0,174,239,.08);
+
+}
+
+
+.employee-management-toolbar button{
+
+    height:42px;
+
+    padding:0 15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+    rgba(255,255,255,.07);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s ease;
+
+}
+
+
+.employee-management-toolbar button:hover{
+
+    background:#00AEEF;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================
+   MANAGEMENT TABLE
+========================================== */
+
+.employee-management-table{
+
+    width:100%;
+
+    max-height:380px;
+
+    overflow:auto;
+
+    border-radius:14px;
+
+}
+
+
+.employee-management-table table{
+
+    width:100%;
+
+    min-width:950px;
+
+    border-collapse:collapse;
+
+}
+
+
+.employee-management-table thead th{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    padding:14px;
+
+    text-align:left;
+
+    background:#0b1220;
+
+    color:#94a3b8;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+
+}
+
+
+.employee-management-table tbody td{
+
+    padding:13px 14px;
+
+    color:#e5e7eb;
+
+    font-size:13px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.05);
+
+}
+
+
+.employee-management-table tbody tr{
+
+    transition:.2s ease;
+
+}
+
+
+.employee-management-table tbody tr:hover{
+
+    background:
+    rgba(0,174,239,.04);
+
+}
+
+
+/* ==========================================
+   MANAGEMENT SCROLLBAR
+========================================== */
+
+.employee-management-table::-webkit-scrollbar{
+
+    width:6px;
+
+    height:6px;
+
+}
+
+
+.employee-management-table::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+
+.employee-management-table::-webkit-scrollbar-thumb{
+
+    background:
+    rgba(0,174,239,.45);
+
+    border-radius:10px;
+
+}
+
+
+.employee-management-table::-webkit-scrollbar-thumb:hover{
+
+    background:#00AEEF;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+    .employee-management-stats{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .employee-management{
+
+        padding:17px;
+
+    }
+
+
+    .employee-management .employee-section-title{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    .employee-management-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .employee-management-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .employee-management-toolbar input,
+    .employee-management-toolbar select,
+    .employee-management-toolbar button{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================
+   COMPACT EMPLOYEE DIRECTORY
+========================================== */
+
+.employee-table-container{
+
+    max-height:420px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* Sticky Table Header */
+
+.employee-table-container thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+
+/* Custom Scrollbar */
+
+.employee-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+/* ==========================================
+   COMPACT ATTENDANCE HISTORY
+========================================== */
+
+.attendance-table-container{
+
+    max-height:420px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* Sticky Attendance Header */
+
+.attendance-table-container thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+
+/* Attendance Scrollbar */
+
+.attendance-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.attendance-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+/* ==========================================
+   COMPACT EMPLOYEE MANAGEMENT
+========================================== */
+
+.employee-management-list{
+
+    max-height:420px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* Sticky Header */
+
+.employee-management-list thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+
+/* Scrollbar */
+
+.employee-management-list::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.employee-management-list::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.employee-management-list::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.employee-management-list::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+/* ==========================================
+   COMPACT EMPLOYEE DIRECTORY
+========================================== */
+
+.employee-table-container{
+
+    max-height:420px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* Sticky Table Header */
+
+.employee-table-container thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+
+/* Directory Scrollbar */
+
+.employee-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+/* ==========================================
+   COMPACT ATTENDANCE HISTORY
+========================================== */
+
+.attendance-table-container{
+
+    max-height:380px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* Sticky Attendance Header */
+
+.attendance-table-container thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+
+/* Attendance Scrollbar */
+
+.attendance-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.attendance-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+/* ==========================================
+   COMPACT EMPLOYEE DIRECTORY
+========================================== */
+
+.employee-table-container{
+
+    max-height:380px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:14px;
+
+}
+
+
+/* Sticky Header */
+
+.employee-table-container thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+
+/* Employee Table Scrollbar */
+
+.employee-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+/* ==========================================
+   EMPLOYEE DIRECTORY - COMPACT DASHBOARD
+========================================== */
+
+.employee-table-container,
+.employee-directory .employee-table-container{
+
+    max-height:420px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:16px;
+
+}
+
+
+/* Sticky Table Header */
+
+.employee-table-container table thead th{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    background:#0b1220;
+
+}
+
+
+/* Custom Scrollbar */
+
+.employee-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:10px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.employee-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .employee-table-container{
+
+        max-height:360px;
+
+    }
+
+}
+
+/* ==========================================
+   ATTENDANCE HISTORY - COMPACT DASHBOARD
+========================================== */
+
+.attendance-history{
+
+    width:100%;
+
+}
+
+
+.attendance-table-container{
+
+    max-height:380px;
+
+    overflow-y:auto;
+    overflow-x:auto;
+
+    border-radius:16px;
+
+}
+
+
+/* Sticky Header */
+
+.attendance-table-container table{
+
+    width:100%;
+
+}
+
+
+.attendance-table-container thead th{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    background:#0b1220;
+
+}
+
+
+/* Scrollbar */
+
+.attendance-table-container::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:10px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+.attendance-table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .attendance-table-container{
+
+        max-height:320px;
+
+    }
+
+}
+
+/* ==========================================
+   EMPLOYEE TASKS - COMPACT DASHBOARD
+========================================== */
+
+.employee-task-list{
+
+    max-height:320px;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    padding-right:5px;
+
+}
+
+
+/* Task Card */
+
+.employee-task-card{
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    transition:.25s ease;
+
+}
+
+
+.employee-task-card:hover{
+
+    transform:translateY(-2px);
+
+    border-color:rgba(0,174,239,.35);
+
+    background:rgba(0,174,239,.05);
+
+}
+
+
+/* Task Information */
+
+.employee-task-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+
+}
+
+
+.employee-task-info h3{
+
+    margin:0 0 4px;
+
+    color:#fff;
+
+    font-size:15px;
+
+}
+
+
+.employee-task-info p{
+
+    margin:0;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+
+/* Task Icon */
+
+.employee-task-icon{
+
+    width:40px;
+
+    height:40px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,174,239,.10);
+
+    border:1px solid rgba(0,174,239,.18);
+
+    border-radius:10px;
+
+}
+
+
+/* Task Status */
+
+.task-status{
+
+    flex-shrink:0;
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+.task-status.in-progress{
+
+    color:#38bdf8;
+
+    background:rgba(56,189,248,.12);
+
+}
+
+
+.task-status.pending{
+
+    color:#f59e0b;
+
+    background:rgba(245,158,11,.12);
+
+}
+
+
+.task-status.completed{
+
+    color:#22c55e;
+
+    background:rgba(34,197,94,.12);
+
+}
+
+
+/* Task Scrollbar */
+
+.employee-task-list::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+
+.employee-task-list::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:10px;
+
+}
+
+
+.employee-task-list::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:10px;
+
+}
+
+
+.employee-task-list::-webkit-scrollbar-thumb:hover{
+
+    background:#0095d1;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .employee-task-list{
+
+        max-height:280px;
+
+    }
+
+    .employee-task-card{
+
+        align-items:flex-start;
+
+    }
+
+    .task-status{
+
+        font-size:10px;
+
+    }
+
+}
+
+/* ==========================================
+   EMPLOYEE DASHBOARD - MAIN GRID
+========================================== */
+
+.employee-dashboard-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.employee-dashboard-main-grid .employee-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.employee-dashboard-main-grid .employee-overview-grid {
+    display: block;
+}
+
+.employee-dashboard-main-grid .employee-overview-card {
+    height: 100%;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .employee-dashboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .employee-dashboard-main-grid .employee-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .employee-dashboard-main-grid .employee-stats {
+        grid-template-columns: 1fr;
+    }
+
+}

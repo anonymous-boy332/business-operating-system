@@ -1,0 +1,1368 @@
+/* ==========================================
+   SYNVORA AI - COMPANY WORKSPACE
+   PROFESSIONAL WORKSPACE DESIGN
+========================================== */
+
+.company-workspace {
+
+    width: 100%;
+
+    margin: 24px 0 40px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,25,35,0.98),
+            rgba(8,12,20,0.98)
+        );
+
+    box-shadow:
+        0 24px 70px rgba(0,0,0,0.30);
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   WORKSPACE HEADER
+========================================== */
+
+.workspace-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding-bottom: 26px;
+
+    margin-bottom: 26px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+
+}
+
+
+.workspace-header-info {
+
+    min-width: 0;
+
+}
+
+
+.workspace-eyebrow {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #00AEEF;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+}
+
+
+.workspace-company-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+}
+
+
+.workspace-company-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 52px;
+
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(0,174,239,0.20);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,174,239,0.15),
+            rgba(255,255,255,0.04)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,174,239,0.08);
+
+    font-size: 24px;
+
+}
+
+
+.workspace-company-title-content {
+
+    min-width: 0;
+
+}
+
+
+.workspace-header h2 {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.workspace-header p {
+
+    margin: 7px 0 0;
+
+    overflow: hidden;
+
+    color: rgba(255,255,255,0.52);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.workspace-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+}
+
+
+.workspace-company-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+}
+
+
+.workspace-company-status.active {
+
+    color: #61e6a8;
+
+    background: rgba(34,197,94,0.09);
+
+    border: 1px solid rgba(34,197,94,0.18);
+
+}
+
+
+.workspace-company-status.inactive {
+
+    color: #ff7777;
+
+    background: rgba(239,68,68,0.09);
+
+    border: 1px solid rgba(239,68,68,0.18);
+
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.workspace-back-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 38px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.045);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.workspace-back-btn:hover {
+
+    transform: translateY(-2px);
+
+    border-color: rgba(0,174,239,0.40);
+
+    background: rgba(0,174,239,0.09);
+
+    box-shadow:
+        0 8px 22px rgba(0,174,239,0.08);
+
+}
+
+
+.workspace-back-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ==========================================
+   WORKSPACE STATS
+========================================== */
+
+.workspace-stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.workspace-stat-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    min-height: 112px;
+
+    padding: 20px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.018)
+        );
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.workspace-stat-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(0,174,239,0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,174,239,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,0.16);
+
+}
+
+
+.workspace-stat-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(0,174,239,0.12);
+
+    border-radius: 13px;
+
+    background:
+        rgba(0,174,239,0.09);
+
+    font-size: 21px;
+
+}
+
+
+.workspace-stat-content {
+
+    min-width: 0;
+
+}
+
+
+.workspace-stat-card small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: rgba(255,255,255,0.48);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.workspace-stat-card strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 750;
+
+    line-height: 1.15;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.workspace-stat-label {
+
+    display: block;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    color: rgba(255,255,255,0.32);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================
+   WORKSPACE SECTIONS
+========================================== */
+
+.workspace-section {
+
+    margin-top: 30px;
+
+}
+
+
+.workspace-section-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.workspace-section-header h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+}
+
+
+.workspace-section-header p {
+
+    max-width: 700px;
+
+    margin: 6px 0 0;
+
+    color: rgba(255,255,255,0.48);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   BUSINESS OPERATIONS
+========================================== */
+
+.workspace-actions-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+}
+
+
+.workspace-action-btn {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    min-height: 88px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.018)
+        );
+
+    color: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.workspace-action-btn:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(0,174,239,0.32);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,174,239,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.16);
+
+}
+
+
+.workspace-action-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+.workspace-action-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    font-size: 19px;
+
+}
+
+
+.workspace-action-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.workspace-action-content strong {
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.workspace-action-content small {
+
+    overflow: hidden;
+
+    color: rgba(255,255,255,0.43);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.workspace-action-arrow {
+
+    color: rgba(255,255,255,0.30);
+
+    font-size: 17px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.workspace-action-btn:hover
+.workspace-action-arrow {
+
+    color: #00AEEF;
+
+    transform: translateX(3px);
+
+}
+
+
+/* ==========================================
+   COMPANY PROFILE
+========================================== */
+
+.workspace-info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+}
+
+
+.workspace-info-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+
+    min-height: 78px;
+
+    padding: 15px 17px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.workspace-info-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(0,174,239,0.20);
+
+    background:
+        rgba(0,174,239,0.045);
+
+}
+
+
+.workspace-info-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(0,174,239,0.10);
+
+    border-radius: 11px;
+
+    background:
+        rgba(0,174,239,0.07);
+
+    font-size: 17px;
+
+}
+
+
+.workspace-info-card div {
+
+    min-width: 0;
+
+}
+
+
+.workspace-info-card small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: rgba(255,255,255,0.40);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+}
+
+
+.workspace-info-card strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    line-height: 1.45;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.workspace-info-full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* ==========================================
+   BUSINESS HEALTH
+========================================== */
+
+.workspace-health-card {
+
+    position: relative;
+
+    margin-top: 30px;
+
+    padding: 23px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,174,239,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.025);
+
+}
+
+
+.workspace-health-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.workspace-health-card h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+}
+
+
+.workspace-health-card p {
+
+    margin: 6px 0 0;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+.workspace-health-value {
+
+    flex-shrink: 0;
+
+    text-align: right;
+
+}
+
+
+.workspace-health-value strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    font-weight: 750;
+
+    line-height: 1;
+
+}
+
+
+.workspace-health-value span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(255,255,255,0.38);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+}
+
+
+.workspace-health-bar {
+
+    width: 100%;
+
+    height: 7px;
+
+    margin-top: 23px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+}
+
+
+.workspace-health-progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00AEEF,
+            #FFD700
+        );
+
+    transition:
+        width 0.5s ease;
+
+}
+
+
+/* ==========================================
+   LOADING ERROR
+========================================== */
+
+.workspace-load-error {
+
+    padding: 35px;
+
+    border: 1px solid rgba(239,68,68,0.20);
+
+    border-radius: 15px;
+
+    background:
+        rgba(239,68,68,0.06);
+
+    color: #ff7777;
+
+    text-align: center;
+
+}
+
+
+.workspace-load-error small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: rgba(255,255,255,0.45);
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .workspace-stats-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .workspace-actions-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .company-workspace {
+
+        margin: 18px 0 30px;
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .workspace-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding-bottom: 20px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .workspace-company-title {
+
+        align-items: flex-start;
+
+    }
+
+
+    .workspace-company-logo {
+
+        width: 46px;
+
+        height: 46px;
+
+        border-radius: 13px;
+
+        font-size: 21px;
+
+    }
+
+
+    .workspace-header h2 {
+
+        max-width: calc(100vw - 115px);
+
+        font-size: 21px;
+
+    }
+
+
+    .workspace-header p {
+
+        max-width: calc(100vw - 115px);
+
+        font-size: 11px;
+
+    }
+
+
+    .workspace-header-actions {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 8px;
+
+    }
+
+
+    .workspace-company-status {
+
+        min-height: 36px;
+
+        padding: 7px 11px;
+
+        font-size: 10px;
+
+    }
+
+
+    .workspace-back-btn {
+
+        min-height: 36px;
+
+        padding: 7px 11px;
+
+        font-size: 11px;
+
+    }
+
+
+    .workspace-stats-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 11px;
+
+    }
+
+
+    .workspace-stat-card {
+
+        min-height: 92px;
+
+        padding: 16px;
+
+    }
+
+
+    .workspace-stat-icon {
+
+        width: 43px;
+
+        height: 43px;
+
+        border-radius: 11px;
+
+        font-size: 19px;
+
+    }
+
+
+    .workspace-stat-card strong {
+
+        font-size: 21px;
+
+    }
+
+
+    .workspace-section {
+
+        margin-top: 25px;
+
+    }
+
+
+    .workspace-section-header {
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .workspace-section-header h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .workspace-section-header p {
+
+        font-size: 11px;
+
+    }
+
+
+    .workspace-actions-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .workspace-action-btn {
+
+        min-height: 76px;
+
+        padding: 13px;
+
+    }
+
+
+    .workspace-action-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 18px;
+
+    }
+
+
+    .workspace-info-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .workspace-info-full {
+
+        grid-column: auto;
+
+    }
+
+
+    .workspace-info-card {
+
+        min-height: 70px;
+
+        padding: 13px;
+
+    }
+
+
+    .workspace-health-card {
+
+        margin-top: 25px;
+
+        padding: 19px;
+
+    }
+
+
+    .workspace-health-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+
+    }
+
+
+    .workspace-health-value {
+
+        text-align: left;
+
+    }
+
+
+    .workspace-health-value strong {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 420px) {
+
+    .company-workspace {
+
+        padding: 15px;
+
+    }
+
+
+    .workspace-header-actions {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .workspace-company-status {
+
+        width: fit-content;
+
+    }
+
+
+    .workspace-back-btn {
+
+        width: 100%;
+
+    }
+
+
+    .workspace-company-title {
+
+        gap: 10px;
+
+    }
+
+
+    .workspace-company-logo {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .workspace-header h2 {
+
+        max-width: calc(100vw - 90px);
+
+        font-size: 19px;
+
+    }
+
+
+    .workspace-header p {
+
+        max-width: calc(100vw - 90px);
+
+    }
+
+}

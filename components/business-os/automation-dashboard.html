@@ -1,0 +1,21 @@
+<section class="automation-dashboard bi-panel" aria-labelledby="biAutomationTitle">
+    <div class="section-header bi-panel-heading">
+        <div><span class="bi-eyebrow">LOCAL WORKFLOWS</span><h2 id="biAutomationTitle">Automation workspace</h2><p>Run data checks on this device. These workflows do not send messages or connect to external services.</p></div>
+        <button type="button" class="primary-btn" data-automation-action="create">＋ Create workflow</button>
+    </div>
+    <div class="bi-summary-strip" aria-label="Automation summary">
+        <div><span>Saved workflows</span><strong id="biAutomationCount">0</strong></div>
+        <div><span>Enabled</span><strong id="biAutomationEnabled">0</strong></div>
+        <div><span>Local runs</span><strong id="biAutomationRuns">0</strong></div>
+    </div>
+    <div class="bi-automation-form" id="biAutomationFormWrap" hidden>
+        <form id="biAutomationForm">
+            <label for="biAutomationName">Workflow name<input id="biAutomationName" maxlength="80" required placeholder="e.g. Weekly operations review"></label>
+            <label for="biAutomationType">Local check<select id="biAutomationType"><option value="business-summary">Business summary</option><option value="overdue-tasks">Overdue tasks</option><option value="low-stock">Low-stock products</option></select></label>
+            <div class="bi-form-actions"><button type="submit" class="primary-btn">Save workflow</button><button type="button" class="secondary-btn" data-automation-action="cancel-create">Cancel</button></div>
+        </form>
+    </div>
+    <p class="bi-feedback" id="biAutomationStatus" role="status" aria-live="polite"></p>
+    <div class="bi-record-list" id="biAutomationList"></div>
+    <div class="bi-history-block"><h3>Recent local runs</h3><div id="biAutomationHistory"></div></div>
+</section>

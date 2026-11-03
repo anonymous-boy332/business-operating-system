@@ -1,0 +1,89 @@
+<section class="invoice-section" aria-labelledby="invoiceManagementTitle">
+    <div class="finance-section-heading">
+        <div>
+            <span class="finance-eyebrow">CUSTOMER BILLING</span>
+            <h2 id="invoiceManagementTitle">Invoice management</h2>
+            <p>Create invoices, track collections and keep payment status up to date.</p>
+        </div>
+        <div class="finance-action-group">
+            <button class="secondary-btn" id="exportInvoices" type="button">Export invoices</button>
+            <button class="primary-btn add-invoice-btn" type="button">+ New invoice</button>
+        </div>
+    </div>
+
+    <div class="invoice-summary" aria-label="Invoice totals">
+        <article class="finance-detail-card">
+            <span>Total invoiced</span>
+            <strong id="totalInvoice">$0.00</strong>
+        </article>
+        <article class="finance-detail-card">
+            <span>Paid</span>
+            <strong id="paidInvoice">$0.00</strong>
+        </article>
+        <article class="finance-detail-card">
+            <span>Awaiting payment</span>
+            <strong id="pendingInvoice">$0.00</strong>
+        </article>
+    </div>
+
+    <div class="finance-table-wrap">
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Invoice</th>
+                    <th>Customer</th>
+                    <th>Due date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p class="finance-empty-state" id="invoiceEmptyState">No invoices yet. Create an invoice to start tracking receivables.</p>
+    </div>
+</section>
+
+<div class="invoice-modal finance-modal" id="invoiceModal" aria-hidden="true">
+    <form class="invoice-form-box finance-modal-panel" id="invoiceForm" role="dialog" aria-modal="true" aria-labelledby="invoiceFormTitle">
+        <div class="finance-modal-heading">
+            <div>
+                <span class="finance-eyebrow">CUSTOMER BILLING</span>
+                <h2 id="invoiceFormTitle">Create invoice</h2>
+            </div>
+            <button class="finance-modal-close" id="closeInvoice" type="button" aria-label="Close invoice form">&times;</button>
+        </div>
+
+        <label for="invoiceCustomer">Customer or business</label>
+        <input id="invoiceCustomer" name="customer" type="text" autocomplete="organization" required>
+
+        <label for="invoiceAmount">Amount</label>
+        <input id="invoiceAmount" name="amount" type="number" min="0.01" step="0.01" required>
+
+        <label for="invoiceCurrency">Currency</label>
+        <select id="invoiceCurrency" name="currency">
+            <option value="USD">USD · US Dollar</option>
+            <option value="PKR">PKR · Pakistani Rupee</option>
+            <option value="EUR">EUR · Euro</option>
+            <option value="GBP">GBP · British Pound</option>
+            <option value="AED">AED · UAE Dirham</option>
+            <option value="SAR">SAR · Saudi Riyal</option>
+        </select>
+
+        <label for="invoiceDate">Due date</label>
+        <input id="invoiceDate" name="date" type="date" required>
+
+        <label for="invoiceStatus">Payment status</label>
+        <select id="invoiceStatus" name="status">
+            <option value="Pending">Pending</option>
+            <option value="Paid">Paid</option>
+        </select>
+
+        <p class="finance-form-message" id="invoiceFormMessage" role="alert"></p>
+
+        <div class="finance-modal-actions">
+            <button class="primary-btn" id="saveInvoice" type="submit">Save invoice</button>
+            <button class="secondary-btn" id="cancelInvoice" type="button">Cancel</button>
+        </div>
+    </form>
+</div>

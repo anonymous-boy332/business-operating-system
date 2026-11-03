@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing &amp; Subscription | Synvora AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/sidebar-toggle.css">
+    <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="ai-sidebar">
+            <div id="sidebar-container"></div>
+        </aside>
+        <button class="menu-toggle" type="button" onclick="toggleSidebar()">☰</button>
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-dashboard billing-page">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Billing &amp; Subscription</h1>
+                    <p>Manage your plan, payment history, and invoices.</p>
+                </div>
+            </header>
+
+            <p id="billingMessage" class="billing-message" role="status">Loading your billing details…</p>
+            <button id="billingRetry" type="button" class="secondary" hidden>Retry loading billing</button>
+            <section id="billingAlerts" class="billing-alerts" aria-live="polite"></section>
+
+            <section class="billing-panel">
+                <div class="billing-panel-heading">
+                    <div>
+                        <span class="billing-eyebrow">YOUR SUBSCRIPTION</span>
+                        <h2 id="billingPlanName">No subscription yet</h2>
+                    </div>
+                    <span id="billingStatus" class="billing-status">—</span>
+                </div>
+                <div id="billingSummary" class="billing-summary"></div>
+                <div class="billing-actions">
+                    <button id="billingCancel" type="button" class="secondary" hidden>Cancel subscription</button>
+                    <button id="billingRenew" type="button" class="primary" hidden>Renew subscription</button>
+                    <a class="billing-pricing-link" href="index.html#pricing">View pricing plans</a>
+                </div>
+                <div class="billing-currency-control">
+                    <label for="billingCurrency">Billing currency</label>
+                    <select id="billingCurrency">
+                        <option value="PKR">PKR</option>
+                        <option value="USD">USD</option>
+                        <option value="AED">AED</option>
+                    </select>
+                    <button id="saveBillingCurrency" type="button" class="secondary" hidden>Save currency</button>
+                </div>
+            </section>
+
+            <section class="billing-panel">
+                <div class="billing-panel-heading">
+                    <div>
+                        <span class="billing-eyebrow">CHANGE YOUR PLAN</span>
+                        <h2>Available plans</h2>
+                    </div>
+                </div>
+                <div class="billing-plan-controls">
+                    <label>
+                        Billing cycle
+                        <select id="billingPeriod">
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </label>
+                </div>
+                <div id="billingPlanOptions" class="pricing-cards"></div>
+            </section>
+
+            <section class="billing-panel">
+                <div class="billing-panel-heading">
+                    <div>
+                        <span class="billing-eyebrow">TRANSACTIONS</span>
+                        <h2>Payment history</h2>
+                    </div>
+                </div>
+                <div class="billing-table-wrap">
+                    <table class="billing-table">
+                        <thead><tr><th>Date</th><th>Provider</th><th>Status</th><th>Amount</th><th>Transaction</th></tr></thead>
+                        <tbody id="paymentHistory"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="billing-panel">
+                <div class="billing-panel-heading">
+                    <div>
+                        <span class="billing-eyebrow">RECEIPTS</span>
+                        <h2>Invoice history</h2>
+                    </div>
+                </div>
+                <div class="billing-table-wrap">
+                    <table class="billing-table">
+                        <thead><tr><th>Invoice</th><th>Issued</th><th>Status</th><th>Amount</th><th></th></tr></thead>
+                        <tbody id="invoiceHistory"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="pricingAdmin" class="billing-panel" hidden>
+                <div class="billing-panel-heading">
+                    <div>
+                        <span class="billing-eyebrow">SUPER ADMIN</span>
+                        <h2>Pricing Management</h2>
+                    </div>
+                </div>
+                <div id="adminMetrics" class="admin-metrics"></div>
+                <h3 class="admin-subscriber-heading">Subscribers by plan</h3>
+                <div class="billing-table-wrap">
+                    <table class="billing-table">
+                        <thead><tr><th>Plan</th><th>Customer ID</th><th>Status</th><th>Currency</th><th>Cycle</th><th>Next date</th></tr></thead>
+                        <tbody id="adminSubscribers"></tbody>
+                    </table>
+                </div>
+                <div class="admin-trial-settings">
+                    <label for="adminTrialDays">Free trial duration (days)</label>
+                    <input id="adminTrialDays" type="number" min="0" max="30" value="7">
+                    <button id="saveTrialDuration" type="button" class="secondary">Save duration</button>
+                </div>
+                <div id="adminPlanList" class="admin-plan-list"></div>
+                <form id="newPlanForm" class="admin-plan-form">
+                    <h3>Create a plan</h3>
+                    <div class="admin-form-grid">
+                        <label>Plan name<input name="name" required maxlength="80"></label>
+                        <label>Slug<input name="slug" required pattern="[a-z0-9-]{2,80}"></label>
+                        <label>Description<input name="description" maxlength="500"></label>
+                        <label>Sort order<input name="sortOrder" type="number" min="0" value="10" required></label>
+                        <label>Team member limit<input name="teamMemberLimit" type="number" min="0" value="1" required></label>
+                        <label>Business limit<input name="businessLimit" type="number" min="0" value="1" required></label>
+                        <label>AI credit limit<input name="aiCreditLimit" type="number" min="0" value="0" required></label>
+                        <label class="admin-feature-field">Features (one per line)<textarea name="features" rows="5"></textarea></label>
+                    </div>
+                    <div class="admin-price-grid" data-admin-prices></div>
+                    <label class="admin-checkbox"><input name="isPopular" type="checkbox"> Mark as Most Popular</label>
+                    <label class="admin-checkbox"><input name="isEnabled" type="checkbox" checked> Plan enabled</label>
+                    <button type="submit" class="primary">Create plan</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="supabase.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/sidebar-toggle.js"></script>
+    <script type="module" src="js/billing-page.js"></script>
+    <script src="./js/pwa.js"></script>
+</body>
+</html>

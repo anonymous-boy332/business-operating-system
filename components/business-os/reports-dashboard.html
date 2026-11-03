@@ -1,0 +1,13 @@
+<section class="reports-dashboard bi-panel" aria-labelledby="biReportsTitle">
+    <div class="section-header bi-panel-heading">
+        <div><span class="bi-eyebrow">BUSINESS RECORDS</span><h2 id="biReportsTitle">Reports &amp; export</h2><p>Current totals are drawn from records saved in this browser. Amounts in different currencies are shown separately.</p></div>
+        <button type="button" class="primary-btn" data-report-action="export">⬇ Export business report (CSV)</button>
+    </div>
+    <div class="reports-grid">
+        <article class="report-card"><h3>Sales orders</h3><strong id="biReportOrders">0</strong><p id="biReportOrderDetails">Saved orders across all statuses</p></article>
+        <article class="report-card"><h3>Received income</h3><strong id="biReportIncome">—</strong><p>Received finance records by currency</p></article>
+        <article class="report-card"><h3>Inventory</h3><strong id="inventoryReportProducts">0</strong><p id="inventoryReportLowStock">No saved inventory records</p></article>
+        <article class="report-card"><h3>Team</h3><strong id="biReportEmployees">0</strong><p id="biReportEmployeeDetails">Saved employee records</p></article>
+    </div>
+    <p class="bi-feedback" id="biReportStatus" role="status" aria-live="polite"></p>
+</section>

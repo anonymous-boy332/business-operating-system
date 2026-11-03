@@ -1,0 +1,26 @@
+<section class="calendar-dashboard bi-panel" aria-labelledby="biCalendarTitle">
+    <div class="section-header bi-panel-heading">
+        <div><span class="bi-eyebrow">MEETINGS &amp; TASKS</span><h2 id="biCalendarTitle">Calendar &amp; meetings</h2><p>Meetings are stored in this browser; task reminders are read from your saved team tasks.</p></div>
+        <button type="button" class="primary-btn" data-meeting-action="new">＋ Schedule meeting</button>
+    </div>
+    <div class="calendar-grid bi-calendar-grid">
+        <article class="calendar-card"><h3>Today's meetings</h3><strong id="biMeetingsToday">0</strong><p id="biMeetingsTodayNote">Scheduled from your calendar</p></article>
+        <article class="calendar-card"><h3>Next 7 days</h3><strong id="biMeetingsWeek">0</strong><p>Saved upcoming meetings</p></article>
+        <article class="calendar-card"><h3>Tasks due this week</h3><strong id="biTasksWeek">0</strong><p id="biOverdueTasksNote">From saved employee tasks</p></article>
+        <article class="calendar-card"><h3>Overdue tasks</h3><strong id="biTasksOverdue">0</strong><p>Open tasks past their due date</p></article>
+    </div>
+    <p class="bi-feedback" id="biMeetingStatus" role="status" aria-live="polite"></p>
+    <div class="bi-record-list" id="biMeetingList"></div>
+    <dialog class="bi-meeting-dialog" id="biMeetingDialog" aria-labelledby="biMeetingDialogTitle">
+        <form id="biMeetingForm">
+            <div class="bi-dialog-heading"><div><span class="bi-eyebrow">BUSINESS CALENDAR</span><h3 id="biMeetingDialogTitle">Schedule a meeting</h3></div><button type="button" class="secondary-btn" data-meeting-action="close" aria-label="Close">✕</button></div>
+            <label for="biMeetingTitle">Meeting title<input id="biMeetingTitle" maxlength="100" required></label>
+            <div class="bi-form-row"><label for="biMeetingDate">Date<input id="biMeetingDate" type="date" required></label><label for="biMeetingTime">Time<input id="biMeetingTime" type="time" required></label></div>
+            <label for="biMeetingAttendees">Attendees<input id="biMeetingAttendees" maxlength="200" placeholder="Names or email addresses"></label>
+            <label for="biMeetingLocation">Location / link<input id="biMeetingLocation" maxlength="160" placeholder="Office, phone, or meeting link"></label>
+            <label for="biMeetingNotes">Notes<textarea id="biMeetingNotes" rows="3" maxlength="1000"></textarea></label>
+            <p class="bi-feedback" id="biMeetingFormStatus" role="status"></p>
+            <div class="bi-form-actions bi-meeting-form-actions"><button type="submit" class="primary-btn">Save meeting</button><button type="button" class="secondary-btn" data-meeting-action="close">Cancel</button></div>
+        </form>
+    </dialog>
+</section>

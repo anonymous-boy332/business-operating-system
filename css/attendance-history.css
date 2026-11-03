@@ -1,0 +1,469 @@
+/* =========================================================
+   SYNVORA AI
+   EMPLOYEE ATTENDANCE HISTORY
+========================================================= */
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.attendance-history {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.attendance-history .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.attendance-history .section-eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: #00aeef;
+}
+
+.attendance-history .section-header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.attendance-history .section-header p {
+    margin: 7px 0 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.attendance-history-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    background: rgba(17, 24, 39, 0.72);
+    backdrop-filter: blur(12px);
+}
+
+.attendance-history-search {
+    flex: 1;
+    min-width: 220px;
+}
+
+.attendance-history-search input,
+.attendance-history-filters input,
+.attendance-history-filters select {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    outline: none;
+    background: #111827;
+    color: #ffffff;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.attendance-history-search input::placeholder {
+    color: #6b7280;
+}
+
+.attendance-history-search input:focus,
+.attendance-history-filters input:focus,
+.attendance-history-filters select:focus {
+    border-color: #00aeef;
+    box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.10);
+}
+
+.attendance-history-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.attendance-history-filters input,
+.attendance-history-filters select {
+    width: 170px;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.attendance-history .secondary-btn {
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #d1d5db;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.attendance-history .secondary-btn:hover {
+    border-color: #00aeef;
+    color: #ffffff;
+    background: rgba(0, 174, 239, 0.08);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.attendance-history-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.attendance-history-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 92px;
+    padding: 18px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    background: rgba(17, 24, 39, 0.78);
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.attendance-history-summary-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 174, 239, 0.28);
+}
+
+.attendance-history-summary-card > span {
+    display: block;
+    margin-bottom: 6px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.attendance-history-summary-card > strong {
+    display: block;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.attendance-history-summary-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(0, 174, 239, 0.10);
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.attendance-history-table-card {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    background: rgba(17, 24, 39, 0.78);
+    backdrop-filter: blur(12px);
+}
+
+.attendance-history-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.attendance-history-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.attendance-history-table thead {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.attendance-history-table th {
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    color: #9ca3af;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.attendance-history-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    color: #d1d5db;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.attendance-history-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.attendance-history-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.attendance-history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   EMPLOYEE
+========================================================= */
+
+.attendance-history-employee {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 180px;
+}
+
+.attendance-history-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(0, 174, 239, 0.10);
+    border: 1px solid rgba(0, 174, 239, 0.16);
+    font-size: 17px;
+}
+
+.attendance-history-employee strong {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.attendance-history-employee small {
+    display: block;
+    margin-top: 3px;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.attendance-history-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.attendance-history-time.check-in {
+    color: #34d399;
+}
+
+.attendance-history-time.check-out {
+    color: #f87171;
+}
+
+.attendance-history-not-checked-out {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   WORKING HOURS
+========================================================= */
+
+.attendance-history-table td strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.attendance-history-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.attendance-history-status.present {
+    background: rgba(34, 197, 94, 0.10);
+    color: #4ade80;
+}
+
+.attendance-history-status.checked-in {
+    background: rgba(0, 174, 239, 0.10);
+    color: #38bdf8;
+}
+
+.attendance-history-status.absent {
+    background: rgba(239, 68, 68, 0.10);
+    color: #f87171;
+}
+
+.attendance-history-status.late {
+    background: rgba(234, 179, 8, 0.10);
+    color: #facc15;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.attendance-history-empty {
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.attendance-history-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    background: rgba(0, 174, 239, 0.08);
+    font-size: 25px;
+}
+
+.attendance-history-empty h3 {
+    margin: 0 0 7px;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.attendance-history-empty p {
+    max-width: 430px;
+    margin: 0 auto;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .attendance-history-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .attendance-history-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-history-search {
+        width: 100%;
+    }
+
+    .attendance-history-filters {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .attendance-history-filters input,
+    .attendance-history-filters select {
+        flex: 1;
+        min-width: 160px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .attendance-history .section-header h2 {
+        font-size: 22px;
+    }
+
+    .attendance-history-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-history-toolbar {
+        padding: 14px;
+    }
+
+    .attendance-history-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-history-filters input,
+    .attendance-history-filters select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .attendance-history .secondary-btn {
+        width: 100%;
+    }
+
+}

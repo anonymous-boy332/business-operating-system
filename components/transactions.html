@@ -1,0 +1,684 @@
+<section class="transaction-page">
+
+
+<h1>
+Finance activity
+</h1>
+<p class="finance-section-description">Review saved income and expense entries, add a record and filter by date or category.</p>
+
+
+<!-- Transaction Form -->
+
+<div class="transaction-form" aria-label="Record a finance transaction">
+
+
+<h2>Add Transaction</h2>
+
+<div class="transaction-field">
+<label for="transactionTitle">Description</label>
+<input type="text" id="transactionTitle" placeholder="Transaction description" required>
+</div>
+
+<div class="transaction-field">
+<label for="transactionAmount">Amount</label>
+<input type="number" id="transactionAmount" placeholder="0.00" min="0.01" step="0.01" required>
+</div>
+
+<div class="transaction-field">
+<label for="transactionCurrency">Currency</label>
+<select id="transactionCurrency">
+<option value="USD">USD · US Dollar</option>
+<option value="PKR">PKR · Pakistani Rupee</option>
+<option value="EUR">EUR · Euro</option>
+<option value="GBP">GBP · British Pound</option>
+<option value="AED">AED · UAE Dirham</option>
+<option value="SAR">SAR · Saudi Riyal</option>
+</select>
+</div>
+
+<div class="transaction-field">
+<label for="transactionDateTime">Date and time</label>
+<input type="datetime-local" id="transactionDateTime" required>
+</div>
+
+<div class="transaction-field">
+<label for="transactionReference">Reference / invoice no.</label>
+<input type="text" id="transactionReference" placeholder="Optional reference">
+</div>
+
+<div class="transaction-field">
+<label for="transactionType">Transaction type</label>
+<select id="transactionType">
+
+<option value="income">
+Income
+</option>
+
+<option value="expense">
+Expense
+</option>
+
+</select>
+</div>
+
+<div class="transaction-field">
+<label for="transactionCategory">Category</label>
+<select id="transactionCategory">
+
+<option value="Sales">
+Sales
+</option>
+
+<option value="Purchase">
+Purchase
+</option>
+
+<option value="Salary">
+Salary
+</option>
+
+<option value="Rent">
+Rent
+</option>
+
+<option value="Maintenance">
+Maintenance
+</option>
+
+<option value="Marketing">
+Marketing
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+</div>
+
+<div class="transaction-field">
+<label for="paymentMethod">Payment method</label>
+
+<select id="paymentMethod">
+
+<option value="Cash">Cash</option>
+<option value="Bank Transfer">Bank Transfer</option>
+<option value="Card">Card</option>
+<option value="Online">Online</option>
+
+</select>
+</div>
+
+<div class="transaction-field">
+<label for="transactionStatus">Status</label>
+
+<select id="transactionStatus">
+
+<option value="Received">Received</option>
+<option value="Pending">Pending</option>
+
+</select>
+</div>
+
+<div class="transaction-field transaction-notes-field">
+<label for="transactionNotes">Notes</label>
+
+<textarea
+id="transactionNotes"
+placeholder="Add context for this record"></textarea>
+</div>
+
+<button type="button" onclick="addTransaction()">
+
+Add Transaction
+
+</button>
+
+<p class="finance-form-message" id="transactionFormMessage" role="alert"></p>
+
+</div>
+
+<div class="transactions-filters">
+
+<input
+type="text"
+id="searchTransaction"
+placeholder="Search Transaction..."
+onkeyup="filterTransactions()">
+
+<select
+id="filterType"
+onchange="filterTransactions()">
+
+<option value="all">All Types</option>
+<option value="income">Income</option>
+<option value="expense">Expense</option>
+
+</select>
+
+<select
+id="filterCategory"
+onchange="filterTransactions()">
+
+<option value="all">All Categories</option>
+<option value="Sales">Sales</option>
+<option value="Purchase">Purchase</option>
+<option value="Salary">Salary</option>
+<option value="Rent">Rent</option>
+<option value="Maintenance">Maintenance</option>
+<option value="Marketing">Marketing</option>
+<option value="Other">Other</option>
+
+  
+
+</select>
+
+  <input
+type="date"
+id="filterDate"
+onchange="filterTransactions()">
+  
+</div>
+
+
+<!-- Stats -->
+
+<div class="transaction-stats">
+
+
+<div class="stat-card">
+
+<h3 id="transactionTotalIncome">
+$0
+</h3>
+
+<p>
+Total Income
+</p>
+
+</div>
+
+  
+
+
+
+<div class="stat-card">
+
+<h3 id="transactionTotalExpense">
+$0
+</h3>
+
+<p>
+Total Expense
+</p>
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+<h3 id="transactionCurrentBalance">
+$0
+</h3>
+
+<p>
+Current Balance
+</p>
+
+</div>
+
+
+
+</div>
+
+
+<div class="transaction-report">
+
+    <div class="report-card">
+        <h3 id="transactionMonthlyIncome">$0</h3>
+        <p>This Month Income</p>
+    </div>
+
+    <div class="report-card">
+        <h3 id="transactionMonthlyExpense">$0</h3>
+        <p>This Month Expense</p>
+    </div>
+
+    <div class="report-card">
+        <h3 id="financeRecordCount">0</h3>
+        <p>Transactions in selected currency</p>
+    </div>
+
+</div>
+
+  <!-- ==========================================
+     SYNVORA AI - FINANCE OVERVIEW
+========================================== -->
+
+<section class="finance-overview">
+
+    <div class="finance-overview-header">
+
+        <div>
+
+            <span class="finance-eyebrow">
+                FINANCIAL INSIGHTS
+            </span>
+
+            <h2>
+                Finance Overview <span id="financeOverviewPeriodLabel">This Month</span>
+            </h2>
+
+            <p>
+                Review saved records by period and currency. No exchange-rate conversion is applied.
+            </p>
+
+        </div>
+
+        <div class="finance-overview-controls">
+            <label for="financeOverviewPeriod">
+                Period
+                <select id="financeOverviewPeriod">
+                    <option value="month">This Month</option>
+                    <option value="quarter">This Quarter</option>
+                    <option value="year">This Year</option>
+                </select>
+            </label>
+
+            <label for="financeOverviewCurrency">
+                Currency
+                <select id="financeOverviewCurrency">
+                    <option value="USD">USD</option>
+                    <option value="PKR">PKR</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AED">AED</option>
+                    <option value="SAR">SAR</option>
+                </select>
+            </label>
+        </div>
+
+    </div>
+
+
+    <!-- FINANCE SUMMARY -->
+
+    <div class="finance-summary-grid">
+
+        <div class="finance-summary-card">
+
+            <div class="finance-summary-icon">
+                💰
+            </div>
+
+            <div>
+
+                <small>
+                    Total Revenue
+                </small>
+
+                <strong id="financeTotalRevenue">
+                    $0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="finance-summary-card">
+
+            <div class="finance-summary-icon">
+                📉
+            </div>
+
+            <div>
+
+                <small>
+                    Total Expenses
+                </small>
+
+                <strong id="financeTotalExpenses">
+                    $0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="finance-summary-card">
+
+            <div class="finance-summary-icon">
+                📊
+            </div>
+
+            <div>
+
+                <small>
+                    Net Profit
+                </small>
+
+                <strong id="financeNetProfit">
+                    $0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="finance-summary-card">
+
+            <div class="finance-summary-icon">
+                📈
+            </div>
+
+            <div>
+
+                <small>
+                    Profit Margin
+                </small>
+
+                <strong id="financeProfitMargin">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHART AREA -->
+
+    <div class="finance-chart-card">
+
+        <div class="finance-chart-header">
+
+            <div>
+
+                <span>
+                    PERFORMANCE
+                </span>
+
+                <h3>
+                    Income vs Expense
+                </h3>
+
+            </div>
+
+            <span class="finance-chart-status">
+                ● Live Data
+            </span>
+
+        </div>
+
+
+        <div class="finance-chart-area">
+
+            <canvas id="financeOverviewChart"></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM FINANCE CARDS -->
+
+    <div class="finance-bottom-grid">
+
+        <div class="finance-breakdown-card">
+
+            <div class="finance-card-header">
+
+                <div>
+
+                    <span>
+                        INCOME
+                    </span>
+
+                    <h3>
+                        Income Breakdown
+                    </h3>
+
+                </div>
+
+                <span>
+                    💵
+                </span>
+
+            </div>
+
+
+            <div class="finance-breakdown-item">
+
+                <div>
+
+                    <span>
+                        Sales
+                    </span>
+
+                    <small>
+                        Revenue from sales
+                    </small>
+
+                </div>
+
+                <strong id="financeSalesIncome">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="finance-breakdown-item">
+
+                <div>
+
+                    <span>
+                        Services
+                    </span>
+
+                    <small>
+                        Service revenue
+                    </small>
+
+                </div>
+
+                <strong id="financeServicesIncome">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="finance-breakdown-item">
+
+                <div>
+
+                    <span>
+                        Other Income
+                    </span>
+
+                    <small>
+                        Other business income
+                    </small>
+
+                </div>
+
+                <strong id="financeOtherIncome">
+                    $0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="finance-breakdown-card">
+
+            <div class="finance-card-header">
+
+                <div>
+
+                    <span>
+                        EXPENSES
+                    </span>
+
+                    <h3>
+                        Expense Breakdown
+                    </h3>
+
+                </div>
+
+                <span>
+                    💸
+                </span>
+
+            </div>
+
+
+            <div class="finance-breakdown-item">
+
+                <div>
+
+                    <span>
+                        Operations
+                    </span>
+
+                    <small>
+                        Business operations
+                    </small>
+
+                </div>
+
+                <strong id="financeOperationsExpense">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="finance-breakdown-item">
+
+                <div>
+
+                    <span>
+                        Salaries
+                    </span>
+
+                    <small>
+                        Employee expenses
+                    </small>
+
+                </div>
+
+                <strong id="financeSalaryExpense">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="finance-breakdown-item">
+
+                <div>
+
+                    <span>
+                        Other Expenses
+                    </span>
+
+                    <small>
+                        Miscellaneous expenses
+                    </small>
+
+                </div>
+
+                <strong id="financeOtherExpense">
+                    $0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Transaction Table -->
+
+
+<div class="transaction-table">
+
+
+<h2>
+Recent Transactions
+</h2>
+
+
+<table>
+
+
+<thead>
+
+<tr>
+    
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Type</th>
+    <th>Category</th>
+    <th>Payment</th>
+    <th>Status</th>
+    <th>Date and time</th>
+    <th>Action</th>
+    
+</tr>
+
+</thead>
+
+
+
+<tbody id="transactionList">
+
+
+</tbody>
+
+
+</table>
+<p class="finance-empty-state" id="financeLedgerEmpty">No saved income or expense records yet. Add your first transaction to see it here.</p>
+
+
+
+</div>
+
+
+
+</section>
+
+<!-- View Transaction Modal -->
+
+<div id="viewTransactionModal" class="transaction-modal">
+    
+    <div class="transaction-modal-box">
+        
+        <h2>
+            Transaction Details
+        </h2>
+        
+        <div id="transactionDetails">
+            
+        </div>
+        
+        <button onclick="closeTransactionModal()">
+            Close
+        </button>
+        
+    </div>
+    
+</div>

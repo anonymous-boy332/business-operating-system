@@ -1,0 +1,602 @@
+<!-- ==========================================
+     SYNVORA AI - COMPANY MANAGEMENT
+========================================== -->
+
+<section class="company-management">
+
+    <div class="active-company-workspace">
+
+        <div class="active-company-info">
+
+            <span class="active-company-icon">🏢</span>
+
+            <div>
+                <span class="active-company-label">ACTIVE WORKSPACE</span>
+
+                <strong id="activeCompanyName">
+                    No Company Selected
+                </strong>
+
+                <small id="activeCompanyType">
+                    Select a company to open its workspace
+                </small>
+            </div>
+
+        </div>
+
+        <span class="active-company-status" id="activeCompanyStatus">
+            ⚪ No Workspace
+        </span>
+
+    </div>
+
+
+    <div class="company-header">
+
+        <div>
+            <span class="company-eyebrow">BUSINESS CONTROL</span>
+
+            <h2>🏢 Company Management</h2>
+
+            <p>
+                Create, organize and manage every business workspace from one place.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            class="primary-btn"
+            onclick="openCompanyModal()">
+
+            ➕ Create Company
+
+        </button>
+
+    </div>
+
+
+    <div class="company-stats-grid">
+
+        <div class="company-stat-card">
+            <span>🏢</span>
+            <strong id="totalCompanies">0</strong>
+            <small>Total Companies</small>
+        </div>
+
+        <div class="company-stat-card">
+            <span>🟢</span>
+            <strong id="activeCompanies">0</strong>
+            <small>Active Companies</small>
+        </div>
+
+        <div class="company-stat-card">
+            <span>👥</span>
+            <strong id="companyEmployees">0</strong>
+            <small>Total Employees</small>
+        </div>
+
+        <div class="company-stat-card">
+            <span>📊</span>
+            <strong id="companyRevenue">$0</strong>
+            <small>Total Revenue</small>
+        </div>
+
+    </div>
+
+
+    <div class="company-toolbar">
+
+        <input
+            type="text"
+            id="companySearch"
+            placeholder="🔍 Search company, owner or industry...">
+
+        <button
+            type="button"
+            class="search-btn"
+            onclick="loadCompanies()">
+
+            🔍 Search
+
+        </button>
+
+        <select id="companyStatusFilter">
+            <option value="all">All Status</option>
+            <option value="Active">🟢 Active</option>
+            <option value="Inactive">🔴 Inactive</option>
+        </select>
+
+    </div>
+
+
+    <div class="company-table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Industry</th>
+                    <th>Owner</th>
+                    <th>Employees</th>
+                    <th>Revenue</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="companyList"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- CREATE / EDIT COMPANY MODAL -->
+
+<div
+    id="companyModal"
+    class="company-modal">
+
+    <div class="company-modal-box">
+
+        <div class="company-modal-header">
+
+            <div>
+                <span class="company-eyebrow">COMPANY SETUP</span>
+
+                <h2 id="companyModalTitle">
+                    ➕ Create Company
+                </h2>
+            </div>
+
+            <button
+                type="button"
+                class="company-close-btn"
+                onclick="closeCompanyModal()">
+
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="company-setup-progress">
+            <span class="active">01 Basic Details</span>
+            <span>02 Contact</span>
+            <span>03 Business Setup</span>
+        </div>
+
+
+        <div class="company-form-grid">
+
+            <div class="company-form-section company-full-width">
+
+                <div class="company-section-heading">
+                    <span>🏢</span>
+
+                    <div>
+                        <strong>Basic Company Details</strong>
+                        <small>Set the company identity and business category.</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+                <label>Company Name *</label>
+
+                <input
+                    type="text"
+                    id="companyName"
+                    placeholder="e.g. Synvora AI">
+            </div>
+
+
+            <div>
+                <label>Company Code</label>
+
+                <input
+                    type="text"
+                    id="companyCode"
+                    maxlength="12"
+                    placeholder="e.g. SYN-AI">
+            </div>
+
+
+            <div>
+                <label>Company Type *</label>
+
+                <select id="companyType">
+                    <option value="">Select Company Type</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Retail">Retail</option>
+                    <option value="E-Commerce">E-Commerce</option>
+                    <option value="Services">Services</option>
+                    <option value="Consulting">Consulting</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+
+            <div>
+                <label>Industry</label>
+
+                <select id="companyIndustry">
+                    <option value="">Select Industry</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Software & SaaS">Software & SaaS</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="E-Commerce">E-Commerce</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Education">Education</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Food & Restaurant">Food & Restaurant</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+
+            <div class="company-form-section company-full-width">
+
+                <div class="company-section-heading">
+                    <span>📞</span>
+
+                    <div>
+                        <strong>Contact Information</strong>
+                        <small>Add the company owner and official contact details.</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+                <label>Owner Name *</label>
+
+                <input
+                    type="text"
+                    id="companyOwner"
+                    placeholder="Owner name">
+            </div>
+
+
+            <div>
+                <label>Business Email</label>
+
+                <input
+                    type="email"
+                    id="companyEmail"
+                    placeholder="business@example.com">
+            </div>
+
+
+            <div>
+                <label>Phone Number</label>
+
+                <input
+                    type="text"
+                    id="companyPhone"
+                    placeholder="+92 300 0000000">
+            </div>
+
+
+            <div>
+                <label>Website</label>
+
+                <input
+                    type="url"
+                    id="companyWebsite"
+                    placeholder="https://yourcompany.com">
+            </div>
+
+
+            <div class="company-form-section company-full-width">
+
+                <div class="company-section-heading">
+                    <span>⚙️</span>
+
+                    <div>
+                        <strong>Business Setup</strong>
+                        <small>Configure finance, registration and workspace settings.</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+                <label>Country</label>
+
+                <input
+                    type="text"
+                    id="companyCountry"
+                    placeholder="Pakistan">
+            </div>
+
+
+            <div>
+                <label>Currency</label>
+
+                <select id="companyCurrency">
+                    <option value="PKR">PKR - Pakistani Rupee</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="AED">AED - UAE Dirham</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+            </div>
+
+
+            <div>
+                <label>Tax / NTN / Registration No.</label>
+
+                <input
+                    type="text"
+                    id="companyTaxId"
+                    placeholder="e.g. NTN-1234567">
+            </div>
+
+
+            <div>
+                <label>Financial Year Starts</label>
+
+                <select id="companyFiscalYear">
+                    <option value="January">January</option>
+                    <option value="April">April</option>
+                    <option value="July">July</option>
+                    <option value="October">October</option>
+                </select>
+            </div>
+
+
+            <div>
+                <label>Company Status</label>
+
+                <select id="companyStatus">
+                    <option value="Active">🟢 Active</option>
+                    <option value="Inactive">🔴 Inactive</option>
+                </select>
+            </div>
+
+
+            <div class="company-checkbox-card">
+
+                <input
+                    type="checkbox"
+                    id="companySetActive">
+
+                <label for="companySetActive">
+                    <strong>Set as active workspace</strong>
+                    <small>Open this company as your current Business OS workspace.</small>
+                </label>
+
+            </div>
+
+
+            <div class="company-full-width">
+                <label>Business Address</label>
+
+                <textarea
+                    id="companyAddress"
+                    placeholder="Enter complete business address..."></textarea>
+            </div>
+
+
+            <div class="company-full-width">
+                <label>Company Description</label>
+
+                <textarea
+                    id="companyDescription"
+                    placeholder="Write a short description about this company..."></textarea>
+            </div>
+
+        </div>
+
+
+        <div class="company-modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="closeCompanyModal()">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="saveCompanyBtn"
+                onclick="saveCompany()">
+
+                💾 Save Company
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- COMPANY PROFILE MODAL -->
+
+<div
+    id="companyViewModal"
+    class="company-modal">
+
+    <div class="company-modal-box">
+
+        <div class="company-modal-header">
+
+            <div>
+                <span class="company-eyebrow">COMPANY PROFILE</span>
+
+                <h2 id="viewCompanyName">
+                    🏢 Company Name
+                </h2>
+            </div>
+
+            <button
+                type="button"
+                class="company-close-btn"
+                onclick="closeCompanyViewModal()">
+
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="company-view-grid">
+
+            <div class="company-view-card">
+                <span>🏷️</span>
+                <div>
+                    <small>Company Code</small>
+                    <strong id="viewCompanyCode">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>🏭</span>
+                <div>
+                    <small>Industry</small>
+                    <strong id="viewCompanyIndustry">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>📁</span>
+                <div>
+                    <small>Company Type</small>
+                    <strong id="viewCompanyType">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>👑</span>
+                <div>
+                    <small>Owner</small>
+                    <strong id="viewCompanyOwner">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>📧</span>
+                <div>
+                    <small>Business Email</small>
+                    <strong id="viewCompanyEmail">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>📞</span>
+                <div>
+                    <small>Phone</small>
+                    <strong id="viewCompanyPhone">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>🌍</span>
+                <div>
+                    <small>Country</small>
+                    <strong id="viewCompanyCountry">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>💱</span>
+                <div>
+                    <small>Currency</small>
+                    <strong id="viewCompanyCurrency">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>🧾</span>
+                <div>
+                    <small>Tax / Registration</small>
+                    <strong id="viewCompanyTaxId">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>📅</span>
+                <div>
+                    <small>Financial Year</small>
+                    <strong id="viewCompanyFiscalYear">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>👥</span>
+                <div>
+                    <small>Employees</small>
+                    <strong id="viewCompanyEmployees">0</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>💰</span>
+                <div>
+                    <small>Revenue</small>
+                    <strong id="viewCompanyRevenue">$0</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>🟢</span>
+                <div>
+                    <small>Status</small>
+                    <strong id="viewCompanyStatus">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-card">
+                <span>🌐</span>
+                <div>
+                    <small>Website</small>
+                    <strong id="viewCompanyWebsite">-</strong>
+                </div>
+            </div>
+
+            <div class="company-view-full">
+                <small>📍 Business Address</small>
+                <p id="viewCompanyAddress">-</p>
+            </div>
+
+            <div class="company-view-full">
+                <small>📝 Company Description</small>
+                <p id="viewCompanyDescription">-</p>
+            </div>
+
+        </div>
+
+
+        <div class="company-modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="closeCompanyViewModal()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

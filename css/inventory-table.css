@@ -1,0 +1,88 @@
+/* ==========================
+   INVENTORY TABLE
+========================== */
+
+.inventory-table{
+    margin-top:40px;
+}
+
+.inventory-table h2{
+    color:#fff;
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.inventory-table table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    backdrop-filter:blur(15px);
+}
+
+.inventory-table th{
+    background:rgba(0,174,239,.15);
+    color:#fff;
+    padding:18px;
+    text-align:left;
+}
+
+.inventory-table td{
+    padding:18px;
+    color:#dbeafe;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.inventory-table tr:hover{
+    background:rgba(255,255,255,.04);
+}
+
+.inventory-table button{
+    background:#00AEEF;
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.inventory-table button:hover{
+    background:#0095d1;
+    transform:translateY(-2px);
+}
+
+
+/* Stock Status */
+
+.in-stock{
+    color:#22c55e;
+    font-weight:700;
+}
+
+.low-stock{
+    color:#facc15;
+    font-weight:700;
+}
+
+.out-stock{
+    color:#ef4444;
+    font-weight:700;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.inventory-table{
+    overflow-x:auto;
+}
+
+.inventory-table table{
+    min-width:850px;
+}
+
+}

@@ -1,0 +1,497 @@
+<!-- ==========================================
+     SYNVORA AI - OWNER DASHBOARD
+========================================== -->
+
+<section class="owner-dashboard">
+
+    <!-- OWNER HEADER -->
+
+    <div class="owner-dashboard-header">
+
+        <div>
+
+            <span class="owner-eyebrow">
+                BUSINESS CONTROL CENTER
+            </span>
+
+            <h2>
+                👑 Owner Dashboard
+            </h2>
+
+            <p>
+                Review live data from your team, finances, customers, sales and inventory in one command center.
+            </p>
+
+        </div>
+
+        <div class="owner-header-controls">
+            <label class="owner-currency-control" for="ownerCurrencySelect">
+                <span>Workspace currency</span>
+                <select id="ownerCurrencySelect" aria-label="Owner dashboard currency">
+                    <option value="all">All currencies</option>
+                </select>
+            </label>
+
+            <div class="owner-header-status">
+                <span class="owner-status-dot"></span>
+                <span id="ownerDashboardDataStatus">Connecting saved business data…</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- OWNER STATS -->
+
+    <div class="owner-stats-grid">
+
+        <div class="owner-stat-card">
+
+            <span class="owner-stat-icon">
+                💰
+            </span>
+
+            <div>
+
+                <strong id="ownerTotalRevenue">
+                    —
+                </strong>
+
+                <span>Recorded Income</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="owner-stat-card">
+
+            <span class="owner-stat-icon">
+                📈
+            </span>
+
+            <div>
+
+                <strong id="ownerNetCashflow">
+                    —
+                </strong>
+
+                <span>Net Cash Flow</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="owner-stat-card">
+
+            <span class="owner-stat-icon">
+                👥
+            </span>
+
+            <div>
+
+                <strong id="ownerTotalEmployees">
+                    —
+                </strong>
+
+                <span>
+                    Team Members
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="owner-stat-card">
+
+            <span class="owner-stat-icon">
+                🛒
+            </span>
+
+            <div>
+
+                <strong id="ownerTotalOrders">
+                    —
+                </strong>
+
+                <span>
+                    Sales Orders
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- OWNER OVERVIEW -->
+
+    <div class="owner-overview-grid">
+
+
+        <!-- BUSINESS PERFORMANCE -->
+
+        <div class="owner-panel">
+
+            <div class="owner-panel-header">
+
+                <div>
+
+                    <h3>
+                        📊 Business Performance
+                    </h3>
+
+                    <p>
+                        Overall business performance overview
+                    </p>
+
+                </div>
+
+                <span>
+                    📊
+                </span>
+
+            </div>
+
+
+            <div class="owner-performance-list">
+
+                <div class="owner-performance-item">
+
+                    <div>
+
+                        <span>Recorded income</span>
+
+                        <strong id="ownerRevenuePerformance">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <small id="ownerRevenueDetail">Received finance records · grouped by currency</small>
+
+                </div>
+
+
+                <div class="owner-performance-item">
+
+                    <div>
+
+                        <span>Completed sales orders</span>
+
+                        <strong id="ownerSalesPerformance">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <small id="ownerSalesDetail">Saved CRM orders</small>
+
+                </div>
+
+
+                <div class="owner-performance-item">
+
+                    <div>
+
+                        <span>Customer directory</span>
+
+                        <strong id="ownerCustomerPerformance">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <small id="ownerCustomerDetail">Saved CRM customer records</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSINESS HEALTH -->
+
+        <div class="owner-panel">
+
+            <div class="owner-panel-header">
+
+                <div>
+
+                    <h3>
+                        Connected Operations
+                    </h3>
+
+                    <p>
+                        Live counts from saved team, stock and business intelligence records
+                    </p>
+
+                </div>
+
+                <span>
+                    ❤️
+                </span>
+
+            </div>
+
+
+            <div class="owner-health">
+
+                <div class="owner-health-items">
+
+                    <div>
+
+                        <span>
+                            Inventory products
+                        </span>
+
+                        <strong id="ownerInventoryHealth">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Products at/below reorder level
+                        </span>
+
+                        <strong id="ownerLowStockHealth">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Active team / open tasks
+                        </span>
+
+                        <strong id="ownerWorkforceHealth">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="owner-panel owner-connected-modules" aria-labelledby="ownerModulesTitle">
+
+        <div class="owner-panel-header">
+            <div>
+                <h3 id="ownerModulesTitle">🔗 Connected business modules</h3>
+                <p>Live summaries from saved records. Select a module to open its management workspace.</p>
+            </div>
+            <span aria-hidden="true">⌘</span>
+        </div>
+
+        <div class="owner-module-grid">
+            <article class="owner-module-card">
+                <div class="owner-module-card-heading"><span aria-hidden="true">👥</span><div><h4>Team Management</h4><small>Workforce &amp; assignments</small></div></div>
+                <strong id="ownerModuleTeamCount">—</strong>
+                <p id="ownerModuleTeamDetail">Saved team members and open tasks</p>
+                <button type="button" class="owner-module-link" data-owner-action="employees">Open Team Management <span aria-hidden="true">→</span></button>
+            </article>
+            <article class="owner-module-card">
+                <div class="owner-module-card-heading"><span aria-hidden="true">💰</span><div><h4>Finance Management</h4><small>Saved cash activity</small></div></div>
+                <strong id="ownerModuleFinanceCount">—</strong>
+                <p id="ownerModuleFinanceDetail">Income and paid expenses by currency</p>
+                <button type="button" class="owner-module-link" data-owner-action="finance">Open Finance Management <span aria-hidden="true">→</span></button>
+            </article>
+            <article class="owner-module-card">
+                <div class="owner-module-card-heading"><span aria-hidden="true">🤝</span><div><h4>CRM &amp; Sales</h4><small>Customers &amp; orders</small></div></div>
+                <strong id="ownerModuleCRMCount">—</strong>
+                <p id="ownerModuleCRMDetail">Saved customers and sales orders</p>
+                <button type="button" class="owner-module-link" data-owner-action="crm">Open CRM &amp; Sales <span aria-hidden="true">→</span></button>
+            </article>
+            <article class="owner-module-card">
+                <div class="owner-module-card-heading"><span aria-hidden="true">📦</span><div><h4>Inventory Management</h4><small>Products &amp; stock levels</small></div></div>
+                <strong id="ownerModuleInventoryCount">—</strong>
+                <p id="ownerModuleInventoryDetail">Products and reorder alerts</p>
+                <button type="button" class="owner-module-link" data-owner-action="inventory">Open Inventory Management <span aria-hidden="true">→</span></button>
+            </article>
+            <article class="owner-module-card">
+                <div class="owner-module-card-heading"><span aria-hidden="true">📊</span><div><h4>Business Intelligence</h4><small>Reports &amp; attention items</small></div></div>
+                <strong id="ownerModuleBIAlerts">—</strong>
+                <p id="ownerModuleBIDetail">Saved-record alerts and local workflows</p>
+                <button type="button" class="owner-module-link" data-owner-action="business-intelligence">Open Business Intelligence <span aria-hidden="true">→</span></button>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- OWNER QUICK ACTIONS -->
+
+    <div class="owner-panel owner-quick-actions">
+
+        <div class="owner-panel-header">
+
+            <div>
+
+                <h3>
+                    ⚡ Owner Quick Actions
+                </h3>
+
+                <p>
+                    Access important business controls
+                </p>
+
+            </div>
+
+            <span>
+                ⚡
+            </span>
+
+        </div>
+
+
+        <div class="owner-actions-grid">
+
+            <button
+                class="owner-action-btn"
+                onclick="openBusinessDashboard()">
+
+                📊
+                <span>
+                    Business Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                class="owner-action-btn"
+                onclick="openFinanceDashboard()">
+
+                💰
+                <span>
+                    Finance
+                </span>
+
+            </button>
+
+
+            <button
+                class="owner-action-btn"
+                onclick="openEmployeeManagement()">
+
+                👥
+                <span>
+                    Employees
+                </span>
+
+            </button>
+
+
+            <button
+                class="owner-action-btn"
+                onclick="openReportsDashboard()">
+
+                📑
+                <span>
+                    Reports
+                </span>
+
+            </button>
+
+
+            <button
+                class="owner-action-btn"
+                onclick="openCompanyManagement()">
+
+                🏢
+                <span>
+                    Company
+                </span>
+
+            </button>
+
+
+            <button
+                class="owner-action-btn"
+                onclick="openAIAdvisor()">
+
+                ✨
+                <span>
+                    AI Advisor
+                </span>
+
+            </button>
+
+            <button
+    type="button"
+    class="owner-action-btn"
+    onclick="openOwnerSettings()">
+
+    ⚙️
+    <span>
+        Settings
+    </span>
+
+</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECENT BUSINESS ACTIVITY -->
+
+    <div class="owner-panel">
+
+        <div class="owner-panel-header">
+
+            <div>
+
+                <h3>
+                    🕒 Recent Business Activity
+                </h3>
+
+                <p>
+                    Latest activity across your business
+                </p>
+
+            </div>
+
+            <span>
+                🕒
+            </span>
+
+        </div>
+
+
+        <div
+            class="owner-activity-list"
+            id="ownerActivityList">
+
+            <div class="owner-empty-state">
+
+                <span>
+                    📭
+                </span>
+
+                <p>
+                    No recent business activity
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

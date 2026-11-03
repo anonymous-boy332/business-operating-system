@@ -1,0 +1,26 @@
+.business-toolbar{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:25px 0;
+
+}
+
+.business-toolbar button{
+
+    background:#00AEEF;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+.business-toolbar button:hover{
+
+    background:#008ecc;
+
+}

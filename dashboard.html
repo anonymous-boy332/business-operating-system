@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Synvora AI Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/sidebar-toggle.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/analytics.css">
+<link rel="stylesheet" href="css/pricing.css">
+<link rel="stylesheet" href="css/enterprise.css">
+
+
+<!-- BUSINESS OS -->
+<link rel="stylesheet" href="css/business-stats.css">
+<link rel="stylesheet" href="css/business-activity.css">
+
+  <link rel="stylesheet" href="css/business-toolbar.css">
+
+<!-- INVENTORY -->
+<link rel="stylesheet" href="css/inventory-table.css">
+
+<!-- EMPLOYEE -->
+<link rel="stylesheet" href="css/employee-tasks.css">
+<link rel="stylesheet" href="css/employee-table.css">
+
+<!-- SYSTEM -->
+<link rel="stylesheet" href="css/notification-center.css">
+<link rel="stylesheet" href="css/calendar-dashboard.css">
+
+<!-- AUTOMATION & AI -->
+<link rel="stylesheet" href="css/automation-dashboard.css">
+<link rel="stylesheet" href="css/reports-dashboard.css">
+<link rel="stylesheet" href="css/ai-advisor.css">
+
+
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+    <!-- Sidebar -->
+
+<aside class="ai-sidebar" id="appSidebar">
+
+    <div id="sidebar-container"></div>
+
+</aside>
+
+<button
+    class="menu-toggle"
+    type="button"
+    onclick="toggleSidebar()"
+    aria-label="Toggle navigation"
+    aria-controls="appSidebar"
+    aria-expanded="false"
+>
+☰
+</button>
+
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+
+
+    <!-- Main Area -->
+
+
+    <main class="main-dashboard">
+
+
+        <header class="dashboard-header">
+
+    <div class="header-left">
+
+        <div>
+            <h1 id="welcomeUser">Welcome 👋</h1>
+        </div>
+
+    </div>
+
+</header>
+
+
+
+        <section class="welcome-card">
+
+    <div class="welcome-left">
+
+        <h2>
+            Welcome to Synvora AI 🚀
+        </h2>
+
+        <p>
+            Your complete AI Business Workspace for entrepreneurs,
+            startups and companies. Create content, generate AI images,
+            automate workflows and grow your business from one dashboard.
+        </p>
+
+        <div class="dashboard-buttons">
+
+            <div class="dashboard-buttons">
+    <a href="business-os.html">
+        <button class="primary">
+            Open Business OS
+        </button>
+    </a>
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="welcome-right">
+
+    </div>
+
+</section>
+
+      <div id="stats-cards-container"></div>
+      
+        <!-- QUICK ACTIONS START -->
+
+<div id="quick-actions-container"></div>
+
+<!-- QUICK ACTIONS END -->
+
+      <div id="analytics-overview-container"></div>
+
+      
+<!-- ACTIVITY FEED START -->
+
+<div id="activity-feed-container"></div>
+      
+<!-- ACTIVITY FEED END -->
+
+
+
+    </main>
+
+
+
+</div>
+
+<script type="module" src="supabase.js"></script>
+  <script src="script.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/sidebar-toggle.js"></script>
+  <script src="js/dashboard.js"></script>
+<script src="js/inventory.js"></script>
+  <script src="js/inventory-manager.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    <script src="./js/pwa.js"></script>
+</body>
+
+</html>

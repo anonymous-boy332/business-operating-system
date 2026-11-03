@@ -1,0 +1,97 @@
+/* ==========================
+   BUSINESS ACTIVITY
+========================== */
+
+.recent-business-activity{
+
+    margin-top:40px;
+
+}
+
+
+.recent-business-activity h2{
+
+    color:#fff;
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.business-activity-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 25px;
+
+    margin-bottom:15px;
+
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.03)
+    );
+
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:20px;
+
+    color:#fff;
+
+    font-size:16px;
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s ease;
+
+}
+
+
+
+.business-activity-card:hover{
+
+    transform:translateX(8px);
+
+    border-color:#00AEEF;
+
+    box-shadow:
+    0 0 30px rgba(0,174,239,.25);
+
+}
+
+
+
+.business-activity-card span{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.business-activity-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+}

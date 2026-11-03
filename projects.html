@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Projects | Synvora AI</title>
+
+    <!-- Existing shared styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/sidebar-toggle.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/business-os.css">
+
+    <!-- Projects-only styles -->
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+
+<body>
+<div class="dashboard projects-page">
+
+    <!-- Shared sidebar -->
+    <aside class="ai-sidebar" id="appSidebar">
+        <div id="sidebar-container"></div>
+    </aside>
+
+    <button
+        class="menu-toggle"
+        type="button"
+        onclick="toggleSidebar()"
+        aria-label="Toggle navigation"
+        aria-controls="appSidebar"
+        aria-expanded="false"
+    >☰</button>
+
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <main class="main-dashboard projects-main">
+
+        <!-- PAGE HEADER -->
+        <header class="projects-header">
+            <div>
+                <span class="projects-eyebrow">SYNVORA BUSINESS PLATFORM</span>
+                <h1>My Projects</h1>
+                <p>Manage your business operations and track projects in one place.</p>
+            </div>
+
+            <button class="projects-primary-btn" id="openProjectModal" type="button">
+                <span>＋</span> New Project
+            </button>
+        </header>
+
+        <!-- OVERVIEW STATISTICS -->
+        <section class="projects-stats" aria-label="Project statistics">
+
+            <article class="projects-stat-card">
+                <div class="projects-stat-icon">📁</div>
+                <div>
+                    <span>Total Projects</span>
+                    <strong id="totalProjects">0</strong>
+                    <small>Saved projects</small>
+                </div>
+            </article>
+
+            <article class="projects-stat-card">
+                <div class="projects-stat-icon">⏳</div>
+                <div>
+                    <span>Active</span>
+                    <strong id="activeProjects">0</strong>
+                    <small>Not completed yet</small>
+                </div>
+            </article>
+
+            <article class="projects-stat-card">
+                <div class="projects-stat-icon">✓</div>
+                <div>
+                    <span>Completed</span>
+                    <strong id="completedProjects">0</strong>
+                    <small>Finished projects</small>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- PROJECT LIBRARY - EXISTING SECTION PRESERVED -->
+        <section class="projects-section">
+
+            <div class="projects-section-heading">
+                <div>
+                    <h2>Project Library</h2>
+                    <p>Search and filter your saved projects.</p>
+                </div>
+            </div>
+
+            <div class="projects-toolbar">
+
+                <div class="projects-filters">
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="Search projects..."
+                        aria-label="Search projects"
+                    >
+
+                    <select id="projectStatusFilter" aria-label="Filter by status">
+                        <option value="all">All statuses</option>
+                        <option value="planned">Planned</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="on-hold">On Hold</option>
+                        <option value="completed">Completed</option>
+                    </select>
+
+                    <select id="projectSort" aria-label="Sort projects">
+                        <option value="updated">Recently updated</option>
+                        <option value="name">Name: A–Z</option>
+                        <option value="deadline">Deadline</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="projects-results-line">
+                <span id="projectResultCount">0 projects</span>
+
+                <span class="projects-local-label">
+                    <span></span> Saved on this device
+                </span>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid"></div>
+
+            <div class="projects-empty-state" id="projectsEmptyState" hidden>
+                <div class="projects-empty-icon">📂</div>
+
+                <h3 id="emptyStateTitle">No projects yet</h3>
+
+                <p id="emptyStateText">
+                    Create a project to start organizing your work.
+                </p>
+
+                <button
+                    class="projects-primary-btn"
+                    id="emptyCreateProject"
+                    type="button"
+                >
+                    ＋ Create Project
+                </button>
+            </div>
+
+        </section>
+
+        <!-- PROJECT MANAGEMENT FORM -->
+        <section
+            class="projects-management-section"
+            id="projectManagement"
+            aria-labelledby="projectModalTitle"
+        >
+
+            <div class="projects-modal" id="projectModal" aria-hidden="true">
+                <button
+                    class="projects-modal-backdrop"
+                    type="button"
+                    data-close-modal
+                    aria-label="Close project form"
+                    tabindex="-1"
+                ></button>
+
+                <div
+                    class="projects-modal-panel"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="projectModalTitle"
+                >
+
+                    <div class="projects-modal-header">
+                        <div>
+                            <span class="projects-eyebrow">SYNVORA BUSINESS PLATFORM</span>
+                            <h2 id="projectModalTitle">Project Management</h2>
+                            <p>
+                                Create projects, assign resources, set priorities
+                                and track progress from one place.
+                            </p>
+                        </div>
+                        <button
+                            class="projects-close-btn"
+                            type="button"
+                            data-close-modal
+                            aria-label="Close project form"
+                        >×</button>
+                    </div>
+
+                    <form id="projectForm">
+
+                        <input type="hidden" id="projectId">
+
+                        <div class="projects-form-grid">
+
+                            <!-- PROJECT NAME -->
+                            <div class="projects-form-field projects-field-full">
+                                <label for="projectName">Project Name *</label>
+
+                                <input
+                                    id="projectName"
+                                    name="projectName"
+                                    type="text"
+                                    maxlength="100"
+                                    placeholder="e.g. Website Redesign"
+                                    required
+                                >
+                            </div>
+
+                            <!-- STATUS -->
+                            <div class="projects-form-field">
+                                <label for="projectStatus">Project Status</label>
+
+                                <select id="projectStatus" name="projectStatus">
+                                    <option value="planned">Planned</option>
+                                    <option value="in-progress">In Progress</option>
+                                    <option value="on-hold">On Hold</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <div class="projects-form-field projects-field-full">
+                                <label for="projectDescription">Description</label>
+
+                                <textarea
+                                    id="projectDescription"
+                                    name="projectDescription"
+                                    rows="3"
+                                    maxlength="1200"
+                                    placeholder="What is this project about?"
+                                ></textarea>
+                            </div>
+
+                            <!-- BUSINESS OS FIELDS -->
+                            <div
+                                class="projects-category-fields projects-field-full"
+                                id="businessFields"
+                            >
+
+                                <div class="projects-fields-heading">
+                                    <span>🏢</span>
+
+                                    <div>
+                                        <h3>Business Details</h3>
+                                        <p>Company, team, tasks and budget information.</p>
+                                    </div>
+                                </div>
+
+                                <div class="projects-form-grid">
+
+                                    <div class="projects-form-field">
+                                        <label for="projectCompany">Company Name</label>
+
+                                        <input
+                                            id="projectCompany"
+                                            type="text"
+                                            maxlength="120"
+                                            placeholder="Enter company name"
+                                        >
+                                    </div>
+
+                                    <div class="projects-form-field">
+                                        <label for="projectEmployees">Assigned Employees</label>
+
+                                        <input
+                                            id="projectEmployees"
+                                            type="text"
+                                            maxlength="250"
+                                            placeholder="Names, separated by commas"
+                                        >
+                                    </div>
+
+                                    <div class="projects-form-field">
+                                        <label for="projectBudget">Budget (USD)</label>
+
+                                        <input
+                                            id="projectBudget"
+                                            type="number"
+                                            min="0"
+                                            step="0.01"
+                                            placeholder="0.00"
+                                        >
+                                    </div>
+
+                                    <div class="projects-form-field">
+                                        <label for="projectDeadline">Deadline</label>
+
+                                        <input
+                                            id="projectDeadline"
+                                            type="date"
+                                        >
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- PROGRESS -->
+                            <div class="projects-form-field">
+                                <label for="projectProgress">Progress (%)</label>
+
+                                <input
+                                    id="projectProgress"
+                                    type="number"
+                                    min="0"
+                                    max="100"
+                                    step="5"
+                                    value="0"
+                                >
+                            </div>
+
+                            <!-- PRIORITY -->
+                            <div class="projects-form-field">
+                                <label for="projectPriority">Priority</label>
+
+                                <select id="projectPriority">
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+
+                            <!-- TASKS -->
+                            <div class="projects-form-field projects-field-full">
+                                <label for="projectTasks">Tasks / Next Steps</label>
+
+                                <textarea
+                                    id="projectTasks"
+                                    rows="4"
+                                    maxlength="3000"
+                                    placeholder="Write one task per line..."
+                                ></textarea>
+
+                                <small class="projects-field-help">
+                                    Business OS tasks are stored with this project.
+                                    This page does not modify your separate task module.
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <!-- VALIDATION MESSAGE -->
+                        <div
+                            class="projects-form-error"
+                            id="projectFormError"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+                        <!-- ACTIONS -->
+                        <div class="projects-modal-actions">
+
+                            <button
+                                class="projects-secondary-btn"
+                                id="cancelProjectBtn"
+                                type="button"
+                                data-close-modal
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                class="projects-primary-btn"
+                                id="saveProjectBtn"
+                                type="submit"
+                            >
+                                Save Project
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="projects-footer">
+            <span>Synvora AI · Project Management</span>
+            <span>Plan and track your business operations in one place.</span>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Existing shared scripts - preserved -->
+<script src="script.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/sidebar-toggle.js"></script>
+<script src="js/project-activity.js"></script>
+
+<!-- Existing project functionality - preserved -->
+<script src="js/projects.js"></script>
+
+    <script src="./js/pwa.js"></script>
+</body>
+</html>

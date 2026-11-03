@@ -1,0 +1,848 @@
+/* Business OS finance workspace */
+
+.business-os-module-group[data-business-module="finance"] {
+    --finance-panel: rgba(255, 255, 255, .035);
+    --finance-panel-strong: rgba(11, 27, 46, .88);
+    --finance-border: rgba(255, 255, 255, .09);
+    --finance-muted: #94a3b8;
+    --finance-text: #e8f1fb;
+    min-width: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-dashboard,
+.business-os-module-group[data-business-module="finance"] .finance-toolbar,
+.business-os-module-group[data-business-module="finance"] .finance-salaries,
+.business-os-module-group[data-business-module="finance"] .income-section,
+.business-os-module-group[data-business-module="finance"] .expense-section,
+.business-os-module-group[data-business-module="finance"] .finance-overview,
+.business-os-module-group[data-business-module="finance"] .transaction-page,
+.business-os-module-group[data-business-module="finance"] .invoice-section {
+    box-sizing: border-box;
+    margin: 0 0 24px;
+    padding: clamp(18px, 2.5vw, 28px);
+    border: 1px solid var(--finance-border);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .018));
+    box-shadow: 0 16px 38px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .025);
+    color: var(--finance-text);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-dashboard .section-header,
+.business-os-module-group[data-business-module="finance"] .finance-section-heading,
+.business-os-module-group[data-business-module="finance"] .finance-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-dashboard .section-header {
+    margin: 0 0 20px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-dashboard h2,
+.business-os-module-group[data-business-module="finance"] .finance-section-heading h2,
+.business-os-module-group[data-business-module="finance"] .finance-toolbar h2 {
+    margin: 4px 0 0;
+    color: #fff;
+    font-size: clamp(20px, 2.5vw, 27px);
+}
+
+.finance-eyebrow {
+    color: #00aeef;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.finance-dashboard-caption,
+.finance-section-heading p,
+.finance-toolbar p {
+    margin: 7px 0 0;
+    color: var(--finance-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-grid,
+.business-os-module-group[data-business-module="finance"] .income-summary,
+.business-os-module-group[data-business-module="finance"] .expense-summary,
+.invoice-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card,
+.business-os-module-group[data-business-module="finance"] .income-card,
+.business-os-module-group[data-business-module="finance"] .expense-card,
+.finance-detail-card {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid rgba(0, 174, 239, .13);
+    border-radius: 16px;
+    background: linear-gradient(150deg, rgba(12, 31, 51, .78), rgba(7, 17, 30, .65));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card:hover,
+.business-os-module-group[data-business-module="finance"] .income-card:hover,
+.business-os-module-group[data-business-module="finance"] .expense-card:hover,
+.finance-detail-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 174, 239, .38);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+}
+
+.finance-card-label,
+.finance-detail-card > span {
+    display: block;
+    color: var(--finance-muted);
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card > strong,
+.finance-detail-card > strong {
+    display: block;
+    margin: 12px 0 7px;
+    color: #fff;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card:nth-child(1) > strong,
+.business-os-module-group[data-business-module="finance"] .income-card h2 {
+    color: #5de0a0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card:nth-child(2) > strong,
+.business-os-module-group[data-business-module="finance"] .expense-card h2 {
+    color: #ff8291;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card:nth-child(3) > strong {
+    color: #ffd86b;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card:nth-child(4) > strong {
+    color: #62d5ff;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-card > small {
+    color: #8293a8;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.finance-data-note,
+.finance-form-message {
+    min-height: 1.3em;
+    margin: 14px 0 0;
+    color: var(--finance-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-toolbar {
+    align-items: center;
+    margin-top: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .toolbar-right,
+.finance-action-group,
+.business-os-module-group[data-business-module="finance"] .income-header,
+.business-os-module-group[data-business-module="finance"] .expense-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-header,
+.business-os-module-group[data-business-module="finance"] .expense-header {
+    justify-content: flex-end;
+    margin: 22px 0 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-header h2,
+.business-os-module-group[data-business-module="finance"] .expense-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.finance-section-copy {
+    margin-right: auto;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-section-copy p,
+.business-os-module-group[data-business-module="finance"] .finance-section-description {
+    margin: 5px 0 0;
+    color: var(--finance-muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.business-os-module-group[data-business-module="finance"] button {
+    min-height: 40px;
+    padding: 9px 14px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .045);
+    color: #eaf4ff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.business-os-module-group[data-business-module="finance"] button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 174, 239, .45);
+    background: rgba(0, 174, 239, .1);
+}
+
+.business-os-module-group[data-business-module="finance"] button:focus-visible,
+.business-os-module-group[data-business-module="finance"] input:focus-visible,
+.business-os-module-group[data-business-module="finance"] select:focus-visible,
+.business-os-module-group[data-business-module="finance"] textarea:focus-visible {
+    outline: 2px solid #00aeef;
+    outline-offset: 2px;
+}
+
+.business-os-module-group[data-business-module="finance"] button.primary-btn,
+.business-os-module-group[data-business-module="finance"] .add-income-btn,
+.business-os-module-group[data-business-module="finance"] .add-expense-btn,
+.business-os-module-group[data-business-module="finance"] #saveIncome,
+.business-os-module-group[data-business-module="finance"] #saveExpense,
+.business-os-module-group[data-business-module="finance"] #saveInvoice {
+    border-color: rgba(0, 174, 239, .55);
+    background: linear-gradient(135deg, #00aeef, #087eae);
+    color: #fff;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-section-heading {
+    margin-bottom: 20px;
+}
+
+.invoice-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-summary,
+.business-os-module-group[data-business-module="finance"] .expense-summary {
+    margin-bottom: 20px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-card h3,
+.business-os-module-group[data-business-module="finance"] .expense-card h3 {
+    margin: 0 0 12px;
+    color: var(--finance-muted);
+    font-size: 12px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-card h2,
+.business-os-module-group[data-business-module="finance"] .expense-card h2 {
+    margin: 0;
+    font-size: 22px;
+    font-variant-numeric: tabular-nums;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-filters,
+.business-os-module-group[data-business-module="finance"] .expense-filters,
+.business-os-module-group[data-business-module="finance"] .transactions-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] input,
+.business-os-module-group[data-business-module="finance"] select,
+.business-os-module-group[data-business-module="finance"] textarea {
+    box-sizing: border-box;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 10px;
+    background: #0a192a;
+    color: #eaf4ff;
+    font: inherit;
+    font-size: 13px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-filters input,
+.business-os-module-group[data-business-module="finance"] .expense-filters input,
+.business-os-module-group[data-business-module="finance"] .transactions-filters input {
+    flex: 1 1 200px;
+}
+
+.business-os-module-group[data-business-module="finance"] .income-table-container,
+.business-os-module-group[data-business-module="finance"] .expense-table-container,
+.business-os-module-group[data-business-module="finance"] .finance-table-wrap,
+.business-os-module-group[data-business-module="finance"] .transaction-table {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--finance-border);
+    border-radius: 13px;
+    background: rgba(4, 12, 22, .32);
+}
+
+.business-os-module-group[data-business-module="finance"] table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.business-os-module-group[data-business-module="finance"] th,
+.business-os-module-group[data-business-module="finance"] td {
+    padding: 13px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, .065);
+    color: #dce8f6;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.business-os-module-group[data-business-module="finance"] th {
+    color: #77d8ff;
+    background: rgba(0, 174, 239, .055);
+    font-size: 10px;
+    letter-spacing: .45px;
+    text-transform: uppercase;
+}
+
+.business-os-module-group[data-business-module="finance"] tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] td button {
+    min-height: 32px;
+    margin: 2px;
+    padding: 6px 9px;
+    font-size: 11px;
+}
+
+.finance-empty-state {
+    margin: 0;
+    padding: 18px;
+    color: var(--finance-muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.finance-empty-state[hidden] {
+    display: none;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-overview-header,
+.business-os-module-group[data-business-module="finance"] .finance-chart-header,
+.business-os-module-group[data-business-module="finance"] .finance-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-overview-header h2,
+.business-os-module-group[data-business-module="finance"] .finance-chart-header h3,
+.business-os-module-group[data-business-module="finance"] .finance-card-header h3,
+.business-os-module-group[data-business-module="finance"] .transaction-page > h1,
+.business-os-module-group[data-business-module="finance"] .transaction-form h2,
+.business-os-module-group[data-business-module="finance"] .transaction-table h2 {
+    color: #fff;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-grid,
+.business-os-module-group[data-business-module="finance"] .finance-bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-overview-header > div {
+    min-width: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-overview-controls {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-overview-controls label {
+    display: grid;
+    gap: 6px;
+    color: var(--finance-muted);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.business-os-module-group[data-business-module="finance"] #financeOverviewPeriod,
+.business-os-module-group[data-business-module="finance"] #financeOverviewCurrency {
+    box-sizing: border-box;
+    width: 150px;
+    min-width: 0;
+    height: 42px;
+    padding: 0 11px;
+    border: 1px solid rgba(92, 124, 170, .42);
+    border-radius: 10px;
+    background: #0b1428;
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-overview-header h2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    line-height: 1.2;
+}
+
+.business-os-module-group[data-business-module="finance"] #financeOverviewPeriodLabel {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 3px 9px;
+    border: 1px solid rgba(0, 174, 239, .25);
+    border-radius: 999px;
+    background: rgba(0, 174, 239, .09);
+    color: #62d5ff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salaries-header,
+.business-os-module-group[data-business-module="finance"] .finance-salary-history-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salaries-header h2 {
+    margin: 5px 0 0;
+    color: #fff;
+    font-size: clamp(20px, 2.5vw, 27px);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salaries-header p,
+.business-os-module-group[data-business-module="finance"] .finance-salary-history-heading span {
+    margin: 6px 0 0;
+    color: var(--finance-muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-stat {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid rgba(0, 174, 239, .13);
+    border-radius: 14px;
+    background: linear-gradient(150deg, rgba(12, 31, 51, .78), rgba(7, 17, 30, .65));
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-stat span {
+    color: var(--finance-muted);
+    font-size: 12px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-stat strong {
+    overflow-wrap: anywhere;
+    color: #fff;
+    font-size: 21px;
+    font-variant-numeric: tabular-nums;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+    padding: 18px;
+    border: 1px solid var(--finance-border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .025);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-form h3,
+.business-os-module-group[data-business-module="finance"] .finance-salary-form > button,
+.business-os-module-group[data-business-module="finance"] .finance-salary-form > p {
+    grid-column: 1 / -1;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-form h3,
+.business-os-module-group[data-business-module="finance"] .finance-salary-history h3 {
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-field {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-field label,
+.business-os-module-group[data-business-module="finance"] .transaction-field label {
+    color: #b7c8db;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-field input,
+.business-os-module-group[data-business-module="finance"] .finance-salary-field select,
+.business-os-module-group[data-business-module="finance"] .finance-salary-field textarea,
+.business-os-module-group[data-business-module="finance"] .transaction-field input,
+.business-os-module-group[data-business-module="finance"] .transaction-field select,
+.business-os-module-group[data-business-module="finance"] .transaction-field textarea {
+    width: 100%;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-notes {
+    grid-column: 1 / -1;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-history {
+    margin-top: 22px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-history-heading {
+    margin-bottom: 12px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-salary-history-heading span {
+    margin: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-card,
+.business-os-module-group[data-business-module="finance"] .finance-breakdown-card,
+.business-os-module-group[data-business-module="finance"] .finance-chart-card,
+.business-os-module-group[data-business-module="finance"] .transaction-form,
+.business-os-module-group[data-business-module="finance"] .transaction-stats .stat-card,
+.business-os-module-group[data-business-module="finance"] .transaction-report .report-card,
+.business-os-module-group[data-business-module="finance"] .transaction-chart {
+    padding: 17px;
+    border: 1px solid var(--finance-border);
+    border-radius: 14px;
+    background: var(--finance-panel);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-card {
+    min-width: 0;
+    gap: 12px;
+    padding: 18px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-card > div:last-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-card strong {
+    overflow-wrap: anywhere;
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    font-size: 20px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-breakdown-item strong,
+.business-os-module-group[data-business-module="finance"] .finance-detail-card > strong {
+    overflow-wrap: anywhere;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-bottom-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-summary-card strong,
+.business-os-module-group[data-business-module="finance"] .finance-breakdown-item strong {
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--finance-border);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-breakdown-item:last-child {
+    border-bottom: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-chart-area {
+    position: relative;
+    min-height: 250px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-chart-area canvas {
+    max-height: 280px;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-page > h1 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-field {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-notes-field {
+    grid-column: 1 / -1;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-form h2,
+.business-os-module-group[data-business-module="finance"] .transaction-form button,
+.business-os-module-group[data-business-module="finance"] .transaction-form .finance-form-message {
+    grid-column: 1 / -1;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-form textarea {
+    min-height: 80px;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-stats,
+.business-os-module-group[data-business-module="finance"] .transaction-report {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.business-os-module-group[data-business-module="finance"] .transaction-stats .stat-card,
+.business-os-module-group[data-business-module="finance"] .transaction-report .report-card {
+    margin: 0;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal,
+.business-os-module-group[data-business-module="finance"] .invoice-modal {
+    display: none;
+    position: fixed;
+    z-index: 1200;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(2, 8, 18, .78);
+    backdrop-filter: blur(8px);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-panel,
+.business-os-module-group[data-business-module="finance"] .income-form-box,
+.business-os-module-group[data-business-module="finance"] .expense-form-box,
+.business-os-module-group[data-business-module="finance"] .transaction-modal-box {
+    box-sizing: border-box;
+    width: min(100%, 480px);
+    max-height: min(90vh, 760px);
+    overflow: auto;
+    padding: 24px;
+    border: 1px solid rgba(0, 174, 239, .24);
+    border-radius: 18px;
+    background: #0b1b2e;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .45);
+    color: var(--finance-text);
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-heading h2 {
+    margin: 5px 0 0;
+    color: #fff;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-panel label {
+    display: block;
+    margin: 12px 0 6px;
+    color: #b7c8db;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-panel input,
+.business-os-module-group[data-business-module="finance"] .finance-modal-panel select {
+    width: 100%;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-actions button {
+    flex: 1;
+}
+
+.business-os-module-group[data-business-module="finance"] .finance-modal-close {
+    min-width: 36px;
+    padding: 0;
+    font-size: 22px;
+}
+
+@media (max-width: 900px) {
+    .business-os-module-group[data-business-module="finance"] .finance-grid,
+    .business-os-module-group[data-business-module="finance"] .income-summary,
+    .business-os-module-group[data-business-module="finance"] .expense-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .business-os-module-group[data-business-module="finance"] .finance-dashboard,
+    .business-os-module-group[data-business-module="finance"] .finance-toolbar,
+    .business-os-module-group[data-business-module="finance"] .finance-salaries,
+    .business-os-module-group[data-business-module="finance"] .income-section,
+    .business-os-module-group[data-business-module="finance"] .expense-section,
+    .business-os-module-group[data-business-module="finance"] .finance-overview,
+    .business-os-module-group[data-business-module="finance"] .transaction-page,
+    .business-os-module-group[data-business-module="finance"] .invoice-section {
+        padding: 17px 14px;
+        border-radius: 16px;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-dashboard .section-header,
+    .business-os-module-group[data-business-module="finance"] .finance-section-heading,
+    .business-os-module-group[data-business-module="finance"] .finance-toolbar,
+    .business-os-module-group[data-business-module="finance"] .finance-overview-header,
+    .business-os-module-group[data-business-module="finance"] .finance-salaries-header,
+    .business-os-module-group[data-business-module="finance"] .finance-salary-history-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-overview-controls {
+        width: 100%;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-overview-controls label {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .business-os-module-group[data-business-module="finance"] #financeOverviewPeriod,
+    .business-os-module-group[data-business-module="finance"] #financeOverviewCurrency {
+        width: 100%;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-grid,
+    .business-os-module-group[data-business-module="finance"] .income-summary,
+    .business-os-module-group[data-business-module="finance"] .expense-summary {
+        gap: 9px;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-card,
+    .business-os-module-group[data-business-module="finance"] .income-card,
+    .business-os-module-group[data-business-module="finance"] .expense-card {
+        padding: 13px;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .finance-card > strong {
+        font-size: 19px;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .toolbar-right,
+    .business-os-module-group[data-business-module="finance"] .finance-action-group {
+        width: 100%;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .toolbar-right button,
+    .business-os-module-group[data-business-module="finance"] .finance-action-group button {
+        flex: 1 1 100%;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .income-header,
+    .business-os-module-group[data-business-module="finance"] .expense-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .transaction-form,
+    .business-os-module-group[data-business-module="finance"] .finance-bottom-grid,
+    .business-os-module-group[data-business-module="finance"] .finance-salary-form {
+        grid-template-columns: 1fr;
+    }
+
+    .business-os-module-group[data-business-module="finance"] .transaction-stats,
+    .business-os-module-group[data-business-module="finance"] .transaction-report,
+    .business-os-module-group[data-business-module="finance"] .finance-salary-summary,
+    .invoice-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .business-os-module-group[data-business-module="finance"] .transaction-notes-field,
+    .business-os-module-group[data-business-module="finance"] .finance-salary-notes {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .business-os-module-group[data-business-module="finance"] .finance-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .business-os-module-group[data-business-module="finance"] *,
+    .business-os-module-group[data-business-module="finance"] *::before,
+    .business-os-module-group[data-business-module="finance"] *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}

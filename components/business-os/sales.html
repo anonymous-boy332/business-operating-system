@@ -1,0 +1,141 @@
+<section class="sales-section">
+
+<div class="sales-summary">
+
+<div class="sales-card">
+<h3>Total Sales</h3>
+<h2 id="totalSales">$0</h2>
+</div>
+
+<div class="sales-card">
+<h3>Completed</h3>
+<h2 id="completedSales">$0</h2>
+</div>
+
+<div class="sales-card">
+<h3>Pending</h3>
+<h2 id="pendingSales">$0</h2>
+</div>
+
+<div class="sales-card">
+<h3>This Month</h3>
+<h2 id="monthlySales">$0</h2>
+</div>
+
+</div>
+
+<div class="sales-header">
+
+<h2>Sales Management</h2>
+
+<button class="add-sale-btn">+ Add Sale</button>
+
+<button class="export-sale-btn">📊 Export CSV</button>
+
+<button class="export-sale-pdf-btn">📄 Export PDF</button>
+
+</div>
+
+<div class="sales-filters">
+
+<input type="text" placeholder="Search Sale...">
+
+<select>
+<option>All Status</option>
+<option>Completed</option>
+<option>Pending</option>
+</select>
+
+</div>
+
+  <div class="sales-analytics">
+
+    <div class="analytics-card">
+
+        <h3>Monthly Sales Trend</h3>
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+    <div class="analytics-card">
+
+        <h3>Sales Categories</h3>
+
+        <canvas id="salesCategoryChart"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- SALES MODAL -->
+
+<div class="sales-modal" id="salesModal">
+
+    <div class="sales-form-box">
+
+        <h2>Add New Sale</h2>
+
+        <input type="text" id="customerName" placeholder="Customer Name">
+
+        <input type="text" id="serviceName" placeholder="Service / Product">
+
+        <input type="date" id="saleDate">
+
+        <input type="number" id="saleAmount" placeholder="Amount">
+
+        <select id="saleStatus">
+
+            <option value="Completed">Completed</option>
+
+            <option value="Pending">Pending</option>
+
+        </select>
+
+        <div class="form-buttons">
+
+            <button id="saveSale">
+                Save Sale
+            </button>
+
+            <button id="closeSale">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="sales-table-container">
+
+<table class="sales-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Customer</th>
+<th>Service</th>
+<th>Date</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>

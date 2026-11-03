@@ -1,0 +1,877 @@
+<!-- ==========================================
+     1. EMPLOYEE DASHBOARD
+========================================== -->
+
+<section class="employee-dashboard">
+
+    <div class="employee-section-title">
+
+        <div>
+
+            <span class="employee-eyebrow">
+                BUSINESS OS
+            </span>
+
+            <h2>
+                👨‍💼 Employee Dashboard
+            </h2>
+
+            <p>
+                Workforce overview and employee insights
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="employee-dashboard-main-grid">
+
+    <!-- EMPLOYEE STATS -->
+
+    <div class="employee-stats">
+
+        <div class="employee-stat-card">
+
+            <span class="employee-stat-icon">
+                👥
+            </span>
+
+            <h3 id="totalEmployees">
+                0
+            </h3>
+
+            <p>
+                Total Employees
+            </p>
+
+        </div>
+
+
+        <div class="employee-stat-card">
+
+            <span class="employee-stat-icon">
+                🟢
+            </span>
+
+            <h3 id="activeEmployees">
+                0
+            </h3>
+
+            <p>
+                Active
+            </p>
+
+        </div>
+
+
+        <div class="employee-stat-card">
+
+            <span class="employee-stat-icon">
+                🟡
+            </span>
+
+            <h3 id="leaveEmployees">
+                0
+            </h3>
+
+            <p>
+                On Leave
+            </p>
+
+        </div>
+
+
+        <div class="employee-stat-card">
+
+            <span class="employee-stat-icon">
+                🔴
+            </span>
+
+            <h3 id="inactiveEmployees">
+                0
+            </h3>
+
+            <p>
+                Inactive
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK OVERVIEW -->
+
+    <div class="employee-overview-grid">
+
+
+
+        <!-- WORKFORCE INSIGHTS -->
+
+        <div class="employee-overview-card">
+
+            <div class="overview-card-header">
+
+                <div>
+
+                    <h3>
+                        📈 Workforce Insights
+                    </h3>
+
+                    <p>
+                        Employee performance overview
+                    </p>
+
+                </div>
+
+                <span class="overview-icon">
+                    📈
+                </span>
+
+            </div>
+
+
+            <div class="employee-insights">
+
+                <div>
+
+                    <span>
+                        Average Performance
+                    </span>
+
+                    <strong id="employeeAveragePerformance">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Attendance Rate
+                    </span>
+
+                    <strong id="employeeDashboardAttendanceRate">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+        </div>
+
+
+</section>
+
+<!-- Add Employee Modal -->
+
+<div id="employeeModal" class="employee-modal">
+
+
+<div class="employee-modal-box">
+
+
+<h2>
+➕ Add New Employee
+</h2>
+
+<div class="employee-photo-upload">
+
+<img
+id="employeePreview"
+src="https://via.placeholder.com/120"
+alt="Employee Photo">
+
+<input
+type="file"
+id="employeePhoto"
+accept="image/*">
+
+</div>
+
+<div class="employee-form-grid">
+
+
+<input 
+type="text"
+id="employeeName"
+placeholder="Employee Name">
+
+
+<input 
+type="text"
+id="employeeDepartment"
+placeholder="Department">
+
+
+<input 
+type="text"
+id="employeeTask"
+placeholder="Current Task">
+
+
+<input 
+type="text"
+id="employeePerformance"
+placeholder="Performance %">
+
+<input
+type="email"
+id="employeeEmail"
+placeholder="Email Address">
+
+<input
+type="text"
+id="employeePhone"
+placeholder="Phone Number">
+
+<input
+type="text"
+id="employeeAddress"
+placeholder="Address">
+
+<input
+type="number"
+id="employeeSalary"
+placeholder="Salary">
+
+<label>
+Join Date
+</label>
+
+<input
+type="date"
+id="employeeJoinDate">
+
+<label>
+Date of Birth
+</label>
+
+<input
+type="date"
+id="employeeDOB">
+
+
+<select id="employeeStatus">
+
+<option value="Active">
+Active
+</option>
+
+<option value="Leave">
+Leave
+</option>
+
+<option value="Inactive">
+Inactive
+</option>
+
+</select>
+
+</div>
+
+<div class="employee-modal-buttons">
+
+<button onclick="saveEmployee()">
+💾 Save Employee
+</button>
+
+<button onclick="closeEmployeeModal()">
+❌ Cancel
+</button>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+<!-- View Employee Modal -->
+
+<div id="viewEmployeeModal" class="employee-modal">
+
+
+<div class="employee-modal-box">
+
+
+<h2>
+👨‍💼 Employee Profile
+</h2>
+
+
+<div id="employeeProfile">
+
+
+</div>
+
+
+<button onclick="closeViewEmployeeModal()">
+Close
+</button>
+
+
+</div>
+
+
+</div>
+
+<!-- Attendance Modal -->
+
+<div id="attendanceModal" class="employee-modal">
+
+    <div class="employee-modal-box attendance-modal-box">
+
+        <h2>
+            🟢 Employee Attendance
+        </h2>
+
+        <div class="attendance-employee">
+
+            <span>Employee</span>
+
+            <strong id="attendanceEmployeeName">
+                Employee Name
+            </strong>
+
+        </div>
+
+
+        <div class="employee-form-grid">
+
+            <div>
+
+                <label>
+                    Date
+                </label>
+
+                <input
+                type="date"
+                id="attendanceDate">
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Status
+                </label>
+
+                <select id="attendanceStatus">
+
+                    <option value="Present">
+                        🟢 Present
+                    </option>
+
+                    <option value="Leave">
+                        🟡 Leave
+                    </option>
+
+                    <option value="Absent">
+                        🔴 Absent
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Check In
+                </label>
+
+                <input
+                type="time"
+                id="attendanceCheckIn">
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Check Out
+                </label>
+
+                <input
+                type="time"
+                id="attendanceCheckOut">
+
+            </div>
+
+
+            <div class="attendance-notes">
+
+                <label>
+                    Notes
+                </label>
+
+                <textarea
+                id="attendanceNotes"
+                placeholder="Attendance notes...">
+                </textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="employee-modal-buttons">
+
+            <button
+            onclick="saveAttendance()">
+
+                💾 Save Attendance
+
+            </button>
+
+
+            <button
+            onclick="closeAttendanceModal()">
+
+                ❌ Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    </div>
+
+<!-- ==========================================
+     2. ATTENDANCE HISTORY
+========================================== -->
+
+<section class="attendance-history">
+
+    <div class="employee-section-title">
+
+        <div>
+
+            <span class="employee-eyebrow">
+                ATTENDANCE
+            </span>
+
+            <h2>
+                🟢 Attendance History
+            </h2>
+
+            <p>
+                Recent employee attendance records
+            </p>
+
+        </div>
+
+
+        <button
+            class="secondary-btn"
+            onclick="showFullAttendance()">
+
+            View All →
+
+        </button>
+
+    </div>
+
+
+    <!-- ATTENDANCE SUMMARY -->
+
+    <div class="attendance-summary">
+
+        <div class="attendance-summary-card">
+
+            <h3 id="attendancePresentCount">
+                0
+            </h3>
+
+            <p>
+                Present
+            </p>
+
+        </div>
+
+
+        <div class="attendance-summary-card">
+
+            <h3 id="attendanceAbsentCount">
+                0
+            </h3>
+
+            <p>
+                Absent
+            </p>
+
+        </div>
+
+
+        <div class="attendance-summary-card">
+
+            <h3 id="attendanceLeaveCount">
+                0
+            </h3>
+
+            <p>
+                Leave
+            </p>
+
+        </div>
+
+
+        <div class="attendance-summary-card">
+
+            <h3 id="attendanceRate">
+                0%
+            </h3>
+
+            <p>
+                Attendance Rate
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ATTENDANCE FILTERS -->
+
+    <div class="attendance-history-toolbar">
+
+        <select id="attendanceEmployeeFilter">
+
+            <option value="all">
+                All Employees
+            </option>
+
+        </select>
+
+
+        <input
+            type="text"
+            id="attendanceSearch"
+            placeholder="🔍 Search Employee...">
+
+
+        <input
+            type="date"
+            id="attendanceDateFilter">
+
+
+        <select id="attendanceStatusFilter">
+
+            <option value="all">
+                All Status
+            </option>
+
+            <option value="Present">
+                🟢 Present
+            </option>
+
+            <option value="Leave">
+                🟡 Leave
+            </option>
+
+            <option value="Absent">
+                🔴 Absent
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ATTENDANCE TABLE -->
+
+    <div class="attendance-table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Employee</th>
+
+                    <th>Date</th>
+
+                    <th>Status</th>
+
+                    <th>Check In</th>
+
+                    <th>Check Out</th>
+
+                    <th>Notes</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="attendanceHistoryList">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     3. EMPLOYEE MANAGEMENT
+========================================== -->
+
+<section class="employee-management">
+
+    <div class="employee-section-title">
+
+    <div>
+
+        <span class="employee-eyebrow">
+            MANAGEMENT
+        </span>
+
+        <h2>
+            ⚙️ Employee Management
+        </h2>
+
+        <p>
+            Manage employees, records and workforce actions
+        </p>
+
+    </div>
+
+    <button
+        class="secondary-btn"
+        onclick="showAllEmployeeManagement()">
+
+        View All →
+
+    </button>
+
+</div>
+
+
+    <!-- MANAGEMENT STATS -->
+
+    <div class="employee-management-stats">
+
+        <div class="management-stat-card">
+
+            <span>👥</span>
+
+            <strong id="managementTotalEmployees">
+                0
+            </strong>
+
+            <small>
+                Total Employees
+            </small>
+
+        </div>
+
+
+        <div class="management-stat-card">
+
+            <span>🟢</span>
+
+            <strong id="managementActiveEmployees">
+                0
+            </strong>
+
+            <small>
+                Active
+            </small>
+
+        </div>
+
+
+        <div class="management-stat-card">
+
+            <span>🟡</span>
+
+            <strong id="managementLeaveEmployees">
+                0
+            </strong>
+
+            <small>
+                On Leave
+            </small>
+
+        </div>
+
+
+        <div class="management-stat-card">
+
+            <span>🔴</span>
+
+            <strong id="managementInactiveEmployees">
+                0
+            </strong>
+
+            <small>
+                Inactive
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- MANAGEMENT TOOLBAR -->
+
+    <div class="employee-management-toolbar">
+
+        <input
+            type="text"
+            id="managementEmployeeSearch"
+            placeholder="🔍 Search employee...">
+
+            <button
+    class="search-btn"
+    onclick="loadEmployeeManagement()">
+
+    🔍 Search
+
+</button>  
+
+        <select id="managementDepartmentFilter">
+
+            <option value="all">
+                All Departments
+            </option>
+
+            <option value="Design">
+                Design
+            </option>
+
+            <option value="Development">
+                Development
+            </option>
+
+            <option value="Marketing">
+                Marketing
+            </option>
+
+            <option value="Sales">
+                Sales
+            </option>
+
+            <option value="HR">
+                HR
+            </option>
+
+            <option value="Finance">
+                Finance
+            </option>
+
+        </select>
+
+
+        <select id="managementStatusFilter">
+
+            <option value="all">
+                All Status
+            </option>
+
+            <option value="Active">
+                Active
+            </option>
+
+            <option value="Leave">
+                Leave
+            </option>
+
+            <option value="Inactive">
+                Inactive
+            </option>
+
+        </select>
+
+        <button
+    id="managementExportEmployees"
+    class="export-btn">
+
+    📄 Export CSV
+
+</button>
+
+
+        <button
+    id="managementExportEmployeesPdf"
+    class="export-btn">
+
+    🖨 Export PDF
+
+</button>
+
+    </div>
+
+
+    <!-- FULL EMPLOYEE MANAGEMENT TABLE -->
+
+    <div class="employee-management-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Employee
+                    </th>
+
+                    <th>
+                        Department
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Current Task
+                    </th>
+
+                    <th>
+                        Performance
+                    </th>
+
+                    <th>
+                        Salary
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="employeeManagementList">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+</div>

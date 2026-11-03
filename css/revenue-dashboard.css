@@ -1,0 +1,112 @@
+/* ==========================
+   REVENUE ANALYTICS
+========================== */
+
+.revenue-analytics{
+    margin-top:40px;
+}
+
+.revenue-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.revenue-card{
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.03)
+    );
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:24px;
+    padding:28px;
+    backdrop-filter:blur(18px);
+    transition:.35s ease;
+}
+
+.revenue-card:hover{
+    transform:translateY(-8px);
+    border-color:#00AEEF;
+    box-shadow:0 0 35px rgba(0,174,239,.25);
+}
+
+.revenue-card h3{
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.revenue-card h1{
+    color:#00AEEF;
+    font-size:42px;
+    margin:15px 0;
+}
+
+.revenue-card p{
+    color:#94a3b8;
+}
+
+/* Revenue Summary */
+
+.revenue-summary-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.revenue-summary-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:22px;
+    transition:.35s;
+}
+
+.revenue-summary-card:hover{
+    transform:translateY(-6px);
+    border-color:#00AEEF;
+}
+
+.revenue-summary-card span{
+    font-size:30px;
+}
+
+.revenue-summary-card h3{
+    color:#00AEEF;
+    margin:12px 0;
+}
+
+.revenue-summary-card p{
+    color:#94a3b8;
+}
+
+/* Chart */
+
+.chart-container{
+    width:100%;
+    height:300px;
+    position:relative;
+}
+
+canvas{
+    max-width:100%;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.revenue-grid{
+    grid-template-columns:1fr;
+}
+
+.revenue-summary-grid{
+    grid-template-columns:1fr;
+}
+
+.chart-container{
+    height:240px;
+}
+
+}

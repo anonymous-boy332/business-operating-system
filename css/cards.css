@@ -1,0 +1,801 @@
+/* ==========================
+   DASHBOARD STATS CARDS
+========================== */
+
+
+.dashboard-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+margin-top:25px;
+
+}
+
+
+
+.stat-box{
+
+padding:25px;
+
+background:rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.12);
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+
+
+.stat-box:hover{
+
+transform:translateY(-8px);
+
+border-color:#00AEEF;
+
+box-shadow:0 0 25px rgba(0,174,239,0.4);
+
+}
+
+
+
+.stat-box h3{
+
+font-size:35px;
+
+color:#FFD700;
+
+margin-bottom:10px;
+
+}
+
+
+
+.stat-box p{
+
+color:#94a3b8;
+
+font-size:15px;
+
+}
+
+/* ==========================
+   RECENT PROJECTS CARDS
+========================== */
+
+
+.recent-projects{
+
+margin-top:40px;
+
+}
+
+
+.recent-projects h2{
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+
+
+.project-card{
+
+padding:22px;
+
+background:rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.12);
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+
+transition:.3s;
+
+}
+
+
+
+.project-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#FFD700;
+
+box-shadow:0 0 25px rgba(255,215,0,0.25);
+
+}
+
+
+
+.project-image{
+
+height:120px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:50px;
+
+background:rgba(0,174,239,0.12);
+
+border-radius:15px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.project-card h3{
+
+color:#ffffff;
+
+margin-bottom:8px;
+
+}
+
+
+
+.project-card p{
+
+color:#94a3b8;
+
+font-size:14px;
+
+}
+
+
+
+.project-card span{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:6px 14px;
+
+border-radius:20px;
+
+font-size:12px;
+
+background:#00AEEF;
+
+color:white;
+
+}
+
+/* ==========================
+   AI RECOMMENDATIONS
+========================== */
+
+
+.ai-recommendations{
+
+margin-top:40px;
+
+}
+
+
+.ai-recommendations h2{
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.recommendation-card{
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+padding:30px;
+
+background:rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.12);
+
+border-radius:22px;
+
+backdrop-filter:blur(15px);
+
+}
+
+
+
+.recommendation-icon{
+
+font-size:45px;
+
+}
+
+
+
+.recommendation-content h3{
+
+color:#FFD700;
+
+margin-bottom:10px;
+
+}
+
+
+
+.recommendation-content p{
+
+color:#94a3b8;
+
+line-height:1.6;
+
+}
+
+
+
+.recommendation-content button{
+
+margin-top:15px;
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:12px;
+
+background:#00AEEF;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.recommendation-content button:hover{
+
+background:#FFD700;
+
+color:#020617;
+
+}
+
+
+
+/* ==========================
+   ACTIVITY FEED
+========================== */
+
+
+.recent-activity{
+
+margin-top:40px;
+
+}
+
+
+
+.recent-activity h2{
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.activity-card{
+
+padding:18px;
+
+margin-bottom:12px;
+
+background:rgba(255,255,255,0.06);
+
+border-left:3px solid #00AEEF;
+
+border-radius:15px;
+
+color:#ffffff;
+
+backdrop-filter:blur(12px);
+
+transition:.3s;
+
+}
+
+
+
+.activity-card:hover{
+
+transform:translateX(8px);
+
+border-left-color:#FFD700;
+
+}
+
+/* ==========================
+   SUBSCRIPTION STATUS
+========================== */
+
+
+.subscription-status{
+
+margin-top:40px;
+
+}
+
+
+.subscription-status h2{
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.subscription-card{
+
+padding:30px;
+
+background:rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.12);
+
+border-radius:22px;
+
+backdrop-filter:blur(15px);
+
+}
+
+
+
+.plan-info h3{
+
+color:#FFD700;
+
+font-size:24px;
+
+}
+
+
+
+.plan-info p{
+
+color:#94a3b8;
+
+}
+
+
+
+.usage{
+
+margin-top:25px;
+
+}
+
+
+
+.usage p{
+
+color:white;
+
+}
+
+
+
+.progress-bar{
+
+height:10px;
+
+background:rgba(255,255,255,0.1);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin:10px 0;
+
+}
+
+
+
+.progress-fill{
+
+height:100%;
+
+width:80%;
+
+background:#00AEEF;
+
+border-radius:20px;
+
+}
+
+
+
+.usage span{
+
+color:#94a3b8;
+
+font-size:13px;
+
+}
+
+
+
+.subscription-card button{
+
+margin-top:20px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:12px;
+
+background:#FFD700;
+
+color:#020617;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.subscription-card button:hover{
+
+box-shadow:0 0 20px #FFD700;
+
+}
+
+
+
+/* ==========================
+   NOTIFICATIONS PANEL
+========================== */
+
+
+.notifications-panel{
+
+margin-top:40px;
+
+}
+
+
+
+.notifications-panel h2{
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+}
+
+
+
+.notification-card{
+
+padding:25px;
+
+background:rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.12);
+
+border-radius:22px;
+
+backdrop-filter:blur(15px);
+
+}
+
+
+
+.notification-item{
+
+display:flex;
+
+gap:15px;
+
+padding:15px 0;
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+
+}
+
+
+
+.notification-item:last-child{
+
+border-bottom:none;
+
+}
+
+
+
+.notification-item span{
+
+font-size:25px;
+
+}
+
+
+
+.notification-item h3{
+
+color:#ffffff;
+
+font-size:16px;
+
+}
+
+
+
+.notification-item p{
+
+color:#94a3b8;
+
+font-size:13px;
+
+}
+
+/* ==========================================
+   PREMIUM SYNVORA MODULE CARDS
+========================================== */
+
+.quick-actions {
+    margin-top: 42px;
+}
+
+.quick-actions .quick-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.quick-section-eyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: #00AEEF;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.quick-actions .section-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(24px, 3vw, 30px);
+}
+
+.quick-section-copy p {
+    margin-top: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.quick-module-count {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    border: 1px solid rgba(0, 174, 239, 0.22);
+    border-radius: 20px;
+    background: rgba(0, 174, 239, 0.08);
+    color: #7dd3fc;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.quick-actions .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.quick-actions .quick-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 260px;
+    padding: 22px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.075),
+        rgba(255, 255, 255, 0.025)
+    );
+    color: #ffffff;
+    text-align: left;
+    text-decoration: none;
+
+    backdrop-filter: blur(16px);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.quick-actions .quick-card::before {
+    content: "";
+    position: absolute;
+    top: -65px;
+    right: -65px;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: rgba(0, 174, 239, 0.12);
+    filter: blur(34px);
+    pointer-events: none;
+}
+
+.quick-actions .quick-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 174, 239, 0.48);
+    background: linear-gradient(
+        145deg,
+        rgba(0, 174, 239, 0.11),
+        rgba(255, 255, 255, 0.035)
+    );
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+.quick-card-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quick-actions .quick-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(0, 174, 239, 0.24);
+    border-radius: 15px;
+    background: rgba(0, 174, 239, 0.1);
+    font-size: 23px;
+}
+
+.quick-card-arrow {
+    color: #64748b;
+    font-size: 18px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.quick-card-category {
+    position: relative;
+    margin-top: 21px;
+    color: #38bdf8;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.quick-actions .quick-card h3 {
+    position: relative;
+    margin: 8px 0;
+    color: #f8fafc;
+    font-size: 18px;
+}
+
+.quick-actions .quick-card p {
+    position: relative;
+    margin: 0;
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.quick-card-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 16px;
+    color: #dbeafe;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.quick-card-link span {
+    color: #00AEEF;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.quick-actions .quick-card:hover .quick-card-arrow {
+    color: #00AEEF;
+    transform: translate(2px, -2px);
+}
+
+.quick-actions .quick-card:hover .quick-card-link span {
+    transform: translateX(4px);
+}
+
+.quick-actions .quick-card:focus-visible {
+    outline: 2px solid #00AEEF;
+    outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+    .quick-actions .quick-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .quick-actions .quick-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quick-actions .quick-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .quick-actions .quick-card {
+        min-height: 235px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quick-actions .quick-card,
+    .quick-card-arrow,
+    .quick-card-link span {
+        transition: none;
+    }
+}

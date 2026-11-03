@@ -1,0 +1,31 @@
+<section class="ai-advisor-dashboard bi-panel" aria-labelledby="biAdvisorTitle">
+    <div class="advisor-dashboard-header">
+        <div class="advisor-heading-copy">
+            <span class="advisor-eyebrow">BUSINESS INTELLIGENCE</span>
+            <h2 id="biAdvisorTitle">AI Business Advisor</h2>
+            <p>Ask a question with context from your saved records. Recommendations are only as complete as the data you have entered.</p>
+        </div>
+        <button type="button" class="primary-btn ai-advisor-ask-btn" id="askBusinessAdvisorBtn" data-ai-action="ask" aria-controls="advisorChatPanel" aria-expanded="false">
+            <span class="ai-advisor-ask-icon" aria-hidden="true">✦</span>
+            <span class="ai-advisor-ask-copy"><strong>Ask AI</strong><small>Get a business-aware answer</small></span>
+            <span class="ai-advisor-ask-arrow" aria-hidden="true">→</span>
+        </button>
+    </div>
+    <div class="advisor-grid">
+        <article class="advisor-card"><div class="advisor-card-top"><span class="advisor-icon">💰</span><small>Saved finance records</small></div><h3>Received income</h3><h1 id="biAdvisorIncome">—</h1><p id="biAdvisorIncomeNote">Grouped by currency; no exchange rates assumed.</p></article>
+        <article class="advisor-card"><div class="advisor-card-top"><span class="advisor-icon">👥</span><small>Saved CRM records</small></div><h3>Customer directory</h3><h1 id="biAdvisorCustomers">0</h1><p id="biAdvisorCustomerNote">Customers on file</p></article>
+        <article class="advisor-card"><div class="advisor-card-top"><span class="advisor-icon">⚠️</span><small>Derived alerts</small></div><h3>Needs attention</h3><h1 id="biAdvisorAlerts">0</h1><p id="biAdvisorAlertNote">Based on due tasks, invoices, and stock levels.</p></article>
+        <article class="advisor-card"><div class="advisor-card-top"><span class="advisor-icon">📦</span><small>Saved inventory records</small></div><h3>Products at / below reorder level</h3><h1 id="biAdvisorLowStock">0</h1><p>Recommendations use saved quantities and reorder points.</p></article>
+    </div>
+    <section class="advisor-chat-panel" id="advisorChatPanel" aria-label="AI Business Advisor chat" hidden>
+        <div class="advisor-chat-header"><div><span class="advisor-eyebrow">YOUR BUSINESS ADVISOR</span><h3>Ask a business question</h3><p>Your current saved-record summary will be included with your question.</p></div><button type="button" class="secondary-btn" data-ai-action="close" aria-label="Close advisor chat">✕</button></div>
+        <div class="advisor-chat-messages" id="advisorChatMessages" aria-live="polite" aria-relevant="additions"><div class="advisor-chat-message advisor-chat-assistant">Welcome. Ask about your sales, costs, or operations and I’ll use your saved business records for context.</div></div>
+        <div class="advisor-prompt-suggestions" aria-label="Suggested questions">
+            <span>Try asking</span>
+            <button type="button" data-ai-prompt="Summarize my saved business performance.">Business summary</button>
+            <button type="button" data-ai-prompt="What needs attention in my saved business records?">Needs attention</button>
+            <button type="button" data-ai-prompt="Review my recorded income and paid expenses by currency.">Income &amp; expenses</button>
+        </div>
+        <form id="advisorChatForm"><label for="advisorChatInput">Your question</label><div class="advisor-chat-compose"><textarea id="advisorChatInput" rows="2" maxlength="2000" placeholder="Ask about your sales, costs, customers, or operations…" required></textarea><button type="submit" class="primary-btn" id="advisorSendBtn"><span aria-hidden="true">↑</span><span>Ask Advisor</span></button></div><p class="advisor-chat-status" id="advisorChatStatus" role="status" aria-live="polite"></p></form>
+    </section>
+</section>

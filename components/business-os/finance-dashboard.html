@@ -1,0 +1,49 @@
+<section class="finance-dashboard">
+
+    <div class="section-header">
+
+        <div>
+            <span class="finance-eyebrow">BUSINESS PERFORMANCE</span>
+            <h2>Finance dashboard</h2>
+            <p class="finance-dashboard-caption">A live view of income, expenses, cash position and receivables.</p>
+        </div>
+
+        <button class="primary-btn" type="button" data-finance-action="transaction">
+            + Add transaction
+        </button>
+
+    </div>
+
+    <div class="finance-grid">
+
+        <div class="finance-card">
+            <span class="finance-card-label">Income received</span>
+            <strong id="financeDashboardIncome">$0.00</strong>
+            <small id="financeDashboardIncomeNote">Current month</small>
+        </div>
+
+        <div class="finance-card">
+            <span class="finance-card-label">Expenses paid</span>
+            <strong id="financeDashboardExpenses">$0.00</strong>
+            <small id="financeDashboardExpensesNote">Current month</small>
+        </div>
+
+        <div class="finance-card">
+            <span class="finance-card-label">Net cash flow</span>
+            <strong id="financeDashboardNet">$0.00</strong>
+            <small>Received income minus paid expenses</small>
+        </div>
+
+        <div class="finance-card">
+            <span class="finance-card-label">To collect</span>
+            <strong id="financeDashboardReceivables">$0.00</strong>
+            <small id="financeDashboardReceivablesNote">Pending income and invoices</small>
+        </div>
+
+    </div>
+
+    <p class="finance-data-note" id="financeDataNote" role="status">
+        Figures update from saved income, expense, invoice and transaction records.
+    </p>
+
+</section>

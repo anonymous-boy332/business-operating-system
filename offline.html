@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#071a35">
+
+    <title>You're Offline | Synvora AI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: #ffffff;
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(0, 174, 239, 0.13),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #071a35,
+                    #020617
+                );
+        }
+
+        .offline-card {
+            width: 100%;
+            max-width: 480px;
+            padding: 42px 28px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(0, 174, 239, 0.25);
+            border-radius: 24px;
+
+            box-shadow:
+                0 20px 70px rgba(0, 0, 0, 0.35),
+                0 0 35px rgba(0, 174, 239, 0.06);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .offline-icon {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 26px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 38px;
+            color: #00AEEF;
+
+            border: 1px solid rgba(0, 174, 239, 0.35);
+            border-radius: 24px;
+
+            background: rgba(0, 174, 239, 0.08);
+
+            box-shadow: 0 0 30px rgba(0, 174, 239, 0.08);
+        }
+
+        .brand {
+            margin-bottom: 10px;
+
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .brand span {
+            color: #FFD700;
+        }
+
+        .eyebrow {
+            margin-bottom: 22px;
+
+            color: #00AEEF;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-bottom: 14px;
+
+            font-size: clamp(25px, 5vw, 34px);
+            line-height: 1.25;
+        }
+
+        .description {
+            max-width: 350px;
+            margin: 0 auto 28px;
+
+            color: #b9c5d8;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .connection-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 25px;
+            padding: 10px 15px;
+
+            color: #ffd700;
+            font-size: 13px;
+
+            background: rgba(255, 215, 0, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 50px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            background: #FFD700;
+            border-radius: 50%;
+        }
+
+        .retry-button {
+            width: 100%;
+            min-height: 48px;
+            padding: 14px 20px;
+
+            border: none;
+            border-radius: 12px;
+
+            color: #020617;
+            background: linear-gradient(
+                135deg,
+                #00AEEF,
+                #70dcff
+            );
+
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .retry-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .retry-button:disabled {
+            opacity: 0.65;
+            cursor: wait;
+            transform: none;
+        }
+
+        .footer {
+            margin-top: 28px;
+
+            color: #718096;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 420px) {
+            .offline-card {
+                padding: 34px 22px;
+            }
+
+            .brand {
+                font-size: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="offline-card">
+
+        <div class="offline-icon" aria-hidden="true">
+            ↗
+        </div>
+
+        <div class="brand">
+            SYNVORA <span>AI</span>
+        </div>
+
+        <div class="eyebrow">
+            Business Operating System
+        </div>
+
+        <h1>You're Currently Offline</h1>
+
+        <p class="description">
+            Your internet connection appears to be unavailable.
+            Reconnect to the internet and try again to access
+            your Synvora AI account.
+        </p>
+
+        <div
+            class="connection-status"
+            role="status"
+            aria-live="polite"
+        >
+            <span class="status-dot"></span>
+            <span id="connectionMessage">
+                Checking connection...
+            </span>
+        </div>
+
+        <button
+            class="retry-button"
+            id="retryButton"
+            type="button"
+        >
+            Try Again
+        </button>
+
+        <p class="footer">
+            Your business data is not stored on this offline page.
+            Reconnect to continue using Synvora AI.
+        </p>
+
+    </main>
+
+    <script>
+        const retryButton = document.getElementById("retryButton");
+        const connectionMessage = document.getElementById("connectionMessage");
+
+        function updateConnectionStatus() {
+            if (navigator.onLine) {
+                connectionMessage.textContent =
+                    "Connection available — checking website...";
+            } else {
+                connectionMessage.textContent =
+                    "No internet connection detected";
+            }
+        }
+
+        retryButton.addEventListener("click", function () {
+            retryButton.disabled = true;
+            retryButton.textContent = "Checking connection...";
+
+            if (!navigator.onLine) {
+                connectionMessage.textContent =
+                    "Still offline. Please reconnect and try again.";
+
+                retryButton.disabled = false;
+                retryButton.textContent = "Try Again";
+                return;
+            }
+
+            window.location.replace("./index.html");
+        });
+
+        window.addEventListener("online", updateConnectionStatus);
+        window.addEventListener("offline", updateConnectionStatus);
+
+        updateConnectionStatus();
+    </script>
+
+</body>
+</html>

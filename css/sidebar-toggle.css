@@ -1,0 +1,123 @@
+/* Shared Business OS sidebar toggle — desktop + mobile */
+
+.menu-toggle {
+    position: fixed !important;
+    top: 16px !important;
+    left: 205px !important;
+    z-index: 1201 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(0, 174, 239, .4);
+    border-radius: 14px;
+
+    background: #101a28;
+    color: #fff;
+
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .3);
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+/* Desktop: button sidebar ko collapse/expand karega */
+@media (min-width: 769px) {
+    .dashboard > .ai-sidebar,
+    .ai-workspace > .ai-sidebar {
+        transition:
+            width .25s ease,
+            min-width .25s ease,
+            flex-basis .25s ease,
+            margin .25s ease;
+    }
+
+    body.sidebar-collapsed .dashboard > .ai-sidebar,
+    body.sidebar-collapsed .ai-workspace > .ai-sidebar {
+        flex: 0 0 0 !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        overflow: hidden !important;
+    }
+
+    body.sidebar-collapsed .menu-toggle {
+        left: 16px !important;
+    }
+
+    .dashboard > .sidebar-overlay,
+    .ai-workspace > .sidebar-overlay {
+        display: none !important;
+    }
+}
+
+/* Mobile: button sidebar drawer kholega */
+@media (max-width: 768px) {
+    .menu-toggle {
+        top: 14px !important;
+        left: 14px !important;
+    }
+
+    .dashboard > .ai-sidebar,
+    .ai-workspace > .ai-sidebar {
+        position: fixed !important;
+        inset: 0 auto 0 0 !important;
+        z-index: 1200 !important;
+
+        width: min(280px, 85vw) !important;
+        min-width: 0 !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+
+        background: #202020;
+        transform: translateX(-105%) !important;
+        visibility: hidden;
+        transition: transform .25s ease, visibility .25s ease;
+    }
+
+    .dashboard > .ai-sidebar.active,
+    .ai-workspace > .ai-sidebar.active {
+        transform: translateX(0) !important;
+        visibility: visible !important;
+    }
+
+    .dashboard > .sidebar-overlay,
+    .ai-workspace > .sidebar-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 1199 !important;
+
+        display: block !important;
+        background: rgba(0, 0, 0, .58);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    .dashboard > .sidebar-overlay.active,
+    .ai-workspace > .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    body.sidebar-mobile-open {
+        overflow: hidden;
+    }
+
+    .main-dashboard,
+    .ai-main {
+        padding-top: 76px !important;
+    }
+}

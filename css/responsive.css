@@ -1,0 +1,266 @@
+/* ==========================
+   DASHBOARD RESPONSIVE
+========================== */
+
+
+@media(max-width:1024px){
+
+
+.dashboard-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.tools-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.projects-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.dash-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.dashboard-header{
+
+padding:20px;
+
+}
+
+
+.header-left h1{
+
+font-size:24px;
+
+}
+
+
+
+.header-right{
+
+width:100%;
+
+justify-content:space-between;
+
+}
+
+
+
+.dashboard-stats{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.tools-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.recommendation-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+
+
+.subscription-card{
+
+padding:20px;
+
+}
+
+
+
+.notification-item{
+
+align-items:flex-start;
+
+}
+
+
+
+}
+
+@media(min-width:1025px){
+
+.dashboard{
+    display:flex;
+    flex-direction:row;
+}
+
+
+.ai-sidebar {
+    width: 280px;
+    min-width: 280px;
+    flex: 0 0 280px;
+    box-sizing: border-box;
+}
+
+
+.main-dashboard {
+    flex: 1 1 0%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+.dashboard-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ==========================
+   WELCOME CARD MOBILE FIX
+========================== */
+
+@media(max-width:600px){
+
+.welcome-card{
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+
+.welcome-left h2{
+
+    font-size:24px;
+
+}
+
+
+.welcome-left p{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+
+.dashboard-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+
+.dashboard-buttons a,
+.dashboard-buttons button{
+
+    width:100%;
+
+}
+
+
+.analytics-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.activity-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.dash-header{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:25px;
+gap:10px;
+
+}
+
+.menu-toggle{
+
+display:flex;
+align-items:center;
+justify-content:center;
+width:45px;
+height:45px;
+flex-shrink:0;
+
+}
+
+.dash-header h1{
+
+font-size:22px;
+margin:0;
+flex:1;
+
+}
+
+#logoutBtn{
+
+padding:10px 15px;
+font-size:14px;
+flex-shrink:0;
+
+}
+
+}

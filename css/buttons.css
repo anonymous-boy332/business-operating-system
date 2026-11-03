@@ -1,0 +1,228 @@
+/* ==========================================
+   SYNVORA AI - GLOBAL BUTTON SYSTEM
+========================================== */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease,
+        background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   PRIMARY
+========================================== */
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #00aeef,
+        #0077ff
+    );
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 18px rgba(0,174,239,0.22);
+}
+
+.primary-btn:hover {
+    box-shadow:
+        0 8px 24px rgba(0,174,239,0.35);
+}
+
+
+/* ==========================================
+   SECONDARY
+========================================== */
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    background: #00aeef;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   EXPORT
+========================================== */
+
+.export-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    background: rgba(255,215,0,0.08);
+
+    border: 1px solid rgba(255,215,0,0.22);
+
+    color: #ffd700;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.export-btn:hover {
+    background: rgba(255,215,0,0.14);
+}
+
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.employee-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+.action-view,
+.action-edit,
+.action-attendance,
+.action-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.action-view {
+    background: rgba(0,174,239,0.10);
+    color: #00aeef;
+    border: 1px solid rgba(0,174,239,0.20);
+}
+
+
+.action-edit {
+    background: rgba(255,215,0,0.10);
+    color: #ffd700;
+    border: 1px solid rgba(255,215,0,0.20);
+}
+
+
+.action-attendance {
+    background: rgba(0,200,120,0.10);
+    color: #00d084;
+    border: 1px solid rgba(0,200,120,0.20);
+}
+
+
+.action-delete {
+    background: rgba(255,70,70,0.10);
+    color: #ff5c5c;
+    border: 1px solid rgba(255,70,70,0.20);
+}
+
+
+.action-view:hover,
+.action-edit:hover,
+.action-attendance:hover,
+.action-delete:hover {
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   MANAGEMENT ACTIONS
+========================================== */
+
+.employee-management-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   MODAL BUTTONS
+========================================== */
+
+.employee-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}

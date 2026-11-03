@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Synvora AI - Business Planner</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/sidebar-toggle.css">
+  
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+
+<body>
+
+<div class="mobile-menu-head">
+
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        ☰
+    </button>
+
+</div>
+
+
+<div class="ai-workspace">
+
+<!-- Sidebar -->
+
+<aside class="ai-sidebar">
+
+    <div id="sidebar-container"></div>
+
+</aside>
+
+  <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- Main -->
+
+<main class="ai-main">
+
+<header class="ai-header">
+
+<div class="workspace-title">
+
+<h1>📄 AI Business Planner</h1>
+
+<p>Create complete business plans using AI.</p>
+
+</div>
+
+<div class="workspace-actions">
+
+<a href="dashboard.html">
+<button class="secondary">🏠 Dashboard</button>
+</a>
+
+<button class="primary">
+⚡ AI Pro
+</button>
+
+</div>
+
+</header>
+
+<section class="business-box">
+
+<h2>Create Business Plan</h2>
+
+<p>Describe your business idea below.</p>
+
+<select id="businessType">
+
+<option>Startup</option>
+<option>Restaurant</option>
+<option>Clothing Brand</option>
+<option>Real Estate</option>
+<option>Digital Agency</option>
+<option>Generator Business</option>
+<option>E-commerce Store</option>
+
+</select>
+
+<textarea
+id="businessPrompt"
+placeholder="Example: I want to start a luxury clothing brand in Pakistan with an online store..."></textarea>
+
+<button
+class="generate-btn"
+id="generateBusiness">
+
+🚀 Generate Business Plan
+
+</button>
+
+<div class="writer-result">
+
+<div
+id="businessResult"
+class="result-box">
+
+Your complete AI business plan will appear here...
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/sidebar-toggle.js"></script>
+  
+    <script src="./js/pwa.js"></script>
+</body>
+
+</html>

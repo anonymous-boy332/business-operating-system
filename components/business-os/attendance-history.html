@@ -1,0 +1,238 @@
+<!-- =========================================================
+     SYNVORA AI
+     EMPLOYEE ATTENDANCE HISTORY
+========================================================= -->
+
+<section class="attendance-history">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <div class="section-header">
+
+        <div>
+            <span class="section-eyebrow">
+                EMPLOYEE MANAGEMENT
+            </span>
+
+            <h2>
+                📋 Attendance History
+            </h2>
+
+            <p>
+                View and track employee attendance records.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ATTENDANCE HISTORY TOOLBAR
+    ====================================================== -->
+
+    <div class="attendance-history-toolbar">
+
+        <div class="attendance-history-search">
+
+            <input
+                type="text"
+                id="attendanceHistorySearch"
+                placeholder="Search employee..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="attendance-history-filters">
+
+            <input
+                type="date"
+                id="attendanceHistoryDate"
+            >
+
+
+            <select id="attendanceHistoryStatus">
+
+                <option value="">
+                    All Status
+                </option>
+
+                <option value="Present">
+                    Present
+                </option>
+
+                <option value="Absent">
+                    Absent
+                </option>
+
+                <option value="Late">
+                    Late
+                </option>
+
+            </select>
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="clearAttendanceHistoryFiltersBtn"
+            >
+                Clear
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ATTENDANCE SUMMARY
+    ====================================================== -->
+
+    <div class="attendance-history-summary">
+
+        <div class="attendance-history-summary-card">
+
+            <span>
+                Total Records
+            </span>
+
+            <strong id="attendanceHistoryTotal">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="attendance-history-summary-card">
+
+            <span>
+                Present
+            </span>
+
+            <strong id="attendanceHistoryPresent">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="attendance-history-summary-card">
+
+            <span>
+                Checked In
+            </span>
+
+            <strong id="attendanceHistoryCheckedIn">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="attendance-history-summary-card">
+
+            <span>
+                Completed
+            </span>
+
+            <strong id="attendanceHistoryCompleted">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ATTENDANCE TABLE
+    ====================================================== -->
+
+    <div class="attendance-history-table-card">
+
+        <div class="attendance-history-table-wrapper">
+
+            <table
+                class="attendance-history-table"
+                id="attendanceHistoryTable"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Employee
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Check In
+                        </th>
+
+                        <th>
+                            Check Out
+                        </th>
+
+                        <th>
+                            Working Hours
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="attendanceHistoryTableBody">
+
+                    <!-- Attendance records will be inserted by JS -->
+
+                </tbody>
+
+            </table>
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div
+                class="attendance-history-empty"
+                id="attendanceHistoryEmpty"
+            >
+
+                <div class="attendance-history-empty-icon">
+                    📋
+                </div>
+
+                <h3>
+                    No Attendance Records
+                </h3>
+
+                <p>
+                    Attendance records will appear here when an
+                    employee checks in.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

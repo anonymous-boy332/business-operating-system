@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Finance Management | Synvora AI</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/sidebar.css">
+<link rel="stylesheet" href="../css/sidebar-toggle.css">
+
+<link rel="stylesheet" href="../css/finance.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="mobile-menu-head">
+
+<button class="menu-toggle" onclick="toggleSidebar()">
+☰
+</button>
+
+</div>
+
+<aside class="ai-sidebar">
+
+<div id="sidebar-container"></div>
+
+</aside>
+
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<main class="main-dashboard">
+
+<header class="dash-header">
+
+<h1>💰 Finance Management</h1>
+
+<button id="logoutBtn">
+Logout
+</button>
+
+</header>
+
+<div id="finance-toolbar-container"></div>
+
+<div id="finance-stats-container"></div>
+
+<div id="transactions-container"></div>
+
+<div id="invoice-container"></div>
+
+<div id="profit-loss-container"></div>
+
+</main>
+
+</div>
+
+<script type="module" src="../supabase.js"></script>
+<script type="module" src="../auth.js"></script>
+
+<script src="../script.js"></script>
+
+<script src="../js/sidebar.js"></script>
+<script src="../js/sidebar-toggle.js"></script>
+
+<script src="../js/finance.js"></script>
+
+</body>
+
+</html>

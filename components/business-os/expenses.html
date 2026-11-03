@@ -1,0 +1,281 @@
+<section class="expense-section">
+
+<!-- Expense Summary Cards -->
+
+<div class="expense-summary">
+
+
+    <div class="expense-card">
+
+        <h3>
+            Total Expense
+        </h3>
+
+        <h2 id="totalExpense">
+    $0
+</h2>
+
+    </div>
+
+
+
+    <div class="expense-card">
+
+        <h3>
+            Paid Expense
+        </h3>
+
+        <h2 id="paidExpense">
+    $0
+</h2>
+
+    </div>
+
+
+
+
+    <div class="expense-card">
+
+        <h3>
+            Pending Expense
+        </h3>
+
+        <h2 id="pendingExpense">
+    $0
+</h2>
+
+    </div>
+
+
+
+
+    <div class="expense-card">
+
+        <h3>
+            This Month
+        </h3>
+
+        <h2 id="monthlyExpense">
+    $0
+</h2>
+
+    </div>
+
+
+</div>
+  
+    <div class="expense-header">
+
+        <div class="finance-section-copy">
+            <h2>Expense management</h2>
+            <p>Track operating costs, payment status and monthly spend using saved expense records.</p>
+        </div>
+
+
+        <button class="add-expense-btn">
+            + Add Expense
+        </button>
+
+      <button class="export-btn" id="exportExpense">
+    📊 Export CSV
+</button>
+
+      <button class="export-pdf-btn" id="exportPdf">
+    📄 Export PDF
+</button>
+
+    </div>
+
+  
+
+<!-- Expense Filters -->
+
+<div class="expense-filters">
+
+
+    <input 
+    type="text" 
+    id="searchExpense"
+    placeholder="Search Expense...">
+
+
+    <select id="categoryFilter">
+        <option value="all">
+            All Categories
+        </option>
+    </select>
+
+
+
+    <select id="statusFilter">
+
+
+        <option value="all">
+            All Status
+        </option>
+
+
+        <option value="Paid">
+            Paid
+        </option>
+
+
+        <option value="Pending">
+            Pending
+        </option>
+
+
+    </select>
+
+
+</div>
+
+    <div class="expense-table-container">
+
+
+        <table class="expense-table">
+
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Expense Name</th>
+
+                    <th>Category</th>
+
+                    <th>Date</th>
+
+                    <th>Amount</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+
+            </thead>
+
+
+
+            <tbody>
+
+            </tbody>
+
+
+        </table>
+        <p class="finance-empty-state" id="expenseEmptyState">No expense records yet. Add an expense to start tracking costs.</p>
+
+
+
+    </div>
+
+
+
+</section>
+
+  <!-- Expense Analytics -->
+
+<div class="expense-analytics">
+
+
+    <div class="analytics-card">
+
+        <h3>
+            Monthly Expense Trend
+        </h3>
+
+
+        <canvas id="expenseChart"></canvas>
+
+
+    </div>
+
+
+
+    <div class="analytics-card">
+
+        <h3>
+            Category Expense
+        </h3>
+
+
+        <canvas id="categoryChart"></canvas>
+
+
+    </div>
+
+
+</div>
+
+<!-- Add Expense Form -->
+
+<div class="expense-modal finance-modal" id="expenseModal" aria-hidden="true">
+
+
+    <div class="expense-form-box finance-modal-panel" role="dialog" aria-modal="true" aria-labelledby="expenseFormTitle">
+
+
+        <h2 id="expenseFormTitle">Add expense</h2>
+
+
+        <label for="expenseName">Expense description</label>
+        <input type="text" id="expenseName" placeholder="Expense description" required>
+
+        <label for="expenseCategory">Category</label>
+        <input type="text" id="expenseCategory" placeholder="Category">
+
+        <label for="expenseDate">Expense date</label>
+        <input type="date" id="expenseDate" required>
+
+        <label for="expenseAmount">Amount</label>
+        <input type="number" id="expenseAmount" placeholder="0.00" min="0.01" step="0.01" required>
+
+        <label for="expenseCurrency">Currency</label>
+        <select id="expenseCurrency">
+            <option value="USD">USD · US Dollar</option>
+            <option value="PKR">PKR · Pakistani Rupee</option>
+            <option value="EUR">EUR · Euro</option>
+            <option value="GBP">GBP · British Pound</option>
+            <option value="AED">AED · UAE Dirham</option>
+            <option value="SAR">SAR · Saudi Riyal</option>
+        </select>
+
+        <label for="expenseStatus">Payment status</label>
+        <select id="expenseStatus">
+
+            <option value="Paid">
+                Paid
+            </option>
+
+            <option value="Pending">
+                Pending
+            </option>
+
+        </select>
+
+        <p class="finance-form-message" id="expenseFormMessage" role="alert"></p>
+
+        <div class="form-buttons">
+
+
+            <button id="saveExpense" type="button">
+                Save Expense
+            </button>
+
+
+            <button id="closeExpense" type="button">
+                Cancel
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

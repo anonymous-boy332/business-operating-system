@@ -1,0 +1,75 @@
+<section class="inventory-table" aria-labelledby="inventoryProductsTitle">
+    <header class="inventory-table-header">
+        <div>
+            <span class="inventory-eyebrow">PRODUCT CATALOG</span>
+            <h2 id="inventoryProductsTitle">Inventory products</h2>
+            <p>Product specifications, stock levels, pricing and supplier details.</p>
+        </div>
+        <button type="button" class="inventory-secondary-btn" data-inventory-action="add">
+            <span aria-hidden="true">＋</span> Add product
+        </button>
+    </header>
+
+    <div class="inventory-toolbar">
+        <label class="inventory-search">
+            <span class="sr-only">Search inventory products</span>
+            <span aria-hidden="true">⌕</span>
+            <input id="inventorySearch" type="search" placeholder="Search name, SKU, supplier or location">
+        </label>
+        <label class="inventory-category-filter">
+            <span class="sr-only">Filter by category</span>
+            <select id="inventoryCategoryFilter" aria-label="Filter by category">
+                <option value="">All categories</option>
+            </select>
+        </label>
+        <button type="button" class="inventory-filter-btn" id="inventoryLowStockFilter" aria-pressed="false" data-inventory-action="toggle-low-stock">
+            ⚠ Low stock only
+        </button>
+        <button type="button" class="inventory-export-btn" data-inventory-action="export">
+            ↓ Export CSV
+        </button>
+    </div>
+
+    <div class="inventory-table-meta">
+        <span id="inventoryResultCount">0 products</span>
+        <span>Stock value uses unit cost and on-hand quantity. Values remain grouped by currency.</span>
+    </div>
+
+    <div class="inventory-table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Unit price</th>
+                    <th scope="col">Stock cost</th>
+                    <th scope="col">Supplier / location</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Updated</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTableBody"></tbody>
+        </table>
+        <div id="inventoryEmptyState" class="inventory-empty-state" hidden>
+            <span class="inventory-empty-icon" aria-hidden="true">▦</span>
+            <h3 id="inventoryEmptyTitle">No products yet</h3>
+            <p id="inventoryEmptyMessage">Add your first product to see live inventory levels and stock value here.</p>
+            <button type="button" class="inventory-primary-btn" data-inventory-action="add">Add your first product</button>
+        </div>
+    </div>
+
+    <section class="inventory-movements" aria-labelledby="inventoryMovementsTitle">
+        <div class="inventory-movements-heading">
+            <div>
+                <span class="inventory-eyebrow">AUDIT TRAIL</span>
+                <h3 id="inventoryMovementsTitle">Recent stock activity</h3>
+            </div>
+            <span id="inventoryMovementCount">No movements recorded</span>
+        </div>
+        <div class="inventory-movement-list" id="inventoryMovementList">
+            <p class="inventory-no-movements">Stock receipts and adjustments will appear here.</p>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,123 @@
+<section class="finance-salaries" aria-labelledby="financeSalariesTitle">
+    <div class="finance-salaries-header">
+        <div>
+            <span class="finance-eyebrow">PEOPLE &amp; PAYROLL</span>
+            <h2 id="financeSalariesTitle">Employee salaries</h2>
+            <p>Record salary payments for employees in your saved team directory.</p>
+        </div>
+        <button type="button" class="secondary-btn" data-salary-action="refresh-employees">
+            Refresh team list
+        </button>
+    </div>
+
+    <div class="finance-salary-summary">
+        <div class="finance-salary-stat">
+            <span>Paid this month</span>
+            <strong id="salaryPaidThisMonth">$0.00</strong>
+        </div>
+        <div class="finance-salary-stat">
+            <span>Pending this month</span>
+            <strong id="salaryPendingThisMonth">$0.00</strong>
+        </div>
+        <div class="finance-salary-stat">
+            <span>Employees on file</span>
+            <strong id="salaryEmployeeCount">0</strong>
+        </div>
+    </div>
+
+    <div class="finance-salary-form" aria-label="Record an employee salary">
+        <h3>Record salary</h3>
+
+        <div class="finance-salary-field">
+            <label for="salaryEmployee">Employee</label>
+            <select id="salaryEmployee" required>
+                <option value="">Select an employee</option>
+            </select>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryPeriod">Salary period</label>
+            <input type="month" id="salaryPeriod" required>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryDateTime">Payment date and time</label>
+            <input type="datetime-local" id="salaryDateTime" required>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryAmount">Amount</label>
+            <input type="number" id="salaryAmount" min="0.01" step="0.01" placeholder="0.00" required>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryCurrency">Currency</label>
+            <select id="salaryCurrency">
+                <option value="USD">USD · US Dollar</option>
+                <option value="PKR">PKR · Pakistani Rupee</option>
+                <option value="EUR">EUR · Euro</option>
+                <option value="GBP">GBP · British Pound</option>
+                <option value="AED">AED · UAE Dirham</option>
+                <option value="SAR">SAR · Saudi Riyal</option>
+            </select>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryPaymentMethod">Payment method</label>
+            <select id="salaryPaymentMethod">
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Cash">Cash</option>
+                <option value="Card">Card</option>
+                <option value="Online">Online</option>
+            </select>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryStatus">Payment status</label>
+            <select id="salaryStatus">
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+
+        <div class="finance-salary-field">
+            <label for="salaryReference">Payment reference</label>
+            <input type="text" id="salaryReference" placeholder="Optional reference">
+        </div>
+
+        <div class="finance-salary-field finance-salary-notes">
+            <label for="salaryNotes">Notes</label>
+            <textarea id="salaryNotes" placeholder="Optional payroll notes"></textarea>
+        </div>
+
+        <button type="button" class="primary-btn" data-salary-action="save">
+            Save salary record
+        </button>
+        <p id="salaryFormMessage" class="finance-form-message" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="finance-salary-history">
+        <div class="finance-salary-history-heading">
+            <h3>Recent salary records</h3>
+            <span>Saved employee payroll entries</span>
+        </div>
+        <div class="finance-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Period</th>
+                        <th>Payment date</th>
+                        <th>Amount</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="salaryHistoryList"></tbody>
+            </table>
+        </div>
+        <p id="salaryHistoryEmpty" class="finance-empty-state">
+            No salary records yet. Choose an employee and save a payroll record to get started.
+        </p>
+    </div>
+</section>

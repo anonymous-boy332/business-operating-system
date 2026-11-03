@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Synvora AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/sidebar-toggle.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/business-os.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+<body>
+    <div class="dashboard ai-workspace profile-page">
+        <aside class="ai-sidebar" id="appSidebar">
+            <div id="sidebar-container"></div>
+        </aside>
+        <button
+            class="menu-toggle"
+            type="button"
+            onclick="toggleSidebar()"
+            aria-label="Toggle navigation"
+            aria-controls="appSidebar"
+            aria-expanded="false"
+        >☰</button>
+
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-dashboard ai-main">
+            <header class="profile-page-header">
+                <div>
+                    <span class="profile-eyebrow">ACCOUNT CENTER</span>
+                    <h1>Your Profile</h1>
+                    <p>Manage your personal details and account security.</p>
+                </div>
+                <div class="profile-header-actions">
+                    <a class="profile-button profile-button-muted" href="dashboard.html">Dashboard</a>
+                    <a class="profile-button profile-button-premium" href="billing.html">View Plans <span aria-hidden="true">→</span></a>
+                </div>
+            </header>
+
+            <div class="profile-auth-notice" id="profileAuthNotice" role="status" hidden>
+                <div>
+                    <strong>Sign in to manage your profile</strong>
+                    <p>Your profile and security settings are available after you sign in.</p>
+                </div>
+                <a class="profile-button profile-button-premium" href="login.html">Sign In</a>
+            </div>
+
+            <section class="profile-hero" aria-label="Account overview">
+                <div class="profile-identity">
+                    <div class="profile-avatar">
+                        <span id="profileAvatar" aria-hidden="true">S</span>
+                        <img id="profileAvatarImage" alt="Profile picture" hidden>
+                    </div>
+                    <div class="profile-identity-copy">
+                        <span class="profile-eyebrow">SYNVORA MEMBER</span>
+                        <h2 id="profileDisplayName">Loading profile...</h2>
+                        <p id="profileDisplayEmail">Please wait while your account loads.</p>
+                    </div>
+                </div>
+                <div class="profile-hero-side">
+                    <span class="profile-status-pill" id="profileVerification">Checking account</span>
+                    <div class="profile-hero-actions">
+                        <button class="profile-button profile-button-light" id="editProfileButton" type="button">Edit Profile</button>
+                        <button class="profile-button profile-button-muted" id="changeProfilePictureButton" type="button">Change picture</button>
+                        <button class="profile-button profile-button-premium" id="saveProfilePictureButton" type="button" hidden>Save picture</button>
+                        <button class="profile-button profile-button-muted" id="removeProfilePictureButton" type="button" hidden>Remove picture</button>
+                    </div>
+                </div>
+                <div class="profile-hero-glow" aria-hidden="true"></div>
+            </section>
+
+            <input
+                id="profilePictureInput"
+                class="profile-picture-input"
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                aria-label="Choose a profile picture"
+                hidden
+            >
+            <p class="profile-form-message profile-picture-message" id="profilePictureMessage" role="status" aria-live="polite"></p>
+
+            <section class="profile-overview" aria-label="Account details">
+                <article class="profile-overview-card">
+                    <span class="profile-overview-icon" aria-hidden="true">✦</span>
+                    <div><span>Membership</span><strong>Synvora Member</strong></div>
+                </article>
+                <article class="profile-overview-card">
+                    <span class="profile-overview-icon" aria-hidden="true">◷</span>
+                    <div><span>Member since</span><strong id="profileMemberSince">—</strong></div>
+                </article>
+                <article class="profile-overview-card">
+                    <span class="profile-overview-icon" aria-hidden="true">⌑</span>
+                    <div><span>Account security</span><strong id="profileSecurityStatus">Checking</strong></div>
+                </article>
+            </section>
+
+            <div class="profile-settings-grid">
+                <section class="profile-panel" id="profileDetailsPanel">
+                    <div class="profile-panel-heading">
+                        <div>
+                            <span class="profile-eyebrow">PERSONAL INFORMATION</span>
+                            <h2>Profile details</h2>
+                            <p>Keep your account information up to date.</p>
+                        </div>
+                        <span class="profile-panel-icon" aria-hidden="true">◇</span>
+                    </div>
+
+                    <form id="profileForm" novalidate>
+                        <label class="profile-field" for="profileName">
+                            <span>Full name</span>
+                            <input id="profileName" name="name" type="text" maxlength="120" autocomplete="name" required>
+                        </label>
+                        <label class="profile-field" for="profileEmail">
+                            <span>Email address</span>
+                            <input id="profileEmail" name="email" type="email" maxlength="254" autocomplete="email" required>
+                        </label>
+                        <p class="profile-form-message" id="profileMessage" role="status" aria-live="polite"></p>
+                        <button class="profile-button profile-button-premium profile-submit" id="saveProfileButton" type="submit">
+                            Save Changes
+                        </button>
+                    </form>
+                </section>
+
+                <section class="profile-panel">
+                    <div class="profile-panel-heading">
+                        <div>
+                            <span class="profile-eyebrow">ACCOUNT SECURITY</span>
+                            <h2>Change password</h2>
+                            <p>Choose a strong password you have not used before.</p>
+                        </div>
+                        <span class="profile-panel-icon" aria-hidden="true">⌑</span>
+                    </div>
+
+                    <form id="passwordForm" novalidate>
+                        <label class="profile-field" for="currentPassword">
+                            <span>Current password</span>
+                            <input id="currentPassword" name="currentPassword" type="password" autocomplete="current-password" required>
+                        </label>
+                        <label class="profile-field" for="newPassword">
+                            <span>New password</span>
+                            <input id="newPassword" name="newPassword" type="password" minlength="8" autocomplete="new-password" required>
+                        </label>
+                        <label class="profile-field" for="confirmPassword">
+                            <span>Confirm new password</span>
+                            <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" autocomplete="new-password" required>
+                        </label>
+                        <p class="profile-form-message" id="passwordMessage" role="status" aria-live="polite"></p>
+                        <button class="profile-button profile-button-muted profile-submit" id="updatePasswordButton" type="submit">
+                            Update Password
+                        </button>
+                    </form>
+                </section>
+            </div>
+
+            <footer class="profile-footer">
+                <span>Your account information is managed securely by Synvora.</span>
+                <a href="settings.html">More account settings <span aria-hidden="true">→</span></a>
+            </footer>
+        </main>
+    </div>
+
+    <script type="module" src="supabase.js"></script>
+    <script src="script.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/sidebar-toggle.js"></script>
+    <script type="module" src="js/profile.js"></script>
+    <script src="./js/pwa.js"></script>
+</body>
+</html>

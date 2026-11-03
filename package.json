@@ -1,0 +1,11 @@
+{
+  "name": "synvora-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Synvora AI SaaS Platform",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "start": "npm run dev"
+  }
+}

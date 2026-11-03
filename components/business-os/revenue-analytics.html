@@ -1,0 +1,75 @@
+<section class="revenue-analytics">
+
+    <div class="section-header revenue-analytics-header">
+        <div>
+            <h2>📈 Revenue Analytics</h2>
+            <p id="revenueAnalyticsStatus" role="status">Figures are calculated from saved finance records.</p>
+        </div>
+
+        <div class="revenue-analytics-controls">
+            <label for="revenueAnalyticsPeriod">
+                Period
+                <select id="revenueAnalyticsPeriod">
+                    <option value="month">This Month</option>
+                    <option value="quarter">This Quarter</option>
+                    <option value="year">This Year</option>
+                </select>
+            </label>
+
+            <label for="revenueAnalyticsCurrency">
+                Currency
+                <select id="revenueAnalyticsCurrency">
+                    <option value="USD">USD</option>
+                    <option value="PKR">PKR</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AED">AED</option>
+                    <option value="SAR">SAR</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="revenue-summary-grid">
+        <div class="revenue-summary-card">
+            <span aria-hidden="true">💰</span>
+            <h3 id="revenueAnalyticsIncome">$0.00</h3>
+            <p>Income received</p>
+            <small id="revenueAnalyticsIncomeCount">0 records</small>
+        </div>
+
+        <div class="revenue-summary-card">
+            <span aria-hidden="true">📉</span>
+            <h3 id="revenueAnalyticsExpenses">$0.00</h3>
+            <p>Expenses paid</p>
+            <small id="revenueAnalyticsExpenseCount">0 records</small>
+        </div>
+
+        <div class="revenue-summary-card">
+            <span aria-hidden="true">📊</span>
+            <h3 id="revenueAnalyticsNet">$0.00</h3>
+            <p>Net cash flow</p>
+            <small id="revenueAnalyticsPeriodLabel">This month</small>
+        </div>
+    </div>
+
+    <div class="revenue-grid">
+        <div class="revenue-card">
+            <h3>Income and expenses</h3>
+            <div class="chart-container">
+                <canvas id="revenueChart" aria-label="Saved income, paid expenses and net cash flow over time"></canvas>
+            </div>
+        </div>
+
+        <div class="revenue-card">
+            <h3>Business performance</h3>
+            <p id="revenueAnalyticsDescription">Based on saved records for the selected period and currency.</p>
+            <div class="performance-list">
+                <p><span>Net margin</span><strong id="revenueAnalyticsMargin">—</strong></p>
+                <p><span>Income records</span><strong id="revenueAnalyticsIncomeCountDetail">0</strong></p>
+                <p><span>Expense records</span><strong id="revenueAnalyticsExpenseCountDetail">0</strong></p>
+            </div>
+        </div>
+    </div>
+
+</section>

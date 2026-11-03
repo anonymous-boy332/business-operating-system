@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Synvora AI - History</title>
+
+    <!-- Business OS ke shared layout/sidebar styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/sidebar-toggle.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/business-os.css">
+    <link rel="stylesheet" href="css/history.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#071a35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Synvora AI">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+
+<body>
+
+    <div class="dashboard ai-workspace history-page">
+
+        <!-- Shared Sidebar -->
+        <aside class="ai-sidebar" id="appSidebar">
+            <div id="sidebar-container"></div>
+        </aside>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            onclick="toggleSidebar()"
+            aria-label="Toggle navigation"
+            aria-controls="appSidebar"
+            aria-expanded="false"
+        >☰</button>
+
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <!-- Main Content -->
+        <main class="main-dashboard ai-main">
+
+            <header class="ai-header">
+                <div class="workspace-title">
+                    <h1>🕒 Activity History</h1>
+                    <p>Review your recent business activity.</p>
+                </div>
+
+                <div class="workspace-actions">
+                    <a href="dashboard.html">
+                        <span class="secondary history-nav-button">🏠 Dashboard</span>
+                    </a>
+
+                    <a href="billing.html" class="primary history-nav-button">💳 Billing</a>
+                </div>
+            </header>
+
+            <section class="history-controls" aria-label="History controls">
+                <label class="history-search">
+                    <span>Search activity</span>
+                    <input
+                        type="search"
+                        id="historySearch"
+                        placeholder="Search project activity..."
+                        aria-label="Search project activity"
+                    >
+                </label>
+
+                <label class="history-filter">
+                    <span>Activity type</span>
+                    <select id="historyFilter" aria-label="Filter activity type">
+                        <option value="all">All activity</option>
+                        <option value="created">Created</option>
+                        <option value="updated">Updated</option>
+                        <option value="deleted">Deleted</option>
+                    </select>
+                </label>
+
+                <button class="history-secondary-btn" id="refreshHistory" type="button">
+                    ↻ Refresh
+                </button>
+
+                <button class="history-danger-btn" id="clearHistory" type="button">
+                    Clear History
+                </button>
+            </section>
+
+            <p class="history-result-count" id="historyResultCount" aria-live="polite"></p>
+
+            <section class="history-grid" id="historyGrid" aria-live="polite"></section>
+
+            <section class="history-empty" id="historyEmpty" hidden>
+                <h2 id="historyEmptyTitle">No activity yet</h2>
+                <p id="historyEmptyMessage">
+                    Create, update, or delete a project to see its activity here.
+                </p>
+                <a class="history-primary-btn" href="projects.html">Go to Projects</a>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Shared sidebar loader and toggle -->
+    <script src="script.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/sidebar-toggle.js"></script>
+    <script src="js/project-activity.js"></script>
+    <script src="js/history.js"></script>
+
+    <script src="./js/pwa.js"></script>
+</body>
+</html>

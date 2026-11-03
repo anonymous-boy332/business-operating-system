@@ -1,0 +1,94 @@
+/* Sidebar scroll — desktop aur mobile */
+
+.ai-sidebar {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.sidebar-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.sidebar-card .dash-logo {
+    flex: 0 0 auto;
+}
+
+.sidebar-card > ul {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 174, 239, 0.55) transparent;
+}
+
+.sidebar-card > ul::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-card > ul::-webkit-scrollbar-thumb {
+    background: rgba(0, 174, 239, 0.55);
+    border-radius: 10px;
+}
+
+/* Sidebar wrapper ko viewport ki height do */
+.ai-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+/* Sidebar loader ke wrapper ko bhi height chahiye */
+.ai-sidebar > #sidebar-container {
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+}
+
+/* Loaded sidebar aur links list ko scroll area do */
+.sidebar-card {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.sidebar-card > .dash-logo {
+    flex: 0 0 auto;
+}
+
+.sidebar-card > ul {
+    flex: 1 1 0%;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+}
+
+/* Mobile par sidebar fixed rahe aur khul/band ho sake */
+@media (max-width: 768px) {
+    .ai-sidebar {
+        position: fixed;
+        top: 0;
+        align-self: auto;
+    }
+}

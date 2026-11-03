@@ -1,0 +1,166 @@
+<section class="sales-section" aria-labelledby="salesDashboardTitle">
+    <div class="sales-header">
+        <div>
+            <span class="crm-eyebrow">CUSTOMER &amp; SALES</span>
+            <h2 id="salesDashboardTitle">Sales Dashboard</h2>
+            <p id="salesDashboardDataNote" role="status">Sales are based on saved customer orders.</p>
+        </div>
+        <div class="sales-dashboard-actions">
+            <button type="button" class="add-sale-btn" id="salesAddOrderBtn">+ New order</button>
+            <button type="button" class="export-sale-btn" id="salesExportOrdersBtn">Export CSV</button>
+        </div>
+    </div>
+
+    <div class="sales-controls">
+        <label for="salesPeriodFilter">
+            Period
+            <select id="salesPeriodFilter">
+                <option value="month">This month</option>
+                <option value="quarter">This quarter</option>
+                <option value="year">This year</option>
+                <option value="all">All time</option>
+            </select>
+        </label>
+        <label for="salesCurrencyFilter">
+            Currency
+            <select id="salesCurrencyFilter">
+                <option value="USD">USD</option>
+                <option value="PKR">PKR</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="AED">AED</option>
+                <option value="SAR">SAR</option>
+            </select>
+        </label>
+        <label for="salesStatusFilter">
+            Order status
+            <select id="salesStatusFilter">
+                <option value="all">All statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Processing">Processing</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="sales-summary">
+        <article class="sales-card">
+            <h3>Completed sales</h3>
+            <strong id="salesTotalRevenue">$0.00</strong>
+            <p id="salesRevenueCaption">Selected period · USD</p>
+        </article>
+        <article class="sales-card">
+            <h3>Orders</h3>
+            <strong id="salesOrderCount">0</strong>
+            <p>Matching saved orders</p>
+        </article>
+        <article class="sales-card">
+            <h3>In progress</h3>
+            <strong id="salesOpenOrderCount">0</strong>
+            <p>Pending and processing</p>
+        </article>
+        <article class="sales-card">
+            <h3>Customers served</h3>
+            <strong id="salesCustomerCount">0</strong>
+            <p>With a matching order</p>
+        </article>
+    </div>
+
+    <div class="sales-analytics">
+        <article class="sales-analytics-card">
+            <h3>Saved sales over time</h3>
+            <div class="sales-chart-container">
+                <canvas id="salesPerformanceChart" aria-label="Completed sales and order counts over time"></canvas>
+            </div>
+        </article>
+        <article class="sales-analytics-card">
+            <h3>Order status breakdown</h3>
+            <div class="sales-chart-container">
+                <canvas id="salesStatusChart" aria-label="Saved orders by status"></canvas>
+            </div>
+        </article>
+    </div>
+
+    <div class="sales-table-card">
+        <div class="sales-table-header">
+            <div>
+                <h3>Customer orders</h3>
+                <p>Saved orders linked to customer profiles.</p>
+            </div>
+        </div>
+        <div class="sales-table-container">
+            <table class="sales-table">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Details</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="salesOrdersTableBody"></tbody>
+            </table>
+            <p class="sales-empty-state" id="salesOrdersEmptyState">No saved orders yet. Create an order to start tracking sales.</p>
+        </div>
+    </div>
+</section>
+
+<div class="sales-order-modal finance-modal" id="salesOrderModal" aria-hidden="true">
+    <div class="sales-order-panel finance-modal-panel" role="dialog" aria-modal="true" aria-labelledby="salesOrderFormTitle">
+        <h2 id="salesOrderFormTitle">Create customer order</h2>
+        <form id="salesOrderForm">
+            <label for="salesOrderCustomer">Customer</label>
+            <select id="salesOrderCustomer" required></select>
+            <p class="sales-customer-empty" id="salesCustomerEmpty" hidden>
+                No customers are saved yet. <button type="button" data-crm-action="add-customer">Add a customer first</button>.
+            </p>
+
+            <label for="salesOrderDetails">Order description</label>
+            <input id="salesOrderDetails" type="text" maxlength="160" required placeholder="Product or service">
+
+            <div class="sales-order-fields">
+                <div>
+                    <label for="salesOrderAmount">Amount</label>
+                    <input id="salesOrderAmount" type="number" min="0.01" step="0.01" required placeholder="0.00">
+                </div>
+                <div>
+                    <label for="salesOrderCurrency">Currency</label>
+                    <select id="salesOrderCurrency">
+                        <option value="USD">USD</option>
+                        <option value="PKR">PKR</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="AED">AED</option>
+                        <option value="SAR">SAR</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="sales-order-fields">
+                <div>
+                    <label for="salesOrderDate">Order date</label>
+                    <input id="salesOrderDate" type="date" required>
+                </div>
+                <div>
+                    <label for="salesOrderStatus">Status</label>
+                    <select id="salesOrderStatus">
+                        <option value="Pending">Pending</option>
+                        <option value="Processing">Processing</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+
+            <p class="sales-form-message" id="salesOrderFormMessage" role="alert"></p>
+            <div class="sales-order-actions">
+                <button type="button" class="secondary-btn" id="salesCancelOrderBtn">Cancel</button>
+                <button type="submit" class="primary-btn" id="salesSaveOrderBtn">Save order</button>
+            </div>
+        </form>
+    </div>
+</div>

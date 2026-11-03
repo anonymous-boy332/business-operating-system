@@ -1,0 +1,610 @@
+<!-- ==========================================
+     SYNVORA AI - COMPANY SETTINGS
+========================================== -->
+
+<section class="company-settings" data-business-module="settings">
+
+    <header class="company-settings-hero">
+
+        <div class="company-settings-hero-content">
+
+            <span class="settings-eyebrow">
+                WORKSPACE CONFIGURATION
+            </span>
+
+            <h2>⚙️ Company Settings</h2>
+
+            <p>
+                Manage your company profile, finance setup and workspace preferences.
+            </p>
+
+        </div>
+
+        <div class="settings-active-company">
+
+            <span class="settings-active-icon">🏢</span>
+
+            <div>
+                <small>ACTIVE COMPANY</small>
+
+                <strong id="settingsActiveCompanyName">
+                    No Company Selected
+                </strong>
+
+                <span id="settingsActiveCompanyMeta">
+                    Select a company from Company Management.
+                </span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="settings-save-state" id="settingsSaveState">
+        Ready to update your company workspace.
+    </div>
+
+
+    <div class="settings-grid">
+
+        <!-- COMPANY PROFILE -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div class="settings-card-icon">🏢</div>
+
+                <div>
+                    <h3>Company Profile</h3>
+
+                    <p>
+                        Main identity and contact information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-fields">
+
+                <div class="settings-field">
+                    <label>Company Name *</label>
+
+                    <input
+                        type="text"
+                        id="settingsCompanyName"
+                        placeholder="Company Name">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Owner Name *</label>
+
+                    <input
+                        type="text"
+                        id="settingsCompanyOwner"
+                        placeholder="Owner Name">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Company Code</label>
+
+                    <input
+                        type="text"
+                        id="settingsCompanyCode"
+                        maxlength="12"
+                        placeholder="e.g. SYN-AI">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Industry</label>
+
+                    <select id="settingsCompanyIndustry">
+                        <option value="">Select Industry</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Software & SaaS">Software & SaaS</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="E-Commerce">E-Commerce</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Education">Education</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Company Type</label>
+
+                    <input
+                        type="text"
+                        id="settingsCompanyType"
+                        placeholder="Technology, Services, Retail...">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Business Email</label>
+
+                    <input
+                        type="email"
+                        id="settingsCompanyEmail"
+                        placeholder="business@example.com">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Phone Number</label>
+
+                    <input
+                        type="text"
+                        id="settingsCompanyPhone"
+                        placeholder="+92 300 0000000">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Website</label>
+
+                    <input
+                        type="url"
+                        id="settingsCompanyWebsite"
+                        placeholder="https://yourcompany.com">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINANCE SETUP -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div class="settings-card-icon">💼</div>
+
+                <div>
+                    <h3>Business & Finance Setup</h3>
+
+                    <p>
+                        Currency, taxation and invoice preferences.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-fields">
+
+                <div class="settings-field">
+                    <label>Currency</label>
+
+                    <select id="settingsCurrency">
+                        <option value="PKR">PKR - Pakistani Rupee</option>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="AED">AED - UAE Dirham</option>
+                        <option value="EUR">EUR - Euro</option>
+                    </select>
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Country</label>
+
+                    <input
+                        type="text"
+                        id="settingsCountry"
+                        placeholder="Pakistan">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Timezone</label>
+
+                    <select id="settingsTimezone">
+                        <option value="Asia/Karachi">Asia/Karachi</option>
+                        <option value="Asia/Dubai">Asia/Dubai</option>
+                        <option value="Europe/London">Europe/London</option>
+                        <option value="America/New_York">America/New York</option>
+                    </select>
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Financial Year Starts</label>
+
+                    <select id="settingsFiscalYear">
+                        <option value="January">January</option>
+                        <option value="April">April</option>
+                        <option value="July">July</option>
+                        <option value="October">October</option>
+                    </select>
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Tax / NTN / Registration No.</label>
+
+                    <input
+                        type="text"
+                        id="settingsTaxId"
+                        placeholder="e.g. NTN-1234567">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Invoice Prefix</label>
+
+                    <input
+                        type="text"
+                        id="settingsInvoicePrefix"
+                        maxlength="10"
+                        placeholder="e.g. SYN-INV">
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Company Status</label>
+
+                    <select id="settingsBusinessStatus">
+                        <option value="Active">🟢 Active</option>
+                        <option value="Inactive">🔴 Inactive</option>
+                    </select>
+                </div>
+
+
+                <div class="settings-field">
+                    <label>Workspace Language</label>
+
+                    <select id="settingsLanguage">
+                        <option value="English">English</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Arabic">Arabic</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WORKSPACE PREFERENCES -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div class="settings-card-icon">✨</div>
+
+                <div>
+                    <h3>Workspace Preferences</h3>
+
+                    <p>
+                        Decide which business updates you want to receive.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-options">
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Notifications</strong>
+
+                        <small>
+                            Receive workspace notifications.
+                        </small>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input
+                            type="checkbox"
+                            id="settingsNotifications"
+                            checked>
+
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Business Alerts</strong>
+
+                        <small>
+                            Receive important sales, finance and team alerts.
+                        </small>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input
+                            type="checkbox"
+                            id="settingsAlerts"
+                            checked>
+
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>AI Business Advisor</strong>
+
+                        <small>
+                            Enable smart AI recommendations for this company.
+                        </small>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input
+                            type="checkbox"
+                            id="settingsAI"
+                            checked>
+
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Weekly Business Summary</strong>
+
+                        <small>
+                            Show a weekly performance summary in Business OS.
+                        </small>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input
+                            type="checkbox"
+                            id="settingsWeeklySummary"
+                            checked>
+
+                        <span></span>
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPANY CONTROLS -->
+
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div class="settings-card-icon">🛠️</div>
+
+                <div>
+                    <h3>Company Controls</h3>
+
+                    <p>
+                        Manage team access and your company data.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-security-list">
+
+                <div class="settings-security-item">
+
+                    <span>👥</span>
+
+                    <div>
+                        <strong>Team Permissions</strong>
+
+                        <small>
+                            Control employee roles and workspace access.
+                        </small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="settings-action-btn"
+                        onclick="openTeamPermissions()">
+
+                        Manage
+
+                    </button>
+
+                </div>
+
+
+                <div class="settings-security-item">
+
+                    <span>📦</span>
+
+                    <div>
+                        <strong>Export Company Data</strong>
+
+                        <small>
+                            Download this company profile and preferences.
+                        </small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="settings-action-btn"
+                        onclick="exportCompanySettingsData()">
+
+                        Export
+
+                    </button>
+
+                </div>
+
+
+                <div class="settings-security-item">
+
+                    <span>🏢</span>
+
+                    <div>
+                        <strong>Company Management</strong>
+
+                        <small>
+                            Create, select and manage your companies.
+                        </small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="settings-action-btn"
+                        onclick="openCompanyManagementFromSettings()">
+
+                        Open
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- COMPANY ADDRESS -->
+
+    <section class="settings-card settings-wide-card">
+
+        <div class="settings-card-header">
+
+            <div class="settings-card-icon">📍</div>
+
+            <div>
+                <h3>Business Address & Description</h3>
+
+                <p>
+                    Keep company address and business details updated.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="settings-fields">
+
+            <div class="settings-field settings-full-width">
+                <label>Business Address</label>
+
+                <textarea
+                    id="settingsCompanyAddress"
+                    placeholder="Enter complete company address..."></textarea>
+            </div>
+
+
+            <div class="settings-field settings-full-width">
+                <label>Company Description</label>
+
+                <textarea
+                    id="settingsCompanyDescription"
+                    placeholder="Write a short description about your company..."></textarea>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DANGER ZONE -->
+
+    <section class="settings-danger-card">
+
+        <div>
+
+            <span class="settings-eyebrow">DANGER ZONE</span>
+
+            <h3>Company Workspace Controls</h3>
+
+            <p>
+                Deactivate or permanently remove the active company workspace.
+            </p>
+        </div>
+
+        <div class="settings-danger-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="deactivateActiveCompany()">
+
+                ⏸ Deactivate Company
+
+            </button>
+
+            <button
+                type="button"
+                class="settings-delete-btn"
+                onclick="deleteActiveCompanyFromSettings()">
+
+                🗑 Delete Company
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SAVE BAR -->
+
+    <div class="settings-save-bar">
+
+        <div>
+            <strong>Company Workspace Configuration</strong>
+
+            <small>
+                All changes will be saved to the currently active company.
+            </small>
+        </div>
+
+        <div class="settings-save-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="resetCompanySettings()">
+
+                Reset
+
+            </button>
+
+            <button
+                type="button"
+                class="primary-btn"
+                onclick="saveCompanySettings()">
+
+                💾 Save Settings
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>

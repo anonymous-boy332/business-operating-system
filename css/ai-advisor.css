@@ -1,0 +1,176 @@
+/* AI Business Advisor Dashboard */
+.ai-advisor-dashboard {
+    width: 100%;
+    margin-top: 28px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Heading */
+.advisor-dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 22px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background: linear-gradient(
+        120deg,
+        rgba(0, 174, 239, 0.09),
+        rgba(255, 255, 255, 0.025)
+    );
+}
+
+.advisor-heading-copy {
+    min-width: 0;
+}
+
+.advisor-eyebrow {
+    color: #00aeef;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.advisor-dashboard-header h2 {
+    margin: 8px 0;
+    color: #fff;
+    font-size: clamp(24px, 3vw, 32px);
+}
+
+.advisor-dashboard-header p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.6;
+}
+
+.advisor-dashboard-header .primary-btn {
+    flex-shrink: 0;
+}
+
+/* Insight cards */
+.advisor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.advisor-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.075),
+        rgba(255, 255, 255, 0.025)
+    );
+    box-sizing: border-box;
+    backdrop-filter: blur(14px);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.advisor-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 174, 239, 0.45);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+.advisor-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.advisor-icon {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 174, 239, 0.18);
+    border-radius: 13px;
+    background: rgba(0, 174, 239, 0.1);
+    font-size: 22px;
+}
+
+.advisor-card-top small {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 11px;
+    text-align: right;
+}
+
+.advisor-card-top .positive {
+    color: #22c55e;
+}
+
+.advisor-card-top .warning {
+    color: #fbbf24;
+}
+
+.advisor-card h3 {
+    margin: 0 0 10px;
+    color: #dbeafe;
+    font-size: 15px;
+}
+
+.advisor-card h1 {
+    margin: 0 0 8px;
+    color: #00aeef;
+    font-size: 36px;
+    line-height: 1.1;
+}
+
+.advisor-card p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.advisor-card:nth-child(2) h1 {
+    color: #22c55e;
+}
+
+.advisor-card:nth-child(3) h1 {
+    color: #ef4444;
+}
+
+.advisor-card:nth-child(4) h1 {
+    color: #ffd700;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .advisor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .advisor-dashboard-header {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .advisor-dashboard-header .primary-btn {
+        align-self: flex-start;
+    }
+
+    .advisor-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .advisor-card {
+        padding: 18px;
+    }
+}
